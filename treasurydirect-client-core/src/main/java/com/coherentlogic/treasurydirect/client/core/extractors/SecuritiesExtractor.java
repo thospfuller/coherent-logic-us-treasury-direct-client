@@ -14,7 +14,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
 
 /**
- * 
+ * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
+ * @author <a href="mailto:support@coherentlogic.com">Support</a>
  */
 public class SecuritiesExtractor implements ResponseExtractor<Securities> {
 
@@ -24,9 +25,9 @@ public class SecuritiesExtractor implements ResponseExtractor<Securities> {
 
     private final GsonBuilder gsonBuilder;
 
-    public SecuritiesExtractor(GsonBuilder gsonBuilder, TypeAdapter<Securities> securitiesTypeAdapter) {
+    public SecuritiesExtractor (GsonBuilder gsonBuilder, TypeAdapter<Securities> securitiesAdapter) {
         this.gsonBuilder = gsonBuilder;
-        gsonBuilder.registerTypeAdapter(Securities.class, securitiesTypeAdapter);
+        gsonBuilder.registerTypeAdapter(Securities.class, securitiesAdapter);
     }
 
     @Override
