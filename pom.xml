@@ -110,9 +110,9 @@
         <module>treasurydirect-client-config</module>
         <module>treasurydirect-client-misc</module -->
         <module>treasurydirect-client-core</module>
+        <module>treasurydirect-client-core-it</module>
         <module>treasurydirect-client-db-int</module>
         <module>treasurydirect-client-example</module>
-        <!-- module>treasurydirect-client-core-it</module -->
         <!-- module>treasurydirect-client-webstart-application</module -->
     </modules>
 
