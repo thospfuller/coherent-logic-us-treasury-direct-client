@@ -15,7 +15,7 @@
 
     <groupId>com.coherentlogic.treasurydirect</groupId>
     <artifactId>client</artifactId>
-    <version>1.0.12-RELEASE</version>
+    <version>0.8.5-RELEASE</version>
 
     <packaging>pom</packaging>
     <name>Coherent Logic Treasury Direct Client</name>
@@ -23,7 +23,7 @@
     <url>https://coherentlogic.com/middleware-development/us-treasury-direct-client/</url>
     <properties>
         <java.version>1.8</java.version>
-        <data.model.version>1.0.25-RELEASE</data.model.version>
+        <data.model.version>1.0.26-RELEASE</data.model.version>
     </properties>
     <licenses>
         <license>
@@ -106,12 +106,13 @@
         as this causes problems and the process will fail. There may be a better 
         way to do this however at the moment commenting the module seems to work. -->
     <modules>
-        <!-- module>treasurydirect-client-assembly</module -->
+        <!-- module>treasurydirect-client-assembly</module>
         <module>treasurydirect-client-config</module>
-        <module>treasurydirect-client-misc</module>
+        <module>treasurydirect-client-misc</module -->
         <module>treasurydirect-client-core</module>
-        <!-- module>treasurydirect-client-core-it</module -->
         <module>treasurydirect-client-db-int</module>
+        <module>treasurydirect-client-example</module>
+        <!-- module>treasurydirect-client-core-it</module -->
         <!-- module>treasurydirect-client-webstart-application</module -->
     </modules>
 
@@ -124,16 +125,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
+            <!-- dependency>
                 <groupId>com.coherentlogic.treasurydirect.client</groupId>
                 <artifactId>treasurydirect-client-config</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
+            </dependency -->
+            <!-- dependency>
                 <groupId>com.coherentlogic.treasurydirect.client</groupId>
                 <artifactId>treasurydirect-client-misc</artifactId>
                 <version>${project.version}</version>
-            </dependency>
+            </dependency -->
             <!-- If we don't have this dependency then the assembly pom will need 
                 to have the custom-namespace-example version number. -->
             <!-- dependency> <groupId>com.coherentlogic.treasurydirect.client</groupId> <artifactId>treasurydirect-example</artifactId> 
@@ -150,9 +151,14 @@
             </dependency>
             <dependency>
                 <groupId>com.coherentlogic.treasurydirect.client</groupId>
-                <artifactId>treasurydirect-client-webstart-application</artifactId>
+                <artifactId>treasurydirect-client-example</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- dependency>
+                <groupId>com.coherentlogic.treasurydirect.client</groupId>
+                <artifactId>treasurydirect-client-webstart-application</artifactId>
+                <version>${project.version}</version>
+            </dependency -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
