@@ -15,9 +15,9 @@ import org.springframework.web.client.RestTemplate;
 
 import com.coherentlogic.treasurydirect.client.core.adapters.SecuritiesAdapter;
 import com.coherentlogic.treasurydirect.client.core.builders.QueryBuilder;
-import com.coherentlogic.treasurydirect.client.core.converters.SecuritiesConverter;
 import com.coherentlogic.treasurydirect.client.core.domain.Securities;
 import com.coherentlogic.treasurydirect.client.core.domain.Security;
+import com.coherentlogic.treasurydirect.client.core.extractors.SecuritiesExtractor;
 import com.coherentlogic.treasurydirect.client.core.factories.SecuritiesFactory;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
@@ -51,9 +51,8 @@ public class GlobalConfiguration {
     }
 
     @Bean(name=TREASURY_DIRECT_REST_TEMPLATE)
-    public RestTemplate getRestTemplate (
-//        @Qualifier(TREASURY_DIRECT_XSTREAM_MARSHALLER) XStreamMarshaller xStreamMarshaller
-    ) {
+    public RestTemplate getRestTemplate () {
+
         RestTemplate restTemplate = new RestTemplate();
 
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>> ();
