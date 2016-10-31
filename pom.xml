@@ -112,7 +112,7 @@
         <module>treasurydirect-client-core</module>
         <module>treasurydirect-client-core-it</module>
         <module>treasurydirect-client-db-int</module>
-        <module>treasurydirect-client-example</module>
+        <module>treasurydirect-client-application</module>
         <!-- module>treasurydirect-client-webstart-application</module -->
     </modules>
 
@@ -151,7 +151,7 @@
             </dependency>
             <dependency>
                 <groupId>com.coherentlogic.treasurydirect.client</groupId>
-                <artifactId>treasurydirect-client-example</artifactId>
+                <artifactId>treasurydirect-client-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- dependency>
