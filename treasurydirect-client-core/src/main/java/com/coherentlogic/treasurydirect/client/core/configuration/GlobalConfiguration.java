@@ -13,11 +13,16 @@ import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 
+import com.coherentlogic.treasurydirect.client.core.adapters.DebtsAdapter;
 import com.coherentlogic.treasurydirect.client.core.adapters.SecuritiesAdapter;
 import com.coherentlogic.treasurydirect.client.core.builders.QueryBuilder;
+import com.coherentlogic.treasurydirect.client.core.domain.Debt;
+import com.coherentlogic.treasurydirect.client.core.domain.Debts;
 import com.coherentlogic.treasurydirect.client.core.domain.Securities;
 import com.coherentlogic.treasurydirect.client.core.domain.Security;
+import com.coherentlogic.treasurydirect.client.core.extractors.DebtsExtractor;
 import com.coherentlogic.treasurydirect.client.core.extractors.SecuritiesExtractor;
+import com.coherentlogic.treasurydirect.client.core.factories.DebtsFactory;
 import com.coherentlogic.treasurydirect.client.core.factories.SecuritiesFactory;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
@@ -36,18 +41,28 @@ public class GlobalConfiguration {
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public QueryBuilder getQueryBuilder (
         @Qualifier(TREASURY_DIRECT_REST_TEMPLATE) RestTemplate restTemplate,
-        @Qualifier(SecuritiesExtractor.BEAN_NAME) ResponseExtractor<Securities> responseExtractor
+        @Qualifier(SecuritiesExtractor.BEAN_NAME) ResponseExtractor<Securities> securitiesExtractor,
+        @Qualifier(DebtsExtractor.BEAN_NAME) ResponseExtractor<Debts> debtsExtractor
     ) {
-        return new QueryBuilder (restTemplate, responseExtractor);
+        return new QueryBuilder (restTemplate, securitiesExtractor, debtsExtractor);
     }
 
-    @Bean(name=QueryBuilder.BEAN_NAME)
+    @Bean(name=SecuritiesExtractor.BEAN_NAME)
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public ResponseExtractor<Securities> getSecuritiesExtractor (
         GsonBuilder gsonBuilder,
         SecuritiesAdapter securitiesAdapter
     ) {
         return new SecuritiesExtractor (gsonBuilder, securitiesAdapter);
+    }
+
+    @Bean(name=DebtsExtractor.BEAN_NAME)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    public ResponseExtractor<Debts> getDebtsExtractor (
+        GsonBuilder gsonBuilder,
+        DebtsAdapter debtsAdapter
+    ) {
+        return new DebtsExtractor (gsonBuilder, debtsAdapter);
     }
 
     @Bean(name=TREASURY_DIRECT_REST_TEMPLATE)
@@ -95,6 +110,15 @@ public class GlobalConfiguration {
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public DebtsAdapter getDebtsAdapter (
+        @Qualifier(GSON_BUILDER) GsonBuilder gsonBuilder,
+        DebtsFactory debtsFactory
+    ) {
+        return new DebtsAdapter (gsonBuilder, debtsFactory);
+    }
+
+    @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public Securities getSecurities () {
         return new Securities ();
     }
@@ -103,5 +127,17 @@ public class GlobalConfiguration {
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public Security getSecurity () {
         return new Security ();
+    }
+
+    @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public Debts getDebts () {
+        return new Debts ();
+    }
+
+    @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public Debt getDebt () {
+        return new Debt ();
     }
 }

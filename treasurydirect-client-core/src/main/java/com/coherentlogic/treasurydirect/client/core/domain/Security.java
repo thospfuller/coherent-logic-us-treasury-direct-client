@@ -5,10 +5,6 @@ import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 
 public class Security extends SerializableBean<Security> {
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -1998838799463838363L;
 
     private String cusip;
 
@@ -19,10 +15,12 @@ public class Security extends SerializableBean<Security> {
         return cusip;
     }
 
+    public static final String CUSIP = "cusip";
+
     /**
      * Setter method for the cusip property.
      */
-    public void setCusip (@Changeable("cusip") String cusip) {
+    public void setCusip (@Changeable(CUSIP) String cusip) {
         this.cusip = cusip;
     }
 
@@ -35,10 +33,12 @@ public class Security extends SerializableBean<Security> {
         return issueDate;
     }
 
+    public static final String ISSUEDATE = "issueDate";
+
     /**
      * Setter method for the issueDate property.
      */
-    public void setIssueDate (@Changeable("issueDate") String issueDate) {
+    public void setIssueDate (@Changeable(ISSUEDATE) String issueDate) {
         this.issueDate = issueDate;
     }
 
@@ -51,10 +51,12 @@ public class Security extends SerializableBean<Security> {
         return securityType;
     }
 
+    public static final String SECURITYTYPE = "securityType";
+
     /**
      * Setter method for the securityType property.
      */
-    public void setSecurityType (@Changeable("securityType") String securityType) {
+    public void setSecurityType (@Changeable(SECURITYTYPE) String securityType) {
         this.securityType = securityType;
     }
 
@@ -67,10 +69,12 @@ public class Security extends SerializableBean<Security> {
         return securityTerm;
     }
 
+    public static final String SECURITYTERM = "securityTerm";
+
     /**
      * Setter method for the securityTerm property.
      */
-    public void setSecurityTerm (@Changeable("securityTerm") String securityTerm) {
+    public void setSecurityTerm (@Changeable(SECURITYTERM) String securityTerm) {
         this.securityTerm = securityTerm;
     }
 
@@ -83,10 +87,12 @@ public class Security extends SerializableBean<Security> {
         return maturityDate;
     }
 
+    public static final String MATURITYDATE = "maturityDate";
+
     /**
      * Setter method for the maturityDate property.
      */
-    public void setMaturityDate (@Changeable("maturityDate") String maturityDate) {
+    public void setMaturityDate (@Changeable(MATURITYDATE) String maturityDate) {
         this.maturityDate = maturityDate;
     }
 
@@ -99,10 +105,12 @@ public class Security extends SerializableBean<Security> {
         return interestRate;
     }
 
+    public static final String INTERESTRATE = "interestRate";
+
     /**
      * Setter method for the interestRate property.
      */
-    public void setInterestRate (@Changeable("interestRate") String interestRate) {
+    public void setInterestRate (@Changeable(INTERESTRATE) String interestRate) {
         this.interestRate = interestRate;
     }
 
@@ -115,10 +123,12 @@ public class Security extends SerializableBean<Security> {
         return refCpiOnIssueDate;
     }
 
+    public static final String REFCPIONISSUEDATE = "refCpiOnIssueDate";
+
     /**
      * Setter method for the refCpiOnIssueDate property.
      */
-    public void setRefCpiOnIssueDate (@Changeable("refCpiOnIssueDate") String refCpiOnIssueDate) {
+    public void setRefCpiOnIssueDate (@Changeable(REFCPIONISSUEDATE) String refCpiOnIssueDate) {
         this.refCpiOnIssueDate = refCpiOnIssueDate;
     }
 
@@ -131,10 +141,12 @@ public class Security extends SerializableBean<Security> {
         return refCpiOnDatedDate;
     }
 
+    public static final String REFCPIONDATEDDATE = "refCpiOnDatedDate";
+
     /**
      * Setter method for the refCpiOnDatedDate property.
      */
-    public void setRefCpiOnDatedDate (@Changeable("refCpiOnDatedDate") String refCpiOnDatedDate) {
+    public void setRefCpiOnDatedDate (@Changeable(REFCPIONDATEDDATE) String refCpiOnDatedDate) {
         this.refCpiOnDatedDate = refCpiOnDatedDate;
     }
 
@@ -147,10 +159,12 @@ public class Security extends SerializableBean<Security> {
         return announcementDate;
     }
 
+    public static final String ANNOUNCEMENTDATE = "announcementDate";
+
     /**
      * Setter method for the announcementDate property.
      */
-    public void setAnnouncementDate (@Changeable("announcementDate") String announcementDate) {
+    public void setAnnouncementDate (@Changeable(ANNOUNCEMENTDATE) String announcementDate) {
         this.announcementDate = announcementDate;
     }
 
@@ -163,10 +177,12 @@ public class Security extends SerializableBean<Security> {
         return auctionDate;
     }
 
+    public static final String AUCTIONDATE = "auctionDate";
+
     /**
      * Setter method for the auctionDate property.
      */
-    public void setAuctionDate (@Changeable("auctionDate") String auctionDate) {
+    public void setAuctionDate (@Changeable(AUCTIONDATE) String auctionDate) {
         this.auctionDate = auctionDate;
     }
 
@@ -179,10 +195,12 @@ public class Security extends SerializableBean<Security> {
         return auctionDateYear;
     }
 
+    public static final String AUCTIONDATEYEAR = "auctionDateYear";
+
     /**
      * Setter method for the auctionDateYear property.
      */
-    public void setAuctionDateYear (@Changeable("auctionDateYear") String auctionDateYear) {
+    public void setAuctionDateYear (@Changeable(AUCTIONDATEYEAR) String auctionDateYear) {
         this.auctionDateYear = auctionDateYear;
     }
 
@@ -195,10 +213,12 @@ public class Security extends SerializableBean<Security> {
         return datedDate;
     }
 
+    public static final String DATEDDATE = "datedDate";
+
     /**
      * Setter method for the datedDate property.
      */
-    public void setDatedDate (@Changeable("datedDate") String datedDate) {
+    public void setDatedDate (@Changeable(DATEDDATE) String datedDate) {
         this.datedDate = datedDate;
     }
 
@@ -211,10 +231,12 @@ public class Security extends SerializableBean<Security> {
         return accruedInterestPer1000;
     }
 
+    public static final String ACCRUEDINTERESTPER1000 = "accruedInterestPer1000";
+
     /**
      * Setter method for the accruedInterestPer1000 property.
      */
-    public void setAccruedInterestPer1000 (@Changeable("accruedInterestPer1000") String accruedInterestPer1000) {
+    public void setAccruedInterestPer1000 (@Changeable(ACCRUEDINTERESTPER1000) String accruedInterestPer1000) {
         this.accruedInterestPer1000 = accruedInterestPer1000;
     }
 
@@ -227,10 +249,12 @@ public class Security extends SerializableBean<Security> {
         return accruedInterestPer100;
     }
 
+    public static final String ACCRUEDINTERESTPER100 = "accruedInterestPer100";
+
     /**
      * Setter method for the accruedInterestPer100 property.
      */
-    public void setAccruedInterestPer100 (@Changeable("accruedInterestPer100") String accruedInterestPer100) {
+    public void setAccruedInterestPer100 (@Changeable(ACCRUEDINTERESTPER100) String accruedInterestPer100) {
         this.accruedInterestPer100 = accruedInterestPer100;
     }
 
@@ -243,10 +267,12 @@ public class Security extends SerializableBean<Security> {
         return adjustedAccruedInterestPer1000;
     }
 
+    public static final String ADJUSTEDACCRUEDINTERESTPER1000 = "adjustedAccruedInterestPer1000";
+
     /**
      * Setter method for the adjustedAccruedInterestPer1000 property.
      */
-    public void setAdjustedAccruedInterestPer1000 (@Changeable("adjustedAccruedInterestPer1000") String adjustedAccruedInterestPer1000) {
+    public void setAdjustedAccruedInterestPer1000 (@Changeable(ADJUSTEDACCRUEDINTERESTPER1000) String adjustedAccruedInterestPer1000) {
         this.adjustedAccruedInterestPer1000 = adjustedAccruedInterestPer1000;
     }
 
@@ -259,10 +285,12 @@ public class Security extends SerializableBean<Security> {
         return adjustedPrice;
     }
 
+    public static final String ADJUSTEDPRICE = "adjustedPrice";
+
     /**
      * Setter method for the adjustedPrice property.
      */
-    public void setAdjustedPrice (@Changeable("adjustedPrice") String adjustedPrice) {
+    public void setAdjustedPrice (@Changeable(ADJUSTEDPRICE) String adjustedPrice) {
         this.adjustedPrice = adjustedPrice;
     }
 
@@ -275,10 +303,12 @@ public class Security extends SerializableBean<Security> {
         return allocationPercentage;
     }
 
+    public static final String ALLOCATIONPERCENTAGE = "allocationPercentage";
+
     /**
      * Setter method for the allocationPercentage property.
      */
-    public void setAllocationPercentage (@Changeable("allocationPercentage") String allocationPercentage) {
+    public void setAllocationPercentage (@Changeable(ALLOCATIONPERCENTAGE) String allocationPercentage) {
         this.allocationPercentage = allocationPercentage;
     }
 
@@ -291,10 +321,12 @@ public class Security extends SerializableBean<Security> {
         return allocationPercentageDecimals;
     }
 
+    public static final String ALLOCATIONPERCENTAGEDECIMALS = "allocationPercentageDecimals";
+
     /**
      * Setter method for the allocationPercentageDecimals property.
      */
-    public void setAllocationPercentageDecimals (@Changeable("allocationPercentageDecimals") String allocationPercentageDecimals) {
+    public void setAllocationPercentageDecimals (@Changeable(ALLOCATIONPERCENTAGEDECIMALS) String allocationPercentageDecimals) {
         this.allocationPercentageDecimals = allocationPercentageDecimals;
     }
 
@@ -307,10 +339,12 @@ public class Security extends SerializableBean<Security> {
         return announcedCusip;
     }
 
+    public static final String ANNOUNCEDCUSIP = "announcedCusip";
+
     /**
      * Setter method for the announcedCusip property.
      */
-    public void setAnnouncedCusip (@Changeable("announcedCusip") String announcedCusip) {
+    public void setAnnouncedCusip (@Changeable(ANNOUNCEDCUSIP) String announcedCusip) {
         this.announcedCusip = announcedCusip;
     }
 
@@ -323,10 +357,12 @@ public class Security extends SerializableBean<Security> {
         return auctionFormat;
     }
 
+    public static final String AUCTIONFORMAT = "auctionFormat";
+
     /**
      * Setter method for the auctionFormat property.
      */
-    public void setAuctionFormat (@Changeable("auctionFormat") String auctionFormat) {
+    public void setAuctionFormat (@Changeable(AUCTIONFORMAT) String auctionFormat) {
         this.auctionFormat = auctionFormat;
     }
 
@@ -339,10 +375,12 @@ public class Security extends SerializableBean<Security> {
         return averageMedianDiscountRate;
     }
 
+    public static final String AVERAGEMEDIANDISCOUNTRATE = "averageMedianDiscountRate";
+
     /**
      * Setter method for the averageMedianDiscountRate property.
      */
-    public void setAverageMedianDiscountRate (@Changeable("averageMedianDiscountRate") String averageMedianDiscountRate) {
+    public void setAverageMedianDiscountRate (@Changeable(AVERAGEMEDIANDISCOUNTRATE) String averageMedianDiscountRate) {
         this.averageMedianDiscountRate = averageMedianDiscountRate;
     }
 
@@ -355,10 +393,12 @@ public class Security extends SerializableBean<Security> {
         return averageMedianInvestmentRate;
     }
 
+    public static final String AVERAGEMEDIANINVESTMENTRATE = "averageMedianInvestmentRate";
+
     /**
      * Setter method for the averageMedianInvestmentRate property.
      */
-    public void setAverageMedianInvestmentRate (@Changeable("averageMedianInvestmentRate") String averageMedianInvestmentRate) {
+    public void setAverageMedianInvestmentRate (@Changeable(AVERAGEMEDIANINVESTMENTRATE) String averageMedianInvestmentRate) {
         this.averageMedianInvestmentRate = averageMedianInvestmentRate;
     }
 
@@ -371,10 +411,12 @@ public class Security extends SerializableBean<Security> {
         return averageMedianPrice;
     }
 
+    public static final String AVERAGEMEDIANPRICE = "averageMedianPrice";
+
     /**
      * Setter method for the averageMedianPrice property.
      */
-    public void setAverageMedianPrice (@Changeable("averageMedianPrice") String averageMedianPrice) {
+    public void setAverageMedianPrice (@Changeable(AVERAGEMEDIANPRICE) String averageMedianPrice) {
         this.averageMedianPrice = averageMedianPrice;
     }
 
@@ -387,10 +429,12 @@ public class Security extends SerializableBean<Security> {
         return averageMedianDiscountMargin;
     }
 
+    public static final String AVERAGEMEDIANDISCOUNTMARGIN = "averageMedianDiscountMargin";
+
     /**
      * Setter method for the averageMedianDiscountMargin property.
      */
-    public void setAverageMedianDiscountMargin (@Changeable("averageMedianDiscountMargin") String averageMedianDiscountMargin) {
+    public void setAverageMedianDiscountMargin (@Changeable(AVERAGEMEDIANDISCOUNTMARGIN) String averageMedianDiscountMargin) {
         this.averageMedianDiscountMargin = averageMedianDiscountMargin;
     }
 
@@ -403,10 +447,12 @@ public class Security extends SerializableBean<Security> {
         return averageMedianYield;
     }
 
+    public static final String AVERAGEMEDIANYIELD = "averageMedianYield";
+
     /**
      * Setter method for the averageMedianYield property.
      */
-    public void setAverageMedianYield (@Changeable("averageMedianYield") String averageMedianYield) {
+    public void setAverageMedianYield (@Changeable(AVERAGEMEDIANYIELD) String averageMedianYield) {
         this.averageMedianYield = averageMedianYield;
     }
 
@@ -419,10 +465,12 @@ public class Security extends SerializableBean<Security> {
         return backDated;
     }
 
+    public static final String BACKDATED = "backDated";
+
     /**
      * Setter method for the backDated property.
      */
-    public void setBackDated (@Changeable("backDated") String backDated) {
+    public void setBackDated (@Changeable(BACKDATED) String backDated) {
         this.backDated = backDated;
     }
 
@@ -435,10 +483,12 @@ public class Security extends SerializableBean<Security> {
         return backDatedDate;
     }
 
+    public static final String BACKDATEDDATE = "backDatedDate";
+
     /**
      * Setter method for the backDatedDate property.
      */
-    public void setBackDatedDate (@Changeable("backDatedDate") String backDatedDate) {
+    public void setBackDatedDate (@Changeable(BACKDATEDDATE) String backDatedDate) {
         this.backDatedDate = backDatedDate;
     }
 
@@ -451,10 +501,12 @@ public class Security extends SerializableBean<Security> {
         return bidToCoverRatio;
     }
 
+    public static final String BIDTOCOVERRATIO = "bidToCoverRatio";
+
     /**
      * Setter method for the bidToCoverRatio property.
      */
-    public void setBidToCoverRatio (@Changeable("bidToCoverRatio") String bidToCoverRatio) {
+    public void setBidToCoverRatio (@Changeable(BIDTOCOVERRATIO) String bidToCoverRatio) {
         this.bidToCoverRatio = bidToCoverRatio;
     }
 
@@ -467,10 +519,12 @@ public class Security extends SerializableBean<Security> {
         return callDate;
     }
 
+    public static final String CALLDATE = "callDate";
+
     /**
      * Setter method for the callDate property.
      */
-    public void setCallDate (@Changeable("callDate") String callDate) {
+    public void setCallDate (@Changeable(CALLDATE) String callDate) {
         this.callDate = callDate;
     }
 
@@ -483,10 +537,12 @@ public class Security extends SerializableBean<Security> {
         return callable;
     }
 
+    public static final String CALLABLE = "callable";
+
     /**
      * Setter method for the callable property.
      */
-    public void setCallable (@Changeable("callable") String callable) {
+    public void setCallable (@Changeable(CALLABLE) String callable) {
         this.callable = callable;
     }
 
@@ -499,10 +555,12 @@ public class Security extends SerializableBean<Security> {
         return calledDate;
     }
 
+    public static final String CALLEDDATE = "calledDate";
+
     /**
      * Setter method for the calledDate property.
      */
-    public void setCalledDate (@Changeable("calledDate") String calledDate) {
+    public void setCalledDate (@Changeable(CALLEDDATE) String calledDate) {
         this.calledDate = calledDate;
     }
 
@@ -515,10 +573,12 @@ public class Security extends SerializableBean<Security> {
         return cashManagementBillCMB;
     }
 
+    public static final String CASHMANAGEMENTBILLCMB = "cashManagementBillCMB";
+
     /**
      * Setter method for the cashManagementBillCMB property.
      */
-    public void setCashManagementBillCMB (@Changeable("cashManagementBillCMB") String cashManagementBillCMB) {
+    public void setCashManagementBillCMB (@Changeable(CASHMANAGEMENTBILLCMB) String cashManagementBillCMB) {
         this.cashManagementBillCMB = cashManagementBillCMB;
     }
 
@@ -531,10 +591,12 @@ public class Security extends SerializableBean<Security> {
         return closingTimeCompetitive;
     }
 
+    public static final String CLOSINGTIMECOMPETITIVE = "closingTimeCompetitive";
+
     /**
      * Setter method for the closingTimeCompetitive property.
      */
-    public void setClosingTimeCompetitive (@Changeable("closingTimeCompetitive") String closingTimeCompetitive) {
+    public void setClosingTimeCompetitive (@Changeable(CLOSINGTIMECOMPETITIVE) String closingTimeCompetitive) {
         this.closingTimeCompetitive = closingTimeCompetitive;
     }
 
@@ -547,10 +609,12 @@ public class Security extends SerializableBean<Security> {
         return closingTimeNoncompetitive;
     }
 
+    public static final String CLOSINGTIMENONCOMPETITIVE = "closingTimeNoncompetitive";
+
     /**
      * Setter method for the closingTimeNoncompetitive property.
      */
-    public void setClosingTimeNoncompetitive (@Changeable("closingTimeNoncompetitive") String closingTimeNoncompetitive) {
+    public void setClosingTimeNoncompetitive (@Changeable(CLOSINGTIMENONCOMPETITIVE) String closingTimeNoncompetitive) {
         this.closingTimeNoncompetitive = closingTimeNoncompetitive;
     }
 
@@ -563,10 +627,12 @@ public class Security extends SerializableBean<Security> {
         return competitiveAccepted;
     }
 
+    public static final String COMPETITIVEACCEPTED = "competitiveAccepted";
+
     /**
      * Setter method for the competitiveAccepted property.
      */
-    public void setCompetitiveAccepted (@Changeable("competitiveAccepted") String competitiveAccepted) {
+    public void setCompetitiveAccepted (@Changeable(COMPETITIVEACCEPTED) String competitiveAccepted) {
         this.competitiveAccepted = competitiveAccepted;
     }
 
@@ -579,10 +645,12 @@ public class Security extends SerializableBean<Security> {
         return competitiveBidDecimals;
     }
 
+    public static final String COMPETITIVEBIDDECIMALS = "competitiveBidDecimals";
+
     /**
      * Setter method for the competitiveBidDecimals property.
      */
-    public void setCompetitiveBidDecimals (@Changeable("competitiveBidDecimals") String competitiveBidDecimals) {
+    public void setCompetitiveBidDecimals (@Changeable(COMPETITIVEBIDDECIMALS) String competitiveBidDecimals) {
         this.competitiveBidDecimals = competitiveBidDecimals;
     }
 
@@ -595,10 +663,12 @@ public class Security extends SerializableBean<Security> {
         return competitiveTendered;
     }
 
+    public static final String COMPETITIVETENDERED = "competitiveTendered";
+
     /**
      * Setter method for the competitiveTendered property.
      */
-    public void setCompetitiveTendered (@Changeable("competitiveTendered") String competitiveTendered) {
+    public void setCompetitiveTendered (@Changeable(COMPETITIVETENDERED) String competitiveTendered) {
         this.competitiveTendered = competitiveTendered;
     }
 
@@ -611,10 +681,12 @@ public class Security extends SerializableBean<Security> {
         return competitiveTendersAccepted;
     }
 
+    public static final String COMPETITIVETENDERSACCEPTED = "competitiveTendersAccepted";
+
     /**
      * Setter method for the competitiveTendersAccepted property.
      */
-    public void setCompetitiveTendersAccepted (@Changeable("competitiveTendersAccepted") String competitiveTendersAccepted) {
+    public void setCompetitiveTendersAccepted (@Changeable(COMPETITIVETENDERSACCEPTED) String competitiveTendersAccepted) {
         this.competitiveTendersAccepted = competitiveTendersAccepted;
     }
 
@@ -627,10 +699,12 @@ public class Security extends SerializableBean<Security> {
         return corpusCusip;
     }
 
+    public static final String CORPUSCUSIP = "corpusCusip";
+
     /**
      * Setter method for the corpusCusip property.
      */
-    public void setCorpusCusip (@Changeable("corpusCusip") String corpusCusip) {
+    public void setCorpusCusip (@Changeable(CORPUSCUSIP) String corpusCusip) {
         this.corpusCusip = corpusCusip;
     }
 
@@ -643,10 +717,12 @@ public class Security extends SerializableBean<Security> {
         return cpiBaseReferencePeriod;
     }
 
+    public static final String CPIBASEREFERENCEPERIOD = "cpiBaseReferencePeriod";
+
     /**
      * Setter method for the cpiBaseReferencePeriod property.
      */
-    public void setCpiBaseReferencePeriod (@Changeable("cpiBaseReferencePeriod") String cpiBaseReferencePeriod) {
+    public void setCpiBaseReferencePeriod (@Changeable(CPIBASEREFERENCEPERIOD) String cpiBaseReferencePeriod) {
         this.cpiBaseReferencePeriod = cpiBaseReferencePeriod;
     }
 
@@ -659,10 +735,12 @@ public class Security extends SerializableBean<Security> {
         return currentlyOutstanding;
     }
 
+    public static final String CURRENTLYOUTSTANDING = "currentlyOutstanding";
+
     /**
      * Setter method for the currentlyOutstanding property.
      */
-    public void setCurrentlyOutstanding (@Changeable("currentlyOutstanding") String currentlyOutstanding) {
+    public void setCurrentlyOutstanding (@Changeable(CURRENTLYOUTSTANDING) String currentlyOutstanding) {
         this.currentlyOutstanding = currentlyOutstanding;
     }
 
@@ -675,10 +753,12 @@ public class Security extends SerializableBean<Security> {
         return directBidderAccepted;
     }
 
+    public static final String DIRECTBIDDERACCEPTED = "directBidderAccepted";
+
     /**
      * Setter method for the directBidderAccepted property.
      */
-    public void setDirectBidderAccepted (@Changeable("directBidderAccepted") String directBidderAccepted) {
+    public void setDirectBidderAccepted (@Changeable(DIRECTBIDDERACCEPTED) String directBidderAccepted) {
         this.directBidderAccepted = directBidderAccepted;
     }
 
@@ -691,10 +771,12 @@ public class Security extends SerializableBean<Security> {
         return directBidderTendered;
     }
 
+    public static final String DIRECTBIDDERTENDERED = "directBidderTendered";
+
     /**
      * Setter method for the directBidderTendered property.
      */
-    public void setDirectBidderTendered (@Changeable("directBidderTendered") String directBidderTendered) {
+    public void setDirectBidderTendered (@Changeable(DIRECTBIDDERTENDERED) String directBidderTendered) {
         this.directBidderTendered = directBidderTendered;
     }
 
@@ -707,10 +789,12 @@ public class Security extends SerializableBean<Security> {
         return estimatedAmountOfPubliclyHeldMaturingSecuritiesByType;
     }
 
+    public static final String ESTIMATEDAMOUNTOFPUBLICLYHELDMATURINGSECURITIESBYTYPE = "estimatedAmountOfPubliclyHeldMaturingSecuritiesByType";
+
     /**
      * Setter method for the estimatedAmountOfPubliclyHeldMaturingSecuritiesByType property.
      */
-    public void setEstimatedAmountOfPubliclyHeldMaturingSecuritiesByType (@Changeable("estimatedAmountOfPubliclyHeldMaturingSecuritiesByType") String estimatedAmountOfPubliclyHeldMaturingSecuritiesByType) {
+    public void setEstimatedAmountOfPubliclyHeldMaturingSecuritiesByType (@Changeable(ESTIMATEDAMOUNTOFPUBLICLYHELDMATURINGSECURITIESBYTYPE) String estimatedAmountOfPubliclyHeldMaturingSecuritiesByType) {
         this.estimatedAmountOfPubliclyHeldMaturingSecuritiesByType = estimatedAmountOfPubliclyHeldMaturingSecuritiesByType;
     }
 
@@ -723,10 +807,12 @@ public class Security extends SerializableBean<Security> {
         return fimaIncluded;
     }
 
+    public static final String FIMAINCLUDED = "fimaIncluded";
+
     /**
      * Setter method for the fimaIncluded property.
      */
-    public void setFimaIncluded (@Changeable("fimaIncluded") String fimaIncluded) {
+    public void setFimaIncluded (@Changeable(FIMAINCLUDED) String fimaIncluded) {
         this.fimaIncluded = fimaIncluded;
     }
 
@@ -739,10 +825,12 @@ public class Security extends SerializableBean<Security> {
         return fimaNoncompetitiveAccepted;
     }
 
+    public static final String FIMANONCOMPETITIVEACCEPTED = "fimaNoncompetitiveAccepted";
+
     /**
      * Setter method for the fimaNoncompetitiveAccepted property.
      */
-    public void setFimaNoncompetitiveAccepted (@Changeable("fimaNoncompetitiveAccepted") String fimaNoncompetitiveAccepted) {
+    public void setFimaNoncompetitiveAccepted (@Changeable(FIMANONCOMPETITIVEACCEPTED) String fimaNoncompetitiveAccepted) {
         this.fimaNoncompetitiveAccepted = fimaNoncompetitiveAccepted;
     }
 
@@ -755,10 +843,12 @@ public class Security extends SerializableBean<Security> {
         return fimaNoncompetitiveTendered;
     }
 
+    public static final String FIMANONCOMPETITIVETENDERED = "fimaNoncompetitiveTendered";
+
     /**
      * Setter method for the fimaNoncompetitiveTendered property.
      */
-    public void setFimaNoncompetitiveTendered (@Changeable("fimaNoncompetitiveTendered") String fimaNoncompetitiveTendered) {
+    public void setFimaNoncompetitiveTendered (@Changeable(FIMANONCOMPETITIVETENDERED) String fimaNoncompetitiveTendered) {
         this.fimaNoncompetitiveTendered = fimaNoncompetitiveTendered;
     }
 
@@ -771,10 +861,12 @@ public class Security extends SerializableBean<Security> {
         return firstInterestPeriod;
     }
 
+    public static final String FIRSTINTERESTPERIOD = "firstInterestPeriod";
+
     /**
      * Setter method for the firstInterestPeriod property.
      */
-    public void setFirstInterestPeriod (@Changeable("firstInterestPeriod") String firstInterestPeriod) {
+    public void setFirstInterestPeriod (@Changeable(FIRSTINTERESTPERIOD) String firstInterestPeriod) {
         this.firstInterestPeriod = firstInterestPeriod;
     }
 
@@ -787,10 +879,12 @@ public class Security extends SerializableBean<Security> {
         return firstInterestPaymentDate;
     }
 
+    public static final String FIRSTINTERESTPAYMENTDATE = "firstInterestPaymentDate";
+
     /**
      * Setter method for the firstInterestPaymentDate property.
      */
-    public void setFirstInterestPaymentDate (@Changeable("firstInterestPaymentDate") String firstInterestPaymentDate) {
+    public void setFirstInterestPaymentDate (@Changeable(FIRSTINTERESTPAYMENTDATE) String firstInterestPaymentDate) {
         this.firstInterestPaymentDate = firstInterestPaymentDate;
     }
 
@@ -803,10 +897,12 @@ public class Security extends SerializableBean<Security> {
         return floatingRate;
     }
 
+    public static final String FLOATINGRATE = "floatingRate";
+
     /**
      * Setter method for the floatingRate property.
      */
-    public void setFloatingRate (@Changeable("floatingRate") String floatingRate) {
+    public void setFloatingRate (@Changeable(FLOATINGRATE) String floatingRate) {
         this.floatingRate = floatingRate;
     }
 
@@ -819,10 +915,12 @@ public class Security extends SerializableBean<Security> {
         return frnIndexDeterminationDate;
     }
 
+    public static final String FRNINDEXDETERMINATIONDATE = "frnIndexDeterminationDate";
+
     /**
      * Setter method for the frnIndexDeterminationDate property.
      */
-    public void setFrnIndexDeterminationDate (@Changeable("frnIndexDeterminationDate") String frnIndexDeterminationDate) {
+    public void setFrnIndexDeterminationDate (@Changeable(FRNINDEXDETERMINATIONDATE) String frnIndexDeterminationDate) {
         this.frnIndexDeterminationDate = frnIndexDeterminationDate;
     }
 
@@ -835,10 +933,12 @@ public class Security extends SerializableBean<Security> {
         return frnIndexDeterminationRate;
     }
 
+    public static final String FRNINDEXDETERMINATIONRATE = "frnIndexDeterminationRate";
+
     /**
      * Setter method for the frnIndexDeterminationRate property.
      */
-    public void setFrnIndexDeterminationRate (@Changeable("frnIndexDeterminationRate") String frnIndexDeterminationRate) {
+    public void setFrnIndexDeterminationRate (@Changeable(FRNINDEXDETERMINATIONRATE) String frnIndexDeterminationRate) {
         this.frnIndexDeterminationRate = frnIndexDeterminationRate;
     }
 
@@ -851,10 +951,12 @@ public class Security extends SerializableBean<Security> {
         return highDiscountRate;
     }
 
+    public static final String HIGHDISCOUNTRATE = "highDiscountRate";
+
     /**
      * Setter method for the highDiscountRate property.
      */
-    public void setHighDiscountRate (@Changeable("highDiscountRate") String highDiscountRate) {
+    public void setHighDiscountRate (@Changeable(HIGHDISCOUNTRATE) String highDiscountRate) {
         this.highDiscountRate = highDiscountRate;
     }
 
@@ -867,10 +969,12 @@ public class Security extends SerializableBean<Security> {
         return highInvestmentRate;
     }
 
+    public static final String HIGHINVESTMENTRATE = "highInvestmentRate";
+
     /**
      * Setter method for the highInvestmentRate property.
      */
-    public void setHighInvestmentRate (@Changeable("highInvestmentRate") String highInvestmentRate) {
+    public void setHighInvestmentRate (@Changeable(HIGHINVESTMENTRATE) String highInvestmentRate) {
         this.highInvestmentRate = highInvestmentRate;
     }
 
@@ -883,10 +987,12 @@ public class Security extends SerializableBean<Security> {
         return highPrice;
     }
 
+    public static final String HIGHPRICE = "highPrice";
+
     /**
      * Setter method for the highPrice property.
      */
-    public void setHighPrice (@Changeable("highPrice") String highPrice) {
+    public void setHighPrice (@Changeable(HIGHPRICE) String highPrice) {
         this.highPrice = highPrice;
     }
 
@@ -899,10 +1005,12 @@ public class Security extends SerializableBean<Security> {
         return highDiscountMargin;
     }
 
+    public static final String HIGHDISCOUNTMARGIN = "highDiscountMargin";
+
     /**
      * Setter method for the highDiscountMargin property.
      */
-    public void setHighDiscountMargin (@Changeable("highDiscountMargin") String highDiscountMargin) {
+    public void setHighDiscountMargin (@Changeable(HIGHDISCOUNTMARGIN) String highDiscountMargin) {
         this.highDiscountMargin = highDiscountMargin;
     }
 
@@ -915,10 +1023,12 @@ public class Security extends SerializableBean<Security> {
         return highYield;
     }
 
+    public static final String HIGHYIELD = "highYield";
+
     /**
      * Setter method for the highYield property.
      */
-    public void setHighYield (@Changeable("highYield") String highYield) {
+    public void setHighYield (@Changeable(HIGHYIELD) String highYield) {
         this.highYield = highYield;
     }
 
@@ -931,10 +1041,12 @@ public class Security extends SerializableBean<Security> {
         return indexRatioOnIssueDate;
     }
 
+    public static final String INDEXRATIOONISSUEDATE = "indexRatioOnIssueDate";
+
     /**
      * Setter method for the indexRatioOnIssueDate property.
      */
-    public void setIndexRatioOnIssueDate (@Changeable("indexRatioOnIssueDate") String indexRatioOnIssueDate) {
+    public void setIndexRatioOnIssueDate (@Changeable(INDEXRATIOONISSUEDATE) String indexRatioOnIssueDate) {
         this.indexRatioOnIssueDate = indexRatioOnIssueDate;
     }
 
@@ -947,10 +1059,12 @@ public class Security extends SerializableBean<Security> {
         return indirectBidderAccepted;
     }
 
+    public static final String INDIRECTBIDDERACCEPTED = "indirectBidderAccepted";
+
     /**
      * Setter method for the indirectBidderAccepted property.
      */
-    public void setIndirectBidderAccepted (@Changeable("indirectBidderAccepted") String indirectBidderAccepted) {
+    public void setIndirectBidderAccepted (@Changeable(INDIRECTBIDDERACCEPTED) String indirectBidderAccepted) {
         this.indirectBidderAccepted = indirectBidderAccepted;
     }
 
@@ -963,10 +1077,12 @@ public class Security extends SerializableBean<Security> {
         return indirectBidderTendered;
     }
 
+    public static final String INDIRECTBIDDERTENDERED = "indirectBidderTendered";
+
     /**
      * Setter method for the indirectBidderTendered property.
      */
-    public void setIndirectBidderTendered (@Changeable("indirectBidderTendered") String indirectBidderTendered) {
+    public void setIndirectBidderTendered (@Changeable(INDIRECTBIDDERTENDERED) String indirectBidderTendered) {
         this.indirectBidderTendered = indirectBidderTendered;
     }
 
@@ -979,10 +1095,12 @@ public class Security extends SerializableBean<Security> {
         return interestPaymentFrequency;
     }
 
+    public static final String INTERESTPAYMENTFREQUENCY = "interestPaymentFrequency";
+
     /**
      * Setter method for the interestPaymentFrequency property.
      */
-    public void setInterestPaymentFrequency (@Changeable("interestPaymentFrequency") String interestPaymentFrequency) {
+    public void setInterestPaymentFrequency (@Changeable(INTERESTPAYMENTFREQUENCY) String interestPaymentFrequency) {
         this.interestPaymentFrequency = interestPaymentFrequency;
     }
 
@@ -995,10 +1113,12 @@ public class Security extends SerializableBean<Security> {
         return lowDiscountRate;
     }
 
+    public static final String LOWDISCOUNTRATE = "lowDiscountRate";
+
     /**
      * Setter method for the lowDiscountRate property.
      */
-    public void setLowDiscountRate (@Changeable("lowDiscountRate") String lowDiscountRate) {
+    public void setLowDiscountRate (@Changeable(LOWDISCOUNTRATE) String lowDiscountRate) {
         this.lowDiscountRate = lowDiscountRate;
     }
 
@@ -1011,10 +1131,12 @@ public class Security extends SerializableBean<Security> {
         return lowInvestmentRate;
     }
 
+    public static final String LOWINVESTMENTRATE = "lowInvestmentRate";
+
     /**
      * Setter method for the lowInvestmentRate property.
      */
-    public void setLowInvestmentRate (@Changeable("lowInvestmentRate") String lowInvestmentRate) {
+    public void setLowInvestmentRate (@Changeable(LOWINVESTMENTRATE) String lowInvestmentRate) {
         this.lowInvestmentRate = lowInvestmentRate;
     }
 
@@ -1027,10 +1149,12 @@ public class Security extends SerializableBean<Security> {
         return lowPrice;
     }
 
+    public static final String LOWPRICE = "lowPrice";
+
     /**
      * Setter method for the lowPrice property.
      */
-    public void setLowPrice (@Changeable("lowPrice") String lowPrice) {
+    public void setLowPrice (@Changeable(LOWPRICE) String lowPrice) {
         this.lowPrice = lowPrice;
     }
 
@@ -1043,10 +1167,12 @@ public class Security extends SerializableBean<Security> {
         return lowDiscountMargin;
     }
 
+    public static final String LOWDISCOUNTMARGIN = "lowDiscountMargin";
+
     /**
      * Setter method for the lowDiscountMargin property.
      */
-    public void setLowDiscountMargin (@Changeable("lowDiscountMargin") String lowDiscountMargin) {
+    public void setLowDiscountMargin (@Changeable(LOWDISCOUNTMARGIN) String lowDiscountMargin) {
         this.lowDiscountMargin = lowDiscountMargin;
     }
 
@@ -1059,10 +1185,12 @@ public class Security extends SerializableBean<Security> {
         return lowYield;
     }
 
+    public static final String LOWYIELD = "lowYield";
+
     /**
      * Setter method for the lowYield property.
      */
-    public void setLowYield (@Changeable("lowYield") String lowYield) {
+    public void setLowYield (@Changeable(LOWYIELD) String lowYield) {
         this.lowYield = lowYield;
     }
 
@@ -1075,10 +1203,12 @@ public class Security extends SerializableBean<Security> {
         return maturingDate;
     }
 
+    public static final String MATURINGDATE = "maturingDate";
+
     /**
      * Setter method for the maturingDate property.
      */
-    public void setMaturingDate (@Changeable("maturingDate") String maturingDate) {
+    public void setMaturingDate (@Changeable(MATURINGDATE) String maturingDate) {
         this.maturingDate = maturingDate;
     }
 
@@ -1091,10 +1221,12 @@ public class Security extends SerializableBean<Security> {
         return maximumCompetitiveAward;
     }
 
+    public static final String MAXIMUMCOMPETITIVEAWARD = "maximumCompetitiveAward";
+
     /**
      * Setter method for the maximumCompetitiveAward property.
      */
-    public void setMaximumCompetitiveAward (@Changeable("maximumCompetitiveAward") String maximumCompetitiveAward) {
+    public void setMaximumCompetitiveAward (@Changeable(MAXIMUMCOMPETITIVEAWARD) String maximumCompetitiveAward) {
         this.maximumCompetitiveAward = maximumCompetitiveAward;
     }
 
@@ -1107,10 +1239,12 @@ public class Security extends SerializableBean<Security> {
         return maximumNoncompetitiveAward;
     }
 
+    public static final String MAXIMUMNONCOMPETITIVEAWARD = "maximumNoncompetitiveAward";
+
     /**
      * Setter method for the maximumNoncompetitiveAward property.
      */
-    public void setMaximumNoncompetitiveAward (@Changeable("maximumNoncompetitiveAward") String maximumNoncompetitiveAward) {
+    public void setMaximumNoncompetitiveAward (@Changeable(MAXIMUMNONCOMPETITIVEAWARD) String maximumNoncompetitiveAward) {
         this.maximumNoncompetitiveAward = maximumNoncompetitiveAward;
     }
 
@@ -1123,10 +1257,12 @@ public class Security extends SerializableBean<Security> {
         return maximumSingleBid;
     }
 
+    public static final String MAXIMUMSINGLEBID = "maximumSingleBid";
+
     /**
      * Setter method for the maximumSingleBid property.
      */
-    public void setMaximumSingleBid (@Changeable("maximumSingleBid") String maximumSingleBid) {
+    public void setMaximumSingleBid (@Changeable(MAXIMUMSINGLEBID) String maximumSingleBid) {
         this.maximumSingleBid = maximumSingleBid;
     }
 
@@ -1139,10 +1275,12 @@ public class Security extends SerializableBean<Security> {
         return minimumBidAmount;
     }
 
+    public static final String MINIMUMBIDAMOUNT = "minimumBidAmount";
+
     /**
      * Setter method for the minimumBidAmount property.
      */
-    public void setMinimumBidAmount (@Changeable("minimumBidAmount") String minimumBidAmount) {
+    public void setMinimumBidAmount (@Changeable(MINIMUMBIDAMOUNT) String minimumBidAmount) {
         this.minimumBidAmount = minimumBidAmount;
     }
 
@@ -1155,10 +1293,12 @@ public class Security extends SerializableBean<Security> {
         return minimumStripAmount;
     }
 
+    public static final String MINIMUMSTRIPAMOUNT = "minimumStripAmount";
+
     /**
      * Setter method for the minimumStripAmount property.
      */
-    public void setMinimumStripAmount (@Changeable("minimumStripAmount") String minimumStripAmount) {
+    public void setMinimumStripAmount (@Changeable(MINIMUMSTRIPAMOUNT) String minimumStripAmount) {
         this.minimumStripAmount = minimumStripAmount;
     }
 
@@ -1171,10 +1311,12 @@ public class Security extends SerializableBean<Security> {
         return minimumToIssue;
     }
 
+    public static final String MINIMUMTOISSUE = "minimumToIssue";
+
     /**
      * Setter method for the minimumToIssue property.
      */
-    public void setMinimumToIssue (@Changeable("minimumToIssue") String minimumToIssue) {
+    public void setMinimumToIssue (@Changeable(MINIMUMTOISSUE) String minimumToIssue) {
         this.minimumToIssue = minimumToIssue;
     }
 
@@ -1187,10 +1329,12 @@ public class Security extends SerializableBean<Security> {
         return multiplesToBid;
     }
 
+    public static final String MULTIPLESTOBID = "multiplesToBid";
+
     /**
      * Setter method for the multiplesToBid property.
      */
-    public void setMultiplesToBid (@Changeable("multiplesToBid") String multiplesToBid) {
+    public void setMultiplesToBid (@Changeable(MULTIPLESTOBID) String multiplesToBid) {
         this.multiplesToBid = multiplesToBid;
     }
 
@@ -1203,10 +1347,12 @@ public class Security extends SerializableBean<Security> {
         return multiplesToIssue;
     }
 
+    public static final String MULTIPLESTOISSUE = "multiplesToIssue";
+
     /**
      * Setter method for the multiplesToIssue property.
      */
-    public void setMultiplesToIssue (@Changeable("multiplesToIssue") String multiplesToIssue) {
+    public void setMultiplesToIssue (@Changeable(MULTIPLESTOISSUE) String multiplesToIssue) {
         this.multiplesToIssue = multiplesToIssue;
     }
 
@@ -1219,10 +1365,12 @@ public class Security extends SerializableBean<Security> {
         return nlpExclusionAmount;
     }
 
+    public static final String NLPEXCLUSIONAMOUNT = "nlpExclusionAmount";
+
     /**
      * Setter method for the nlpExclusionAmount property.
      */
-    public void setNlpExclusionAmount (@Changeable("nlpExclusionAmount") String nlpExclusionAmount) {
+    public void setNlpExclusionAmount (@Changeable(NLPEXCLUSIONAMOUNT) String nlpExclusionAmount) {
         this.nlpExclusionAmount = nlpExclusionAmount;
     }
 
@@ -1235,10 +1383,12 @@ public class Security extends SerializableBean<Security> {
         return nlpReportingThreshold;
     }
 
+    public static final String NLPREPORTINGTHRESHOLD = "nlpReportingThreshold";
+
     /**
      * Setter method for the nlpReportingThreshold property.
      */
-    public void setNlpReportingThreshold (@Changeable("nlpReportingThreshold") String nlpReportingThreshold) {
+    public void setNlpReportingThreshold (@Changeable(NLPREPORTINGTHRESHOLD) String nlpReportingThreshold) {
         this.nlpReportingThreshold = nlpReportingThreshold;
     }
 
@@ -1251,10 +1401,12 @@ public class Security extends SerializableBean<Security> {
         return noncompetitiveAccepted;
     }
 
+    public static final String NONCOMPETITIVEACCEPTED = "noncompetitiveAccepted";
+
     /**
      * Setter method for the noncompetitiveAccepted property.
      */
-    public void setNoncompetitiveAccepted (@Changeable("noncompetitiveAccepted") String noncompetitiveAccepted) {
+    public void setNoncompetitiveAccepted (@Changeable(NONCOMPETITIVEACCEPTED) String noncompetitiveAccepted) {
         this.noncompetitiveAccepted = noncompetitiveAccepted;
     }
 
@@ -1267,10 +1419,12 @@ public class Security extends SerializableBean<Security> {
         return noncompetitiveTendersAccepted;
     }
 
+    public static final String NONCOMPETITIVETENDERSACCEPTED = "noncompetitiveTendersAccepted";
+
     /**
      * Setter method for the noncompetitiveTendersAccepted property.
      */
-    public void setNoncompetitiveTendersAccepted (@Changeable("noncompetitiveTendersAccepted") String noncompetitiveTendersAccepted) {
+    public void setNoncompetitiveTendersAccepted (@Changeable(NONCOMPETITIVETENDERSACCEPTED) String noncompetitiveTendersAccepted) {
         this.noncompetitiveTendersAccepted = noncompetitiveTendersAccepted;
     }
 
@@ -1283,10 +1437,12 @@ public class Security extends SerializableBean<Security> {
         return offeringAmount;
     }
 
+    public static final String OFFERINGAMOUNT = "offeringAmount";
+
     /**
      * Setter method for the offeringAmount property.
      */
-    public void setOfferingAmount (@Changeable("offeringAmount") String offeringAmount) {
+    public void setOfferingAmount (@Changeable(OFFERINGAMOUNT) String offeringAmount) {
         this.offeringAmount = offeringAmount;
     }
 
@@ -1299,10 +1455,12 @@ public class Security extends SerializableBean<Security> {
         return originalCusip;
     }
 
+    public static final String ORIGINALCUSIP = "originalCusip";
+
     /**
      * Setter method for the originalCusip property.
      */
-    public void setOriginalCusip (@Changeable("originalCusip") String originalCusip) {
+    public void setOriginalCusip (@Changeable(ORIGINALCUSIP) String originalCusip) {
         this.originalCusip = originalCusip;
     }
 
@@ -1315,10 +1473,12 @@ public class Security extends SerializableBean<Security> {
         return originalDatedDate;
     }
 
+    public static final String ORIGINALDATEDDATE = "originalDatedDate";
+
     /**
      * Setter method for the originalDatedDate property.
      */
-    public void setOriginalDatedDate (@Changeable("originalDatedDate") String originalDatedDate) {
+    public void setOriginalDatedDate (@Changeable(ORIGINALDATEDDATE) String originalDatedDate) {
         this.originalDatedDate = originalDatedDate;
     }
 
@@ -1331,10 +1491,12 @@ public class Security extends SerializableBean<Security> {
         return originalIssueDate;
     }
 
+    public static final String ORIGINALISSUEDATE = "originalIssueDate";
+
     /**
      * Setter method for the originalIssueDate property.
      */
-    public void setOriginalIssueDate (@Changeable("originalIssueDate") String originalIssueDate) {
+    public void setOriginalIssueDate (@Changeable(ORIGINALISSUEDATE) String originalIssueDate) {
         this.originalIssueDate = originalIssueDate;
     }
 
@@ -1347,10 +1509,12 @@ public class Security extends SerializableBean<Security> {
         return originalSecurityTerm;
     }
 
+    public static final String ORIGINALSECURITYTERM = "originalSecurityTerm";
+
     /**
      * Setter method for the originalSecurityTerm property.
      */
-    public void setOriginalSecurityTerm (@Changeable("originalSecurityTerm") String originalSecurityTerm) {
+    public void setOriginalSecurityTerm (@Changeable(ORIGINALSECURITYTERM) String originalSecurityTerm) {
         this.originalSecurityTerm = originalSecurityTerm;
     }
 
@@ -1363,10 +1527,12 @@ public class Security extends SerializableBean<Security> {
         return pdfFilenameAnnouncement;
     }
 
+    public static final String PDFFILENAMEANNOUNCEMENT = "pdfFilenameAnnouncement";
+
     /**
      * Setter method for the pdfFilenameAnnouncement property.
      */
-    public void setPdfFilenameAnnouncement (@Changeable("pdfFilenameAnnouncement") String pdfFilenameAnnouncement) {
+    public void setPdfFilenameAnnouncement (@Changeable(PDFFILENAMEANNOUNCEMENT) String pdfFilenameAnnouncement) {
         this.pdfFilenameAnnouncement = pdfFilenameAnnouncement;
     }
 
@@ -1379,10 +1545,12 @@ public class Security extends SerializableBean<Security> {
         return pdfFilenameCompetitiveResults;
     }
 
+    public static final String PDFFILENAMECOMPETITIVERESULTS = "pdfFilenameCompetitiveResults";
+
     /**
      * Setter method for the pdfFilenameCompetitiveResults property.
      */
-    public void setPdfFilenameCompetitiveResults (@Changeable("pdfFilenameCompetitiveResults") String pdfFilenameCompetitiveResults) {
+    public void setPdfFilenameCompetitiveResults (@Changeable(PDFFILENAMECOMPETITIVERESULTS) String pdfFilenameCompetitiveResults) {
         this.pdfFilenameCompetitiveResults = pdfFilenameCompetitiveResults;
     }
 
@@ -1395,10 +1563,12 @@ public class Security extends SerializableBean<Security> {
         return pdfFilenameNoncompetitiveResults;
     }
 
+    public static final String PDFFILENAMENONCOMPETITIVERESULTS = "pdfFilenameNoncompetitiveResults";
+
     /**
      * Setter method for the pdfFilenameNoncompetitiveResults property.
      */
-    public void setPdfFilenameNoncompetitiveResults (@Changeable("pdfFilenameNoncompetitiveResults") String pdfFilenameNoncompetitiveResults) {
+    public void setPdfFilenameNoncompetitiveResults (@Changeable(PDFFILENAMENONCOMPETITIVERESULTS) String pdfFilenameNoncompetitiveResults) {
         this.pdfFilenameNoncompetitiveResults = pdfFilenameNoncompetitiveResults;
     }
 
@@ -1411,10 +1581,12 @@ public class Security extends SerializableBean<Security> {
         return pdfFilenameSpecialAnnouncement;
     }
 
+    public static final String PDFFILENAMESPECIALANNOUNCEMENT = "pdfFilenameSpecialAnnouncement";
+
     /**
      * Setter method for the pdfFilenameSpecialAnnouncement property.
      */
-    public void setPdfFilenameSpecialAnnouncement (@Changeable("pdfFilenameSpecialAnnouncement") String pdfFilenameSpecialAnnouncement) {
+    public void setPdfFilenameSpecialAnnouncement (@Changeable(PDFFILENAMESPECIALANNOUNCEMENT) String pdfFilenameSpecialAnnouncement) {
         this.pdfFilenameSpecialAnnouncement = pdfFilenameSpecialAnnouncement;
     }
 
@@ -1427,10 +1599,12 @@ public class Security extends SerializableBean<Security> {
         return pricePer100;
     }
 
+    public static final String PRICEPER100 = "pricePer100";
+
     /**
      * Setter method for the pricePer100 property.
      */
-    public void setPricePer100 (@Changeable("pricePer100") String pricePer100) {
+    public void setPricePer100 (@Changeable(PRICEPER100) String pricePer100) {
         this.pricePer100 = pricePer100;
     }
 
@@ -1443,10 +1617,12 @@ public class Security extends SerializableBean<Security> {
         return primaryDealerAccepted;
     }
 
+    public static final String PRIMARYDEALERACCEPTED = "primaryDealerAccepted";
+
     /**
      * Setter method for the primaryDealerAccepted property.
      */
-    public void setPrimaryDealerAccepted (@Changeable("primaryDealerAccepted") String primaryDealerAccepted) {
+    public void setPrimaryDealerAccepted (@Changeable(PRIMARYDEALERACCEPTED) String primaryDealerAccepted) {
         this.primaryDealerAccepted = primaryDealerAccepted;
     }
 
@@ -1459,10 +1635,12 @@ public class Security extends SerializableBean<Security> {
         return primaryDealerTendered;
     }
 
+    public static final String PRIMARYDEALERTENDERED = "primaryDealerTendered";
+
     /**
      * Setter method for the primaryDealerTendered property.
      */
-    public void setPrimaryDealerTendered (@Changeable("primaryDealerTendered") String primaryDealerTendered) {
+    public void setPrimaryDealerTendered (@Changeable(PRIMARYDEALERTENDERED) String primaryDealerTendered) {
         this.primaryDealerTendered = primaryDealerTendered;
     }
 
@@ -1475,10 +1653,12 @@ public class Security extends SerializableBean<Security> {
         return reopening;
     }
 
+    public static final String REOPENING = "reopening";
+
     /**
      * Setter method for the reopening property.
      */
-    public void setReopening (@Changeable("reopening") String reopening) {
+    public void setReopening (@Changeable(REOPENING) String reopening) {
         this.reopening = reopening;
     }
 
@@ -1491,10 +1671,12 @@ public class Security extends SerializableBean<Security> {
         return securityTermDayMonth;
     }
 
+    public static final String SECURITYTERMDAYMONTH = "securityTermDayMonth";
+
     /**
      * Setter method for the securityTermDayMonth property.
      */
-    public void setSecurityTermDayMonth (@Changeable("securityTermDayMonth") String securityTermDayMonth) {
+    public void setSecurityTermDayMonth (@Changeable(SECURITYTERMDAYMONTH) String securityTermDayMonth) {
         this.securityTermDayMonth = securityTermDayMonth;
     }
 
@@ -1507,10 +1689,12 @@ public class Security extends SerializableBean<Security> {
         return securityTermWeekYear;
     }
 
+    public static final String SECURITYTERMWEEKYEAR = "securityTermWeekYear";
+
     /**
      * Setter method for the securityTermWeekYear property.
      */
-    public void setSecurityTermWeekYear (@Changeable("securityTermWeekYear") String securityTermWeekYear) {
+    public void setSecurityTermWeekYear (@Changeable(SECURITYTERMWEEKYEAR) String securityTermWeekYear) {
         this.securityTermWeekYear = securityTermWeekYear;
     }
 
@@ -1523,10 +1707,12 @@ public class Security extends SerializableBean<Security> {
         return series;
     }
 
+    public static final String SERIES = "series";
+
     /**
      * Setter method for the series property.
      */
-    public void setSeries (@Changeable("series") String series) {
+    public void setSeries (@Changeable(SERIES) String series) {
         this.series = series;
     }
 
@@ -1539,10 +1725,12 @@ public class Security extends SerializableBean<Security> {
         return somaAccepted;
     }
 
+    public static final String SOMAACCEPTED = "somaAccepted";
+
     /**
      * Setter method for the somaAccepted property.
      */
-    public void setSomaAccepted (@Changeable("somaAccepted") String somaAccepted) {
+    public void setSomaAccepted (@Changeable(SOMAACCEPTED) String somaAccepted) {
         this.somaAccepted = somaAccepted;
     }
 
@@ -1555,10 +1743,12 @@ public class Security extends SerializableBean<Security> {
         return somaHoldings;
     }
 
+    public static final String SOMAHOLDINGS = "somaHoldings";
+
     /**
      * Setter method for the somaHoldings property.
      */
-    public void setSomaHoldings (@Changeable("somaHoldings") String somaHoldings) {
+    public void setSomaHoldings (@Changeable(SOMAHOLDINGS) String somaHoldings) {
         this.somaHoldings = somaHoldings;
     }
 
@@ -1571,10 +1761,12 @@ public class Security extends SerializableBean<Security> {
         return somaIncluded;
     }
 
+    public static final String SOMAINCLUDED = "somaIncluded";
+
     /**
      * Setter method for the somaIncluded property.
      */
-    public void setSomaIncluded (@Changeable("somaIncluded") String somaIncluded) {
+    public void setSomaIncluded (@Changeable(SOMAINCLUDED) String somaIncluded) {
         this.somaIncluded = somaIncluded;
     }
 
@@ -1587,10 +1779,12 @@ public class Security extends SerializableBean<Security> {
         return somaTendered;
     }
 
+    public static final String SOMATENDERED = "somaTendered";
+
     /**
      * Setter method for the somaTendered property.
      */
-    public void setSomaTendered (@Changeable("somaTendered") String somaTendered) {
+    public void setSomaTendered (@Changeable(SOMATENDERED) String somaTendered) {
         this.somaTendered = somaTendered;
     }
 
@@ -1603,10 +1797,12 @@ public class Security extends SerializableBean<Security> {
         return spread;
     }
 
+    public static final String SPREAD = "spread";
+
     /**
      * Setter method for the spread property.
      */
-    public void setSpread (@Changeable("spread") String spread) {
+    public void setSpread (@Changeable(SPREAD) String spread) {
         this.spread = spread;
     }
 
@@ -1619,10 +1815,12 @@ public class Security extends SerializableBean<Security> {
         return standardInterestPaymentPer1000;
     }
 
+    public static final String STANDARDINTERESTPAYMENTPER1000 = "standardInterestPaymentPer1000";
+
     /**
      * Setter method for the standardInterestPaymentPer1000 property.
      */
-    public void setStandardInterestPaymentPer1000 (@Changeable("standardInterestPaymentPer1000") String standardInterestPaymentPer1000) {
+    public void setStandardInterestPaymentPer1000 (@Changeable(STANDARDINTERESTPAYMENTPER1000) String standardInterestPaymentPer1000) {
         this.standardInterestPaymentPer1000 = standardInterestPaymentPer1000;
     }
 
@@ -1635,10 +1833,12 @@ public class Security extends SerializableBean<Security> {
         return strippable;
     }
 
+    public static final String STRIPPABLE = "strippable";
+
     /**
      * Setter method for the strippable property.
      */
-    public void setStrippable (@Changeable("strippable") String strippable) {
+    public void setStrippable (@Changeable(STRIPPABLE) String strippable) {
         this.strippable = strippable;
     }
 
@@ -1651,10 +1851,12 @@ public class Security extends SerializableBean<Security> {
         return term;
     }
 
+    public static final String TERM = "term";
+
     /**
      * Setter method for the term property.
      */
-    public void setTerm (@Changeable("term") String term) {
+    public void setTerm (@Changeable(TERM) String term) {
         this.term = term;
     }
 
@@ -1667,10 +1869,12 @@ public class Security extends SerializableBean<Security> {
         return tiinConversionFactorPer1000;
     }
 
+    public static final String TIINCONVERSIONFACTORPER1000 = "tiinConversionFactorPer1000";
+
     /**
      * Setter method for the tiinConversionFactorPer1000 property.
      */
-    public void setTiinConversionFactorPer1000 (@Changeable("tiinConversionFactorPer1000") String tiinConversionFactorPer1000) {
+    public void setTiinConversionFactorPer1000 (@Changeable(TIINCONVERSIONFACTORPER1000) String tiinConversionFactorPer1000) {
         this.tiinConversionFactorPer1000 = tiinConversionFactorPer1000;
     }
 
@@ -1683,10 +1887,12 @@ public class Security extends SerializableBean<Security> {
         return tips;
     }
 
+    public static final String TIPS = "tips";
+
     /**
      * Setter method for the tips property.
      */
-    public void setTips (@Changeable("tips") String tips) {
+    public void setTips (@Changeable(TIPS) String tips) {
         this.tips = tips;
     }
 
@@ -1699,10 +1905,12 @@ public class Security extends SerializableBean<Security> {
         return totalAccepted;
     }
 
+    public static final String TOTALACCEPTED = "totalAccepted";
+
     /**
      * Setter method for the totalAccepted property.
      */
-    public void setTotalAccepted (@Changeable("totalAccepted") String totalAccepted) {
+    public void setTotalAccepted (@Changeable(TOTALACCEPTED) String totalAccepted) {
         this.totalAccepted = totalAccepted;
     }
 
@@ -1715,10 +1923,12 @@ public class Security extends SerializableBean<Security> {
         return totalTendered;
     }
 
+    public static final String TOTALTENDERED = "totalTendered";
+
     /**
      * Setter method for the totalTendered property.
      */
-    public void setTotalTendered (@Changeable("totalTendered") String totalTendered) {
+    public void setTotalTendered (@Changeable(TOTALTENDERED) String totalTendered) {
         this.totalTendered = totalTendered;
     }
 
@@ -1731,10 +1941,12 @@ public class Security extends SerializableBean<Security> {
         return treasuryDirectAccepted;
     }
 
+    public static final String TREASURYDIRECTACCEPTED = "treasuryDirectAccepted";
+
     /**
      * Setter method for the treasuryDirectAccepted property.
      */
-    public void setTreasuryDirectAccepted (@Changeable("treasuryDirectAccepted") String treasuryDirectAccepted) {
+    public void setTreasuryDirectAccepted (@Changeable(TREASURYDIRECTACCEPTED) String treasuryDirectAccepted) {
         this.treasuryDirectAccepted = treasuryDirectAccepted;
     }
 
@@ -1747,10 +1959,12 @@ public class Security extends SerializableBean<Security> {
         return treasuryDirectTendersAccepted;
     }
 
+    public static final String TREASURYDIRECTTENDERSACCEPTED = "treasuryDirectTendersAccepted";
+
     /**
      * Setter method for the treasuryDirectTendersAccepted property.
      */
-    public void setTreasuryDirectTendersAccepted (@Changeable("treasuryDirectTendersAccepted") String treasuryDirectTendersAccepted) {
+    public void setTreasuryDirectTendersAccepted (@Changeable(TREASURYDIRECTTENDERSACCEPTED) String treasuryDirectTendersAccepted) {
         this.treasuryDirectTendersAccepted = treasuryDirectTendersAccepted;
     }
 
@@ -1763,10 +1977,12 @@ public class Security extends SerializableBean<Security> {
         return type;
     }
 
+    public static final String TYPE = "type";
+
     /**
      * Setter method for the type property.
      */
-    public void setType (@Changeable("type") String type) {
+    public void setType (@Changeable(TYPE) String type) {
         this.type = type;
     }
 
@@ -1779,10 +1995,12 @@ public class Security extends SerializableBean<Security> {
         return unadjustedAccruedInterestPer1000;
     }
 
+    public static final String UNADJUSTEDACCRUEDINTERESTPER1000 = "unadjustedAccruedInterestPer1000";
+
     /**
      * Setter method for the unadjustedAccruedInterestPer1000 property.
      */
-    public void setUnadjustedAccruedInterestPer1000 (@Changeable("unadjustedAccruedInterestPer1000") String unadjustedAccruedInterestPer1000) {
+    public void setUnadjustedAccruedInterestPer1000 (@Changeable(UNADJUSTEDACCRUEDINTERESTPER1000) String unadjustedAccruedInterestPer1000) {
         this.unadjustedAccruedInterestPer1000 = unadjustedAccruedInterestPer1000;
     }
 
@@ -1795,10 +2013,12 @@ public class Security extends SerializableBean<Security> {
         return unadjustedPrice;
     }
 
+    public static final String UNADJUSTEDPRICE = "unadjustedPrice";
+
     /**
      * Setter method for the unadjustedPrice property.
      */
-    public void setUnadjustedPrice (@Changeable("unadjustedPrice") String unadjustedPrice) {
+    public void setUnadjustedPrice (@Changeable(UNADJUSTEDPRICE) String unadjustedPrice) {
         this.unadjustedPrice = unadjustedPrice;
     }
 
@@ -1811,10 +2031,12 @@ public class Security extends SerializableBean<Security> {
         return updatedTimestamp;
     }
 
+    public static final String UPDATEDTIMESTAMP = "updatedTimestamp";
+
     /**
      * Setter method for the updatedTimestamp property.
      */
-    public void setUpdatedTimestamp (@Changeable("updatedTimestamp") String updatedTimestamp) {
+    public void setUpdatedTimestamp (@Changeable(UPDATEDTIMESTAMP) String updatedTimestamp) {
         this.updatedTimestamp = updatedTimestamp;
     }
 
@@ -1827,10 +2049,12 @@ public class Security extends SerializableBean<Security> {
         return xmlFilenameAnnouncement;
     }
 
+    public static final String XMLFILENAMEANNOUNCEMENT = "xmlFilenameAnnouncement";
+
     /**
      * Setter method for the xmlFilenameAnnouncement property.
      */
-    public void setXmlFilenameAnnouncement (@Changeable("xmlFilenameAnnouncement") String xmlFilenameAnnouncement) {
+    public void setXmlFilenameAnnouncement (@Changeable(XMLFILENAMEANNOUNCEMENT) String xmlFilenameAnnouncement) {
         this.xmlFilenameAnnouncement = xmlFilenameAnnouncement;
     }
 
@@ -1843,10 +2067,12 @@ public class Security extends SerializableBean<Security> {
         return xmlFilenameCompetitiveResults;
     }
 
+    public static final String XMLFILENAMECOMPETITIVERESULTS = "xmlFilenameCompetitiveResults";
+
     /**
      * Setter method for the xmlFilenameCompetitiveResults property.
      */
-    public void setXmlFilenameCompetitiveResults (@Changeable("xmlFilenameCompetitiveResults") String xmlFilenameCompetitiveResults) {
+    public void setXmlFilenameCompetitiveResults (@Changeable(XMLFILENAMECOMPETITIVERESULTS) String xmlFilenameCompetitiveResults) {
         this.xmlFilenameCompetitiveResults = xmlFilenameCompetitiveResults;
     }
 
@@ -1859,10 +2085,12 @@ public class Security extends SerializableBean<Security> {
         return xmlFilenameSpecialAnnouncement;
     }
 
+    public static final String XMLFILENAMESPECIALANNOUNCEMENT = "xmlFilenameSpecialAnnouncement";
+
     /**
      * Setter method for the xmlFilenameSpecialAnnouncement property.
      */
-    public void setXmlFilenameSpecialAnnouncement (@Changeable("xmlFilenameSpecialAnnouncement") String xmlFilenameSpecialAnnouncement) {
+    public void setXmlFilenameSpecialAnnouncement (@Changeable(XMLFILENAMESPECIALANNOUNCEMENT) String xmlFilenameSpecialAnnouncement) {
         this.xmlFilenameSpecialAnnouncement = xmlFilenameSpecialAnnouncement;
     }
 

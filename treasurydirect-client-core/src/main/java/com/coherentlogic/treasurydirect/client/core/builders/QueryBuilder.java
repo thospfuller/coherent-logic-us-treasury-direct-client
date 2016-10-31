@@ -13,8 +13,11 @@ import org.springframework.web.client.RestTemplate;
 
 import com.coherentlogic.coherent.data.adapter.core.builders.rest.AbstractRESTQueryBuilder;
 import com.coherentlogic.coherent.data.adapter.core.util.WelcomeMessage;
+import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 import com.coherentlogic.coherent.data.model.core.util.Utils;
+import com.coherentlogic.treasurydirect.client.core.domain.Debts;
 import com.coherentlogic.treasurydirect.client.core.domain.Securities;
+import com.coherentlogic.treasurydirect.client.core.exceptions.UnsupportedTypeException;
 import com.coherentlogic.treasurydirect.client.core.services.GoogleAnalyticsMeasurementService;
 
 /**
@@ -118,6 +121,7 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         TA_WS = "TA_WS",
         NP_WS = "NP_WS",
         SECURITIES = "securities",
+        DEBT = "debt",
         ANNOUNCED = "announced",
         AUCTIONED = "auctioned",
         FORMAT = "format",
@@ -133,22 +137,30 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
     static final DateFormat dateFormat = new SimpleDateFormat ("yyyy.MM.dd");
 
     private final ResponseExtractor<Securities> securitiesExtractor;
+    
+    private final ResponseExtractor<Debts> debtsExtractor;
 
-    public QueryBuilder(RestTemplate restTemplate, ResponseExtractor<Securities> securitiesExtractor) {
-        this(restTemplate, DEFAULT_URI, securitiesExtractor);
+    public QueryBuilder(
+        RestTemplate restTemplate,
+        ResponseExtractor<Securities> securitiesExtractor,
+        ResponseExtractor<Debts> debtsExtractor
+    ) {
+        this(restTemplate, DEFAULT_URI, securitiesExtractor, debtsExtractor);
     }
 
     public QueryBuilder(
         RestTemplate restTemplate,
         String uri,
 //        InReturnAdapterSpecification<RequestBody, String> requestBodyAdapter,
-        ResponseExtractor<Securities> securitiesExtractor
+        ResponseExtractor<Securities> securitiesExtractor,
+        ResponseExtractor<Debts> debtsExtractor
     ) {
         super(restTemplate, uri);
 //        this.requestBodyAdapter = requestBodyAdapter;
 //        this.requestBody = new RequestBody (this);
 //        headers = new HashMap<String, String> ();
         this.securitiesExtractor = securitiesExtractor;
+        this.debtsExtractor = debtsExtractor;
     }
 
 //    public QueryBuilder(
@@ -175,14 +187,14 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 //        super(restTemplate, uriBuilder);
 //    }
 
-    public QueryBuilder TA_WS () {
+    protected QueryBuilder TA_WS () {
 
         extendPathWith(TA_WS);
 
         return this;
     }
 
-    public QueryBuilder NP_WS () {
+    protected QueryBuilder NP_WS () {
 
         extendPathWith(NP_WS);
 
@@ -192,23 +204,20 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 //    /securities/Cusip(9#)/Date(MM/DD/YYYY)
     
     public QueryBuilder securities () {
-
-        extendPathWith(SECURITIES);
-
-        return this;
+        return (QueryBuilder) TA_WS().extendPathWith(SECURITIES);
     }
 
     public QueryBuilder securities (SecurityType securityType) {
 
-        extendPathWith(SECURITIES);
-
         Utils.assertNotNull ("securityType", securityType);
 
+        TA_WS();
+        extendPathWith(SECURITIES);
         extendPathWith(securityType.toString());
 
         return this;
     }
-    
+
     public QueryBuilder securities (String cusip, Date date) {
 
 //        assertSizeExactlyNAlphaNumericChars(9, cusip);
@@ -222,9 +231,21 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 
     public QueryBuilder securities (String cusip, String date) {
 
+        TA_WS();
         extendPathWith(SECURITIES);
         extendPathWith(cusip);
         extendPathWith(date);
+
+        return this;
+    }
+
+    public QueryBuilder debt (String yyyy, String mm, String dd) {
+
+        NP_WS();
+        extendPathWith(DEBT);
+        extendPathWith(yyyy);
+        extendPathWith(mm);
+        extendPathWith(dd);
 
         return this;
     }
@@ -289,30 +310,32 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         T result = (T) getCache().get(getKey ());
 
         if (result == null) {
+
+            ResponseExtractor<? extends SerializableBean<?>> responseExtractor = null;
+
+            if (Securities.class.equals(type))
+                responseExtractor = securitiesExtractor;
+            else if (Debts.class.equals(type))
+                responseExtractor = debtsExtractor;
+            else
+                throw new UnsupportedTypeException (type);
+
+            addParameter(FORMAT, JSON);
+
+            log.info("escapedURI: " + getEscapedURI());
+
             result = (T) getRestTemplate()
-                .execute(getEscapedURI(), HttpMethod.GET, (RequestCallback) null, securitiesExtractor);
+                .execute(getEscapedURI(), HttpMethod.GET, (RequestCallback) null, responseExtractor);
         }
 
         return result;
     }
 
     public Securities doGetAsSecurities () {
-
-        addParameter(FORMAT, JSON);
-
         return doGet(Securities.class);
     }
 
-//    public static void main (String[] unused) {
-//
-//        QueryBuilder queryBuilder = new QueryBuilder ();
-//
-//        String uri = queryBuilder.TA_WS().securities(SecurityType.FRN).getEscapedURI();
-//
-//        System.out.println("uri: " + uri);
-//
-//        Securities securities = queryBuilder.doGetAsSecurities();
-//
-//        System.out.println("securities: " + securities);
-//    }
+    public Debts doGetAsDebts () {
+        return doGet(Debts.class);
+    }
 }
