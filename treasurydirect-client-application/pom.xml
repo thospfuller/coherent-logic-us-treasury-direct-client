@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.coherentlogic.treasurydirect</groupId>
+        <artifactId>client</artifactId>
+        <version>0.8.5-RELEASE</version>
+    </parent>
+
+    <groupId>com.coherentlogic.treasurydirect.client</groupId>
+    <artifactId>treasurydirect-client-application</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Coherent Data Adapter: Treasury Direct Client Example</name>
+    <description>An example application that demonstrates how to use the Coherent Data Adapter: Treasury Direct Client API</description>
+    <url>treasurydirect-client-application</url>
+    <licenses>
+        <license>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE Version 3</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+            <distribution>manual</distribution>
+            <comments></comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Support</name>
+            <email>support@coherentlogic.com</email>
+            <id>support</id>
+            <organization>Coherent Logic Limited</organization>
+            <organizationUrl>www.coherentlogic.com</organizationUrl>
+            <url>www.coherentlogic.com</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>Support</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.boot.version>1.4.0.RELEASE</spring.boot.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.coherentlogic.coherent.data-model</groupId>
+            <artifactId>data-adapter-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.coherentlogic.treasurydirect.client</groupId>
+            <artifactId>treasurydirect-client-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.coherentlogic.treasurydirect.client</groupId>
+            <artifactId>treasurydirect-client-db-int</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <!-- Can not deserialize instance of com.coherentlogic.treasurydirect.client.core.domain.Securities out of START_ARRAY token -->
+                <!-- exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion -->
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <!-- exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion -->
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-remote-shell</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
