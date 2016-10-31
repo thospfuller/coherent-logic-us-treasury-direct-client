@@ -40,7 +40,7 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
     public void setUp () {
 //    	queryBuilder = applicationContext.getBean(QueryBuilder.class);
     }
-    
+
     @After
     public void tearDown () {
         this.queryBuilder = null;
@@ -48,7 +48,7 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
 
     @Test
     public void testDoGetAsSecurities () {
-        Securities securities = queryBuilder.TA_WS().securities(SecurityType.FRN).doGetAsSecurities();
+        Securities securities = queryBuilder.securities(SecurityType.FRN).doGetAsSecurities();
         
         System.out.println(securities);
     }
