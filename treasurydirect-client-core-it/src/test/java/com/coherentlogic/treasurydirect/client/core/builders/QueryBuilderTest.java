@@ -1,5 +1,8 @@
 package com.coherentlogic.treasurydirect.client.core.builders;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import com.coherentlogic.treasurydirect.client.core.builders.QueryBuilder.SecurityType;
+import com.coherentlogic.treasurydirect.client.core.domain.Debts;
 import com.coherentlogic.treasurydirect.client.core.domain.Securities;
+import com.coherentlogic.treasurydirect.client.core.factories.QueryBuilderFactory;
 
 /**
  * @see <a href="https://www.treasurydirect.gov/webapis/webapisindex.htm">TreasuryDirect.gov Web APIs</a>
@@ -26,19 +31,21 @@ import com.coherentlogic.treasurydirect.client.core.domain.Securities;
 //@ComponentScan(basePackages="com.coherentlogic.treasurydirect.client")
 public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
 
-	@Configuration
-	@ComponentScan(basePackages="com.coherentlogic.treasurydirect.client")
-	static class Foo {}
-	
+    @Configuration
+    @ComponentScan(basePackages="com.coherentlogic.treasurydirect.client")
+    static class Foo {}
+    
 //    @Autowired
 //    private ApplicationContext applicationContext;
 
     @Autowired
+    private QueryBuilderFactory queryBuilderFactory;
+
     private QueryBuilder queryBuilder;
 
     @Before
     public void setUp () {
-//    	queryBuilder = applicationContext.getBean(QueryBuilder.class);
+        queryBuilder = queryBuilderFactory.getInstance();
     }
 
     @After
@@ -48,8 +55,42 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
 
     @Test
     public void testDoGetAsSecurities () {
+
         Securities securities = queryBuilder.securities(SecurityType.FRN).doGetAsSecurities();
-        
-        System.out.println(securities);
+
+        assertNotNull(securities);
+        assertTrue(30 < securities.getSecurityList().size());
+    }
+
+    /**
+     * http://www.treasurydirect.gov/NP_WS/debt/current
+     */
+    @Test
+    public void testDoGetAsDebts () {
+
+        Debts debts = queryBuilder.debt().current().doGetAsDebts();
+
+        assertNotNull("debts", debts);
+        assertNotNull("debtList", debts.getDebtList());
+
+        assertTrue(1 == debts.getDebtList().size());
+    }
+
+    /**
+     * http://www.treasurydirect.gov/NP_WS/debt/search?startdate=2014-01-01&enddate=2014-02-01
+     */
+    @Test
+    public void testDebtSearchExample () {
+
+    	//String escURI = queryBuilder.debt().search().withStartDate("2014-01-01").withEndDate("2014-02-01").getEscapedURI();
+
+    	//System.out.println("escURI: " + escURI);
+
+        Debts debts = queryBuilder.debt().search().withStartDate("2014-01-01").withEndDate("2014-02-01").doGetAsDebts();
+
+        assertNotNull("debts", debts);
+        assertNotNull("debtList", debts.getDebtList());
+
+        assertTrue(21 == debts.getDebtList().size());
     }
 }
