@@ -122,6 +122,10 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         NP_WS = "NP_WS",
         SECURITIES = "securities",
         DEBT = "debt",
+        CURRENT = "current",
+        SEARCH = "search",
+        START_DATE = "startdate",
+        END_DATE = "enddate",
         ANNOUNCED = "announced",
         AUCTIONED = "auctioned",
         FORMAT = "format",
@@ -250,6 +254,52 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         return this;
     }
 
+    public QueryBuilder debt () {
+
+        NP_WS();
+        extendPathWith(DEBT);
+
+        return this;
+    }
+
+    public QueryBuilder current () {
+
+        extendPathWith(CURRENT);
+
+        return this;
+    }
+
+    public QueryBuilder search () {
+
+        extendPathWith(SEARCH);
+
+        return this;
+    }
+
+    /**
+     * 
+     * @param date MM/DD/YYYY String mm, String dd, String yyyy
+     * @return
+     */
+    public QueryBuilder withStartDate (String startDate) {
+
+        addParameter(START_DATE, startDate);
+
+        return this;
+    }
+
+    /**
+     * 
+     * @param date MM/DD/YYYY String mm, String dd, String yyyy
+     * @return
+     */
+    public QueryBuilder withEndDate (String endDate) {
+
+        addParameter(END_DATE, endDate);
+
+        return this;
+    }
+
     public QueryBuilder withType (String type) {
 
         addParameter(TYPE, type);
@@ -322,7 +372,7 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 
             addParameter(FORMAT, JSON);
 
-            log.info("escapedURI: " + getEscapedURI());
+            log.info("responseExtractor: " + responseExtractor + ", escapedURI: " + getEscapedURI());
 
             result = (T) getRestTemplate()
                 .execute(getEscapedURI(), HttpMethod.GET, (RequestCallback) null, responseExtractor);
