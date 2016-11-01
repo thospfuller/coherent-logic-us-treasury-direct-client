@@ -53,6 +53,8 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
         this.queryBuilder = null;
     }
 
+    // TODO: set up this test too: http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=json
+
     @Test
     public void testDoGetAsSecurities () {
 
