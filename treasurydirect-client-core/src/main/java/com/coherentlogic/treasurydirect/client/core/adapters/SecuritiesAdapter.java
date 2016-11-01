@@ -16,12 +16,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * 
+ * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
+ * @author <a href="mailto:support@coherentlogic.com">Support</a>
  */
 public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> {
 
@@ -40,21 +41,21 @@ public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> 
     @Override
     public Securities read(JsonReader reader) throws IOException {
 
-    	log.info("read: method begins; reader: " + reader);
+        log.debug("read: method begins; reader: " + reader);
 
         Securities result = new Securities ();
 
         JsonElement securitiesElement = null;
 
-        try {
+        JsonToken token = reader.peek ();
+
+        if (JsonToken.BEGIN_ARRAY.equals(token)) {
             securitiesElement = getGsonBuilder().create().fromJson(reader, JsonArray.class);
-        } catch (JsonSyntaxException jsonSyntaxException) {
-            try {
-                securitiesElement = getGsonBuilder().create().fromJson(reader, JsonObject.class);
-            } catch (Throwable thrown) {
-                throw new ConversionFailedException("Unable to convert the JSON into either an array or an object.",
-                    thrown);
-            }
+        } else if (JsonToken.BEGIN_OBJECT.equals(token)) {
+            securitiesElement = getGsonBuilder().create().fromJson(reader, JsonObject.class);
+        } else {
+            throw new ConversionFailedException("Unable to convert the JSON into either an array or an object due to "
+                + "an unsupported token type (token: " + token + ").");
         }
 
         if (securitiesElement.isJsonArray()) {
@@ -72,9 +73,11 @@ public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> 
             Security security = asSecurity(securitiesElement.getAsJsonObject());
 
             securityList.add(security);
+
+            result.setSecurityList(securityList);
         }
 
-        log.info("read: method ends; result: " + result);
+        log.debug("read: method ends; result: " + result);
 
         return result;
     }
@@ -83,697 +86,700 @@ public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> 
 
         Security result = new Security ();
 
-        String cusip = securityObject.get("cusip").toString();
+        String cusip = securityObject.get(Security.CUSIP).getAsString();
 
         log.debug("cusip: " + cusip);
 
         result.setCusip(cusip);
 
-        String issueDate = securityObject.get("issueDate").toString();
+        String issueDate = securityObject.get("issueDate").getAsString();
 
         log.debug("issueDate: " + issueDate);
 
         result.setIssueDate(issueDate);
 
-        String securityType = securityObject.get("securityType").toString();
+        String securityType = securityObject.get("securityType").getAsString();
 
         log.debug("securityType: " + securityType);
 
         result.setSecurityType(securityType);
 
-        String securityTerm = securityObject.get("securityTerm").toString();
+        String securityTerm = securityObject.get("securityTerm").getAsString();
 
         log.debug("securityTerm: " + securityTerm);
 
         result.setSecurityTerm(securityTerm);
 
-        String maturityDate = securityObject.get("maturityDate").toString();
+        String maturityDate = securityObject.get("maturityDate").getAsString();
 
         log.debug("maturityDate: " + maturityDate);
 
         result.setMaturityDate(maturityDate);
 
-        String interestRate = securityObject.get("interestRate").toString();
+        String interestRate = securityObject.get("interestRate").getAsString();
 
         log.debug("interestRate: " + interestRate);
 
         result.setInterestRate(interestRate);
 
-        String refCpiOnIssueDate = securityObject.get("refCpiOnIssueDate").toString();
+        String refCpiOnIssueDate = securityObject.get("refCpiOnIssueDate").getAsString();
 
         log.debug("refCpiOnIssueDate: " + refCpiOnIssueDate);
 
         result.setRefCpiOnIssueDate(refCpiOnIssueDate);
 
-        String refCpiOnDatedDate = securityObject.get("refCpiOnDatedDate").toString();
+        String refCpiOnDatedDate = securityObject.get("refCpiOnDatedDate").getAsString();
 
         log.debug("refCpiOnDatedDate: " + refCpiOnDatedDate);
 
         result.setRefCpiOnDatedDate(refCpiOnDatedDate);
 
-        String announcementDate = securityObject.get("announcementDate").toString();
+        String announcementDate = securityObject.get("announcementDate").getAsString();
 
         log.debug("announcementDate: " + announcementDate);
 
         result.setAnnouncementDate(announcementDate);
 
-        String auctionDate = securityObject.get("auctionDate").toString();
+        String auctionDate = securityObject.get("auctionDate").getAsString();
 
         log.debug("auctionDate: " + auctionDate);
 
         result.setAuctionDate(auctionDate);
 
-        String auctionDateYear = securityObject.get("auctionDateYear").toString();
+        String auctionDateYear = securityObject.get("auctionDateYear").getAsString();
 
         log.debug("auctionDateYear: " + auctionDateYear);
 
         result.setAuctionDateYear(auctionDateYear);
 
-        String datedDate = securityObject.get("datedDate").toString();
+        String datedDate = securityObject.get("datedDate").getAsString();
 
         log.debug("datedDate: " + datedDate);
 
         result.setDatedDate(datedDate);
 
-        String accruedInterestPer1000 = securityObject.get("accruedInterestPer1000").toString();
+        String accruedInterestPer1000 = securityObject.get("accruedInterestPer1000").getAsString();
 
         log.debug("accruedInterestPer1000: " + accruedInterestPer1000);
 
         result.setAccruedInterestPer1000(accruedInterestPer1000);
 
-        String accruedInterestPer100 = securityObject.get("accruedInterestPer100").toString();
+        String accruedInterestPer100 = securityObject.get("accruedInterestPer100").getAsString();
 
         log.debug("accruedInterestPer100: " + accruedInterestPer100);
 
         result.setAccruedInterestPer100(accruedInterestPer100);
 
-        String adjustedAccruedInterestPer1000 = securityObject.get("adjustedAccruedInterestPer1000").toString();
+        String adjustedAccruedInterestPer1000 = securityObject.get("adjustedAccruedInterestPer1000").getAsString();
 
         log.debug("adjustedAccruedInterestPer1000: " + adjustedAccruedInterestPer1000);
 
         result.setAdjustedAccruedInterestPer1000(adjustedAccruedInterestPer1000);
 
-        String adjustedPrice = securityObject.get("adjustedPrice").toString();
+        String adjustedPrice = securityObject.get("adjustedPrice").getAsString();
 
         log.debug("adjustedPrice: " + adjustedPrice);
 
         result.setAdjustedPrice(adjustedPrice);
 
-        String allocationPercentage = securityObject.get("allocationPercentage").toString();
+        String allocationPercentage = securityObject.get("allocationPercentage").getAsString();
 
         log.debug("allocationPercentage: " + allocationPercentage);
 
         result.setAllocationPercentage(allocationPercentage);
 
-        String allocationPercentageDecimals = securityObject.get("allocationPercentageDecimals").toString();
+        String allocationPercentageDecimals = securityObject.get("allocationPercentageDecimals").getAsString();
 
         log.debug("allocationPercentageDecimals: " + allocationPercentageDecimals);
 
         result.setAllocationPercentageDecimals(allocationPercentageDecimals);
 
-        String announcedCusip = securityObject.get("announcedCusip").toString();
+        String announcedCusip = securityObject.get("announcedCusip").getAsString();
 
         log.debug("announcedCusip: " + announcedCusip);
 
         result.setAnnouncedCusip(announcedCusip);
 
-        String auctionFormat = securityObject.get("auctionFormat").toString();
+        String auctionFormat = securityObject.get("auctionFormat").getAsString();
 
         log.debug("auctionFormat: " + auctionFormat);
 
         result.setAuctionFormat(auctionFormat);
 
-        String averageMedianDiscountRate = securityObject.get("averageMedianDiscountRate").toString();
+        String averageMedianDiscountRate = securityObject.get("averageMedianDiscountRate").getAsString();
 
         log.debug("averageMedianDiscountRate: " + averageMedianDiscountRate);
 
         result.setAverageMedianDiscountRate(averageMedianDiscountRate);
 
-        String averageMedianInvestmentRate = securityObject.get("averageMedianInvestmentRate").toString();
+        String averageMedianInvestmentRate = securityObject.get("averageMedianInvestmentRate").getAsString();
 
         log.debug("averageMedianInvestmentRate: " + averageMedianInvestmentRate);
 
         result.setAverageMedianInvestmentRate(averageMedianInvestmentRate);
 
-        String averageMedianPrice = securityObject.get("averageMedianPrice").toString();
+        String averageMedianPrice = securityObject.get("averageMedianPrice").getAsString();
 
         log.debug("averageMedianPrice: " + averageMedianPrice);
 
         result.setAverageMedianPrice(averageMedianPrice);
 
-        String averageMedianDiscountMargin = securityObject.get("averageMedianDiscountMargin").toString();
+        String averageMedianDiscountMargin = securityObject.get("averageMedianDiscountMargin").getAsString();
 
         log.debug("averageMedianDiscountMargin: " + averageMedianDiscountMargin);
 
         result.setAverageMedianDiscountMargin(averageMedianDiscountMargin);
 
-        String averageMedianYield = securityObject.get("averageMedianYield").toString();
+        String averageMedianYield = securityObject.get("averageMedianYield").getAsString();
 
         log.debug("averageMedianYield: " + averageMedianYield);
 
         result.setAverageMedianYield(averageMedianYield);
 
-        String backDated = securityObject.get("backDated").toString();
+        String backDated = securityObject.get("backDated").getAsString();
 
         log.debug("backDated: " + backDated);
 
         result.setBackDated(backDated);
 
-        String backDatedDate = securityObject.get("backDatedDate").toString();
+        String backDatedDate = securityObject.get("backDatedDate").getAsString();
 
         log.debug("backDatedDate: " + backDatedDate);
 
         result.setBackDatedDate(backDatedDate);
 
-        String bidToCoverRatio = securityObject.get("bidToCoverRatio").toString();
+        String bidToCoverRatio = securityObject.get("bidToCoverRatio").getAsString();
 
         log.debug("bidToCoverRatio: " + bidToCoverRatio);
 
         result.setBidToCoverRatio(bidToCoverRatio);
 
-        String callDate = securityObject.get("callDate").toString();
+        String callDate = securityObject.get("callDate").getAsString();
 
         log.debug("callDate: " + callDate);
 
         result.setCallDate(callDate);
 
-        String callable = securityObject.get("callable").toString();
+        String callable = securityObject.get("callable").getAsString();
 
         log.debug("callable: " + callable);
 
         result.setCallable(callable);
 
-        String calledDate = securityObject.get("calledDate").toString();
+        String calledDate = securityObject.get("calledDate").getAsString();
 
         log.debug("calledDate: " + calledDate);
 
         result.setCalledDate(calledDate);
 
-        String cashManagementBillCMB = securityObject.get("cashManagementBillCMB").toString();
+        String cashManagementBillCMB = securityObject.get("cashManagementBillCMB").getAsString();
 
         log.debug("cashManagementBillCMB: " + cashManagementBillCMB);
 
         result.setCashManagementBillCMB(cashManagementBillCMB);
 
-        String closingTimeCompetitive = securityObject.get("closingTimeCompetitive").toString();
+        String closingTimeCompetitive = securityObject.get("closingTimeCompetitive").getAsString();
 
         log.debug("closingTimeCompetitive: " + closingTimeCompetitive);
 
         result.setClosingTimeCompetitive(closingTimeCompetitive);
 
-        String closingTimeNoncompetitive = securityObject.get("closingTimeNoncompetitive").toString();
+        String closingTimeNoncompetitive = securityObject.get("closingTimeNoncompetitive").getAsString();
 
         log.debug("closingTimeNoncompetitive: " + closingTimeNoncompetitive);
 
         result.setClosingTimeNoncompetitive(closingTimeNoncompetitive);
 
-        String competitiveAccepted = securityObject.get("competitiveAccepted").toString();
+        String competitiveAccepted = securityObject.get("competitiveAccepted").getAsString();
 
         log.debug("competitiveAccepted: " + competitiveAccepted);
 
         result.setCompetitiveAccepted(competitiveAccepted);
 
-        String competitiveBidDecimals = securityObject.get("competitiveBidDecimals").toString();
+        String competitiveBidDecimals = securityObject.get("competitiveBidDecimals").getAsString();
 
         log.debug("competitiveBidDecimals: " + competitiveBidDecimals);
 
         result.setCompetitiveBidDecimals(competitiveBidDecimals);
 
-        String competitiveTendered = securityObject.get("competitiveTendered").toString();
+        String competitiveTendered = securityObject.get("competitiveTendered").getAsString();
 
         log.debug("competitiveTendered: " + competitiveTendered);
 
         result.setCompetitiveTendered(competitiveTendered);
 
-        String competitiveTendersAccepted = securityObject.get("competitiveTendersAccepted").toString();
+        String competitiveTendersAccepted = securityObject.get("competitiveTendersAccepted").getAsString();
 
         log.debug("competitiveTendersAccepted: " + competitiveTendersAccepted);
 
         result.setCompetitiveTendersAccepted(competitiveTendersAccepted);
 
-        String corpusCusip = securityObject.get("corpusCusip").toString();
+        String corpusCusip = securityObject.get("corpusCusip").getAsString();
 
         log.debug("corpusCusip: " + corpusCusip);
 
         result.setCorpusCusip(corpusCusip);
 
-        String cpiBaseReferencePeriod = securityObject.get("cpiBaseReferencePeriod").toString();
+        String cpiBaseReferencePeriod = securityObject.get("cpiBaseReferencePeriod").getAsString();
 
         log.debug("cpiBaseReferencePeriod: " + cpiBaseReferencePeriod);
 
         result.setCpiBaseReferencePeriod(cpiBaseReferencePeriod);
 
-        String currentlyOutstanding = securityObject.get("currentlyOutstanding").toString();
+        String currentlyOutstanding = securityObject.get("currentlyOutstanding").getAsString();
 
         log.debug("currentlyOutstanding: " + currentlyOutstanding);
 
         result.setCurrentlyOutstanding(currentlyOutstanding);
 
-        String directBidderAccepted = securityObject.get("directBidderAccepted").toString();
+        String directBidderAccepted = securityObject.get("directBidderAccepted").getAsString();
 
         log.debug("directBidderAccepted: " + directBidderAccepted);
 
         result.setDirectBidderAccepted(directBidderAccepted);
 
-        String directBidderTendered = securityObject.get("directBidderTendered").toString();
+        String directBidderTendered = securityObject.get("directBidderTendered").getAsString();
 
         log.debug("directBidderTendered: " + directBidderTendered);
 
         result.setDirectBidderTendered(directBidderTendered);
 
-        String estimatedAmountOfPubliclyHeldMaturingSecuritiesByType = securityObject.get("estimatedAmountOfPubliclyHeldMaturingSecuritiesByType").toString();
+        String estimatedAmountOfPubliclyHeldMaturingSecuritiesByType =
+            securityObject.get("estimatedAmountOfPubliclyHeldMaturingSecuritiesByType").getAsString();
 
-        log.debug("estimatedAmountOfPubliclyHeldMaturingSecuritiesByType: " + estimatedAmountOfPubliclyHeldMaturingSecuritiesByType);
+        log.debug("estimatedAmountOfPubliclyHeldMaturingSecuritiesByType: " +
+            estimatedAmountOfPubliclyHeldMaturingSecuritiesByType);
 
-        result.setEstimatedAmountOfPubliclyHeldMaturingSecuritiesByType(estimatedAmountOfPubliclyHeldMaturingSecuritiesByType);
+        result.setEstimatedAmountOfPubliclyHeldMaturingSecuritiesByType(
+            estimatedAmountOfPubliclyHeldMaturingSecuritiesByType);
 
-        String fimaIncluded = securityObject.get("fimaIncluded").toString();
+        String fimaIncluded = securityObject.get("fimaIncluded").getAsString();
 
         log.debug("fimaIncluded: " + fimaIncluded);
 
         result.setFimaIncluded(fimaIncluded);
 
-        String fimaNoncompetitiveAccepted = securityObject.get("fimaNoncompetitiveAccepted").toString();
+        String fimaNoncompetitiveAccepted = securityObject.get("fimaNoncompetitiveAccepted").getAsString();
 
         log.debug("fimaNoncompetitiveAccepted: " + fimaNoncompetitiveAccepted);
 
         result.setFimaNoncompetitiveAccepted(fimaNoncompetitiveAccepted);
 
-        String fimaNoncompetitiveTendered = securityObject.get("fimaNoncompetitiveTendered").toString();
+        String fimaNoncompetitiveTendered = securityObject.get("fimaNoncompetitiveTendered").getAsString();
 
         log.debug("fimaNoncompetitiveTendered: " + fimaNoncompetitiveTendered);
 
         result.setFimaNoncompetitiveTendered(fimaNoncompetitiveTendered);
 
-        String firstInterestPeriod = securityObject.get("firstInterestPeriod").toString();
+        String firstInterestPeriod = securityObject.get("firstInterestPeriod").getAsString();
 
         log.debug("firstInterestPeriod: " + firstInterestPeriod);
 
         result.setFirstInterestPeriod(firstInterestPeriod);
 
-        String firstInterestPaymentDate = securityObject.get("firstInterestPaymentDate").toString();
+        String firstInterestPaymentDate = securityObject.get("firstInterestPaymentDate").getAsString();
 
         log.debug("firstInterestPaymentDate: " + firstInterestPaymentDate);
 
         result.setFirstInterestPaymentDate(firstInterestPaymentDate);
 
-        String floatingRate = securityObject.get("floatingRate").toString();
+        String floatingRate = securityObject.get("floatingRate").getAsString();
 
         log.debug("floatingRate: " + floatingRate);
 
         result.setFloatingRate(floatingRate);
 
-        String frnIndexDeterminationDate = securityObject.get("frnIndexDeterminationDate").toString();
+        String frnIndexDeterminationDate = securityObject.get("frnIndexDeterminationDate").getAsString();
 
         log.debug("frnIndexDeterminationDate: " + frnIndexDeterminationDate);
 
         result.setFrnIndexDeterminationDate(frnIndexDeterminationDate);
 
-        String frnIndexDeterminationRate = securityObject.get("frnIndexDeterminationRate").toString();
+        String frnIndexDeterminationRate = securityObject.get("frnIndexDeterminationRate").getAsString();
 
         log.debug("frnIndexDeterminationRate: " + frnIndexDeterminationRate);
 
         result.setFrnIndexDeterminationRate(frnIndexDeterminationRate);
 
-        String highDiscountRate = securityObject.get("highDiscountRate").toString();
+        String highDiscountRate = securityObject.get("highDiscountRate").getAsString();
 
         log.debug("highDiscountRate: " + highDiscountRate);
 
         result.setHighDiscountRate(highDiscountRate);
 
-        String highInvestmentRate = securityObject.get("highInvestmentRate").toString();
+        String highInvestmentRate = securityObject.get("highInvestmentRate").getAsString();
 
         log.debug("highInvestmentRate: " + highInvestmentRate);
 
         result.setHighInvestmentRate(highInvestmentRate);
 
-        String highPrice = securityObject.get("highPrice").toString();
+        String highPrice = securityObject.get("highPrice").getAsString();
 
         log.debug("highPrice: " + highPrice);
 
         result.setHighPrice(highPrice);
 
-        String highDiscountMargin = securityObject.get("highDiscountMargin").toString();
+        String highDiscountMargin = securityObject.get("highDiscountMargin").getAsString();
 
         log.debug("highDiscountMargin: " + highDiscountMargin);
 
         result.setHighDiscountMargin(highDiscountMargin);
 
-        String highYield = securityObject.get("highYield").toString();
+        String highYield = securityObject.get("highYield").getAsString();
 
         log.debug("highYield: " + highYield);
 
         result.setHighYield(highYield);
 
-        String indexRatioOnIssueDate = securityObject.get("indexRatioOnIssueDate").toString();
+        String indexRatioOnIssueDate = securityObject.get("indexRatioOnIssueDate").getAsString();
 
         log.debug("indexRatioOnIssueDate: " + indexRatioOnIssueDate);
 
         result.setIndexRatioOnIssueDate(indexRatioOnIssueDate);
 
-        String indirectBidderAccepted = securityObject.get("indirectBidderAccepted").toString();
+        String indirectBidderAccepted = securityObject.get("indirectBidderAccepted").getAsString();
 
         log.debug("indirectBidderAccepted: " + indirectBidderAccepted);
 
         result.setIndirectBidderAccepted(indirectBidderAccepted);
 
-        String indirectBidderTendered = securityObject.get("indirectBidderTendered").toString();
+        String indirectBidderTendered = securityObject.get("indirectBidderTendered").getAsString();
 
         log.debug("indirectBidderTendered: " + indirectBidderTendered);
 
         result.setIndirectBidderTendered(indirectBidderTendered);
 
-        String interestPaymentFrequency = securityObject.get("interestPaymentFrequency").toString();
+        String interestPaymentFrequency = securityObject.get("interestPaymentFrequency").getAsString();
 
         log.debug("interestPaymentFrequency: " + interestPaymentFrequency);
 
         result.setInterestPaymentFrequency(interestPaymentFrequency);
 
-        String lowDiscountRate = securityObject.get("lowDiscountRate").toString();
+        String lowDiscountRate = securityObject.get("lowDiscountRate").getAsString();
 
         log.debug("lowDiscountRate: " + lowDiscountRate);
 
         result.setLowDiscountRate(lowDiscountRate);
 
-        String lowInvestmentRate = securityObject.get("lowInvestmentRate").toString();
+        String lowInvestmentRate = securityObject.get("lowInvestmentRate").getAsString();
 
         log.debug("lowInvestmentRate: " + lowInvestmentRate);
 
         result.setLowInvestmentRate(lowInvestmentRate);
 
-        String lowPrice = securityObject.get("lowPrice").toString();
+        String lowPrice = securityObject.get("lowPrice").getAsString();
 
         log.debug("lowPrice: " + lowPrice);
 
         result.setLowPrice(lowPrice);
 
-        String lowDiscountMargin = securityObject.get("lowDiscountMargin").toString();
+        String lowDiscountMargin = securityObject.get("lowDiscountMargin").getAsString();
 
         log.debug("lowDiscountMargin: " + lowDiscountMargin);
 
         result.setLowDiscountMargin(lowDiscountMargin);
 
-        String lowYield = securityObject.get("lowYield").toString();
+        String lowYield = securityObject.get("lowYield").getAsString();
 
         log.debug("lowYield: " + lowYield);
 
         result.setLowYield(lowYield);
 
-        String maturingDate = securityObject.get("maturingDate").toString();
+        String maturingDate = securityObject.get("maturingDate").getAsString();
 
         log.debug("maturingDate: " + maturingDate);
 
         result.setMaturingDate(maturingDate);
 
-        String maximumCompetitiveAward = securityObject.get("maximumCompetitiveAward").toString();
+        String maximumCompetitiveAward = securityObject.get("maximumCompetitiveAward").getAsString();
 
         log.debug("maximumCompetitiveAward: " + maximumCompetitiveAward);
 
         result.setMaximumCompetitiveAward(maximumCompetitiveAward);
 
-        String maximumNoncompetitiveAward = securityObject.get("maximumNoncompetitiveAward").toString();
+        String maximumNoncompetitiveAward = securityObject.get("maximumNoncompetitiveAward").getAsString();
 
         log.debug("maximumNoncompetitiveAward: " + maximumNoncompetitiveAward);
 
         result.setMaximumNoncompetitiveAward(maximumNoncompetitiveAward);
 
-        String maximumSingleBid = securityObject.get("maximumSingleBid").toString();
+        String maximumSingleBid = securityObject.get("maximumSingleBid").getAsString();
 
         log.debug("maximumSingleBid: " + maximumSingleBid);
 
         result.setMaximumSingleBid(maximumSingleBid);
 
-        String minimumBidAmount = securityObject.get("minimumBidAmount").toString();
+        String minimumBidAmount = securityObject.get("minimumBidAmount").getAsString();
 
         log.debug("minimumBidAmount: " + minimumBidAmount);
 
         result.setMinimumBidAmount(minimumBidAmount);
 
-        String minimumStripAmount = securityObject.get("minimumStripAmount").toString();
+        String minimumStripAmount = securityObject.get("minimumStripAmount").getAsString();
 
         log.debug("minimumStripAmount: " + minimumStripAmount);
 
         result.setMinimumStripAmount(minimumStripAmount);
 
-        String minimumToIssue = securityObject.get("minimumToIssue").toString();
+        String minimumToIssue = securityObject.get("minimumToIssue").getAsString();
 
         log.debug("minimumToIssue: " + minimumToIssue);
 
         result.setMinimumToIssue(minimumToIssue);
 
-        String multiplesToBid = securityObject.get("multiplesToBid").toString();
+        String multiplesToBid = securityObject.get("multiplesToBid").getAsString();
 
         log.debug("multiplesToBid: " + multiplesToBid);
 
         result.setMultiplesToBid(multiplesToBid);
 
-        String multiplesToIssue = securityObject.get("multiplesToIssue").toString();
+        String multiplesToIssue = securityObject.get("multiplesToIssue").getAsString();
 
         log.debug("multiplesToIssue: " + multiplesToIssue);
 
         result.setMultiplesToIssue(multiplesToIssue);
 
-        String nlpExclusionAmount = securityObject.get("nlpExclusionAmount").toString();
+        String nlpExclusionAmount = securityObject.get("nlpExclusionAmount").getAsString();
 
         log.debug("nlpExclusionAmount: " + nlpExclusionAmount);
 
         result.setNlpExclusionAmount(nlpExclusionAmount);
 
-        String nlpReportingThreshold = securityObject.get("nlpReportingThreshold").toString();
+        String nlpReportingThreshold = securityObject.get("nlpReportingThreshold").getAsString();
 
         log.debug("nlpReportingThreshold: " + nlpReportingThreshold);
 
         result.setNlpReportingThreshold(nlpReportingThreshold);
 
-        String noncompetitiveAccepted = securityObject.get("noncompetitiveAccepted").toString();
+        String noncompetitiveAccepted = securityObject.get("noncompetitiveAccepted").getAsString();
 
         log.debug("noncompetitiveAccepted: " + noncompetitiveAccepted);
 
         result.setNoncompetitiveAccepted(noncompetitiveAccepted);
 
-        String noncompetitiveTendersAccepted = securityObject.get("noncompetitiveTendersAccepted").toString();
+        String noncompetitiveTendersAccepted = securityObject.get("noncompetitiveTendersAccepted").getAsString();
 
         log.debug("noncompetitiveTendersAccepted: " + noncompetitiveTendersAccepted);
 
         result.setNoncompetitiveTendersAccepted(noncompetitiveTendersAccepted);
 
-        String offeringAmount = securityObject.get("offeringAmount").toString();
+        String offeringAmount = securityObject.get("offeringAmount").getAsString();
 
         log.debug("offeringAmount: " + offeringAmount);
 
         result.setOfferingAmount(offeringAmount);
 
-        String originalCusip = securityObject.get("originalCusip").toString();
+        String originalCusip = securityObject.get("originalCusip").getAsString();
 
         log.debug("originalCusip: " + originalCusip);
 
         result.setOriginalCusip(originalCusip);
 
-        String originalDatedDate = securityObject.get("originalDatedDate").toString();
+        String originalDatedDate = securityObject.get("originalDatedDate").getAsString();
 
         log.debug("originalDatedDate: " + originalDatedDate);
 
         result.setOriginalDatedDate(originalDatedDate);
 
-        String originalIssueDate = securityObject.get("originalIssueDate").toString();
+        String originalIssueDate = securityObject.get("originalIssueDate").getAsString();
 
         log.debug("originalIssueDate: " + originalIssueDate);
 
         result.setOriginalIssueDate(originalIssueDate);
 
-        String originalSecurityTerm = securityObject.get("originalSecurityTerm").toString();
+        String originalSecurityTerm = securityObject.get("originalSecurityTerm").getAsString();
 
         log.debug("originalSecurityTerm: " + originalSecurityTerm);
 
         result.setOriginalSecurityTerm(originalSecurityTerm);
 
-        String pdfFilenameAnnouncement = securityObject.get("pdfFilenameAnnouncement").toString();
+        String pdfFilenameAnnouncement = securityObject.get("pdfFilenameAnnouncement").getAsString();
 
         log.debug("pdfFilenameAnnouncement: " + pdfFilenameAnnouncement);
 
         result.setPdfFilenameAnnouncement(pdfFilenameAnnouncement);
 
-        String pdfFilenameCompetitiveResults = securityObject.get("pdfFilenameCompetitiveResults").toString();
+        String pdfFilenameCompetitiveResults = securityObject.get("pdfFilenameCompetitiveResults").getAsString();
 
         log.debug("pdfFilenameCompetitiveResults: " + pdfFilenameCompetitiveResults);
 
         result.setPdfFilenameCompetitiveResults(pdfFilenameCompetitiveResults);
 
-        String pdfFilenameNoncompetitiveResults = securityObject.get("pdfFilenameNoncompetitiveResults").toString();
+        String pdfFilenameNoncompetitiveResults = securityObject.get("pdfFilenameNoncompetitiveResults").getAsString();
 
         log.debug("pdfFilenameNoncompetitiveResults: " + pdfFilenameNoncompetitiveResults);
 
         result.setPdfFilenameNoncompetitiveResults(pdfFilenameNoncompetitiveResults);
 
-        String pdfFilenameSpecialAnnouncement = securityObject.get("pdfFilenameSpecialAnnouncement").toString();
+        String pdfFilenameSpecialAnnouncement = securityObject.get("pdfFilenameSpecialAnnouncement").getAsString();
 
         log.debug("pdfFilenameSpecialAnnouncement: " + pdfFilenameSpecialAnnouncement);
 
         result.setPdfFilenameSpecialAnnouncement(pdfFilenameSpecialAnnouncement);
 
-        String pricePer100 = securityObject.get("pricePer100").toString();
+        String pricePer100 = securityObject.get("pricePer100").getAsString();
 
         log.debug("pricePer100: " + pricePer100);
 
         result.setPricePer100(pricePer100);
 
-        String primaryDealerAccepted = securityObject.get("primaryDealerAccepted").toString();
+        String primaryDealerAccepted = securityObject.get("primaryDealerAccepted").getAsString();
 
         log.debug("primaryDealerAccepted: " + primaryDealerAccepted);
 
         result.setPrimaryDealerAccepted(primaryDealerAccepted);
 
-        String primaryDealerTendered = securityObject.get("primaryDealerTendered").toString();
+        String primaryDealerTendered = securityObject.get("primaryDealerTendered").getAsString();
 
         log.debug("primaryDealerTendered: " + primaryDealerTendered);
 
         result.setPrimaryDealerTendered(primaryDealerTendered);
 
-        String reopening = securityObject.get("reopening").toString();
+        String reopening = securityObject.get("reopening").getAsString();
 
         log.debug("reopening: " + reopening);
 
         result.setReopening(reopening);
 
-        String securityTermDayMonth = securityObject.get("securityTermDayMonth").toString();
+        String securityTermDayMonth = securityObject.get("securityTermDayMonth").getAsString();
 
         log.debug("securityTermDayMonth: " + securityTermDayMonth);
 
         result.setSecurityTermDayMonth(securityTermDayMonth);
 
-        String securityTermWeekYear = securityObject.get("securityTermWeekYear").toString();
+        String securityTermWeekYear = securityObject.get("securityTermWeekYear").getAsString();
 
         log.debug("securityTermWeekYear: " + securityTermWeekYear);
 
         result.setSecurityTermWeekYear(securityTermWeekYear);
 
-        String series = securityObject.get("series").toString();
+        String series = securityObject.get("series").getAsString();
 
         log.debug("series: " + series);
 
         result.setSeries(series);
 
-        String somaAccepted = securityObject.get("somaAccepted").toString();
+        String somaAccepted = securityObject.get("somaAccepted").getAsString();
 
         log.debug("somaAccepted: " + somaAccepted);
 
         result.setSomaAccepted(somaAccepted);
 
-        String somaHoldings = securityObject.get("somaHoldings").toString();
+        String somaHoldings = securityObject.get("somaHoldings").getAsString();
 
         log.debug("somaHoldings: " + somaHoldings);
 
         result.setSomaHoldings(somaHoldings);
 
-        String somaIncluded = securityObject.get("somaIncluded").toString();
+        String somaIncluded = securityObject.get("somaIncluded").getAsString();
 
         log.debug("somaIncluded: " + somaIncluded);
 
         result.setSomaIncluded(somaIncluded);
 
-        String somaTendered = securityObject.get("somaTendered").toString();
+        String somaTendered = securityObject.get("somaTendered").getAsString();
 
         log.debug("somaTendered: " + somaTendered);
 
         result.setSomaTendered(somaTendered);
 
-        String spread = securityObject.get("spread").toString();
+        String spread = securityObject.get("spread").getAsString();
 
         log.debug("spread: " + spread);
 
         result.setSpread(spread);
 
-        String standardInterestPaymentPer1000 = securityObject.get("standardInterestPaymentPer1000").toString();
+        String standardInterestPaymentPer1000 = securityObject.get("standardInterestPaymentPer1000").getAsString();
 
         log.debug("standardInterestPaymentPer1000: " + standardInterestPaymentPer1000);
 
         result.setStandardInterestPaymentPer1000(standardInterestPaymentPer1000);
 
-        String strippable = securityObject.get("strippable").toString();
+        String strippable = securityObject.get("strippable").getAsString();
 
         log.debug("strippable: " + strippable);
 
         result.setStrippable(strippable);
 
-        String term = securityObject.get("term").toString();
+        String term = securityObject.get("term").getAsString();
 
         log.debug("term: " + term);
 
         result.setTerm(term);
 
-        String tiinConversionFactorPer1000 = securityObject.get("tiinConversionFactorPer1000").toString();
+        String tiinConversionFactorPer1000 = securityObject.get("tiinConversionFactorPer1000").getAsString();
 
         log.debug("tiinConversionFactorPer1000: " + tiinConversionFactorPer1000);
 
         result.setTiinConversionFactorPer1000(tiinConversionFactorPer1000);
 
-        String tips = securityObject.get("tips").toString();
+        String tips = securityObject.get("tips").getAsString();
 
         log.debug("tips: " + tips);
 
         result.setTips(tips);
 
-        String totalAccepted = securityObject.get("totalAccepted").toString();
+        String totalAccepted = securityObject.get("totalAccepted").getAsString();
 
         log.debug("totalAccepted: " + totalAccepted);
 
         result.setTotalAccepted(totalAccepted);
 
-        String totalTendered = securityObject.get("totalTendered").toString();
+        String totalTendered = securityObject.get("totalTendered").getAsString();
 
         log.debug("totalTendered: " + totalTendered);
 
         result.setTotalTendered(totalTendered);
 
-        String treasuryDirectAccepted = securityObject.get("treasuryDirectAccepted").toString();
+        String treasuryDirectAccepted = securityObject.get("treasuryDirectAccepted").getAsString();
 
         log.debug("treasuryDirectAccepted: " + treasuryDirectAccepted);
 
         result.setTreasuryDirectAccepted(treasuryDirectAccepted);
 
-        String treasuryDirectTendersAccepted = securityObject.get("treasuryDirectTendersAccepted").toString();
+        String treasuryDirectTendersAccepted = securityObject.get("treasuryDirectTendersAccepted").getAsString();
 
         log.debug("treasuryDirectTendersAccepted: " + treasuryDirectTendersAccepted);
 
         result.setTreasuryDirectTendersAccepted(treasuryDirectTendersAccepted);
 
-        String type = securityObject.get("type").toString();
+        String type = securityObject.get("type").getAsString();
 
         log.debug("type: " + type);
 
         result.setType(type);
 
-        String unadjustedAccruedInterestPer1000 = securityObject.get("unadjustedAccruedInterestPer1000").toString();
+        String unadjustedAccruedInterestPer1000 = securityObject.get("unadjustedAccruedInterestPer1000").getAsString();
 
         log.debug("unadjustedAccruedInterestPer1000: " + unadjustedAccruedInterestPer1000);
 
         result.setUnadjustedAccruedInterestPer1000(unadjustedAccruedInterestPer1000);
 
-        String unadjustedPrice = securityObject.get("unadjustedPrice").toString();
+        String unadjustedPrice = securityObject.get("unadjustedPrice").getAsString();
 
         log.debug("unadjustedPrice: " + unadjustedPrice);
 
         result.setUnadjustedPrice(unadjustedPrice);
 
-        String updatedTimestamp = securityObject.get("updatedTimestamp").toString();
+        String updatedTimestamp = securityObject.get("updatedTimestamp").getAsString();
 
         log.debug("updatedTimestamp: " + updatedTimestamp);
 
         result.setUpdatedTimestamp(updatedTimestamp);
 
-        String xmlFilenameAnnouncement = securityObject.get("xmlFilenameAnnouncement").toString();
+        String xmlFilenameAnnouncement = securityObject.get("xmlFilenameAnnouncement").getAsString();
 
         log.debug("xmlFilenameAnnouncement: " + xmlFilenameAnnouncement);
 
         result.setXmlFilenameAnnouncement(xmlFilenameAnnouncement);
 
-        String xmlFilenameCompetitiveResults = securityObject.get("xmlFilenameCompetitiveResults").toString();
+        String xmlFilenameCompetitiveResults = securityObject.get("xmlFilenameCompetitiveResults").getAsString();
 
         log.debug("xmlFilenameCompetitiveResults: " + xmlFilenameCompetitiveResults);
 
         result.setXmlFilenameCompetitiveResults(xmlFilenameCompetitiveResults);
 
-        String xmlFilenameSpecialAnnouncement = securityObject.get("xmlFilenameSpecialAnnouncement").toString();
+        String xmlFilenameSpecialAnnouncement = securityObject.get("xmlFilenameSpecialAnnouncement").getAsString();
 
         log.debug("xmlFilenameSpecialAnnouncement: " + xmlFilenameSpecialAnnouncement);
 
@@ -781,125 +787,6 @@ public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> 
 
         return result;
     }
-
-/*
-	"cusip": "912828WK2",
-	"issueDate": "2014-01-31T00:00:00",
-	"securityType": "Note",
-	"securityTerm": "2-Year",
-	"maturityDate": "2016-01-31T00:00:00",
-	"interestRate": "",
-	"refCpiOnIssueDate": "",
-	"refCpiOnDatedDate": "",
-	"announcementDate": "2014-01-23T00:00:00",
-	"auctionDate": "2014-01-29T00:00:00",
-	"auctionDateYear": "2014",
-	"datedDate": "2014-01-31T00:00:00",
-	"accruedInterestPer1000": "",
-	"accruedInterestPer100": "",
-	"adjustedAccruedInterestPer1000": "",
-	"adjustedPrice": "",
-	"allocationPercentage": "51.490000",
-	"allocationPercentageDecimals": "2",
-	"announcedCusip": "",
-	"auctionFormat": "Single-Price",
-	"averageMedianDiscountRate": "",
-	"averageMedianInvestmentRate": "",
-	"averageMedianPrice": "",
-	"averageMedianDiscountMargin": "0.039000",
-	"averageMedianYield": "",
-	"backDated": "No",
-	"backDatedDate": "",
-	"bidToCoverRatio": "5.670000",
-	"callDate": "",
-	"callable": "No",
-	"calledDate": "",
-	"cashManagementBillCMB": "No",
-	"closingTimeCompetitive": "11:30 AM",
-	"closingTimeNoncompetitive": "11:00 AM",
-	"competitiveAccepted": "14925524000",
-	"competitiveBidDecimals": "3",
-	"competitiveTendered": "84923585000",
-	"competitiveTendersAccepted": "Yes",
-	"corpusCusip": "",
-	"cpiBaseReferencePeriod": "",
-	"currentlyOutstanding": "",
-	"directBidderAccepted": "1335000000",
-	"directBidderTendered": "6240000000",
-	"estimatedAmountOfPubliclyHeldMaturingSecuritiesByType": "66932000000",
-	"fimaIncluded": "Yes",
-	"fimaNoncompetitiveAccepted": "0",
-	"fimaNoncompetitiveTendered": "0",
-	"firstInterestPeriod": "Normal",
-	"firstInterestPaymentDate": "2014-04-30T00:00:00",
-	"floatingRate": "Yes",
-	"frnIndexDeterminationDate": "2014-01-27T00:00:00",
-	"frnIndexDeterminationRate": "0.055000",
-	"highDiscountRate": "",
-	"highInvestmentRate": "",
-	"highPrice": "100.000000",
-	"highDiscountMargin": "0.045000",
-	"highYield": "",
-	"indexRatioOnIssueDate": "",
-	"indirectBidderAccepted": "5649034000",
-	"indirectBidderTendered": "35393585000",
-	"interestPaymentFrequency": "Quarterly",
-	"lowDiscountRate": "",
-	"lowInvestmentRate": "",
-	"lowPrice": "",
-	"lowDiscountMargin": "0.000000",
-	"lowYield": "",
-	"maturingDate": "2014-01-31T00:00:00",
-	"maximumCompetitiveAward": "5250000000",
-	"maximumNoncompetitiveAward": "5000000",
-	"maximumSingleBid": "5250000000",
-	"minimumBidAmount": "100",
-	"minimumStripAmount": "",
-	"minimumToIssue": "100",
-	"multiplesToBid": "100",
-	"multiplesToIssue": "100",
-	"nlpExclusionAmount": "0",
-	"nlpReportingThreshold": "5250000000",
-	"noncompetitiveAccepted": "74547200",
-	"noncompetitiveTendersAccepted": "Yes",
-	"offeringAmount": "15000000000",
-	"originalCusip": "",
-	"originalDatedDate": "",
-	"originalIssueDate": "",
-	"originalSecurityTerm": "2-Year",
-	"pdfFilenameAnnouncement": "A_20140123_3.pdf",
-	"pdfFilenameCompetitiveResults": "R_20140129_1.pdf",
-	"pdfFilenameNoncompetitiveResults": "NCR_20140129_1.pdf",
-	"pdfFilenameSpecialAnnouncement": "",
-	"pricePer100": "100.000000",
-	"primaryDealerAccepted": "7941490000",
-	"primaryDealerTendered": "43290000000",
-	"reopening": "No",
-	"securityTermDayMonth": "0-Month",
-	"securityTermWeekYear": "2-Year",
-	"series": "AV-2016",
-	"somaAccepted": "0",
-	"somaHoldings": "1000000",
-	"somaIncluded": "No",
-	"somaTendered": "0",
-	"spread": "0.0450",
-	"standardInterestPaymentPer1000": "",
-	"strippable": "No",
-	"term": "2-Year",
-	"tiinConversionFactorPer1000": "",
-	"tips": "No",
-	"totalAccepted": "15000071200",
-	"totalTendered": "84998132200",
-	"treasuryDirectAccepted": "14940200",
-	"treasuryDirectTendersAccepted": "Yes",
-	"type": "FRN",
-	"unadjustedAccruedInterestPer1000": "",
-	"unadjustedPrice": "",
-	"updatedTimestamp": "2014-03-07T12:05:06",
-	"xmlFilenameAnnouncement": "A_20140123_3.xml",
-	"xmlFilenameCompetitiveResults": "R_20140129_1.xml",
-	"xmlFilenameSpecialAnnouncement": ""
- */
 
     List<Security> asSecurityList (JsonArray securityArray) {
 
@@ -923,49 +810,3 @@ public class SecuritiesAdapter extends AbstractGSONBasedTypeAdapter<Securities> 
         throw new MethodNotSupportedException ("The write method is not supported.");
     }
 }
-
-//DataEntry result = getEntryFactory().getInstance();
-//
-//JsonObject dataEntryObject = gsonBuilder.create().fromJson(reader, JsonObject.class);
-//
-//JsonElement figi = dataEntryObject.get(FIGI);
-//
-//result.setFigi(getAsString (FIGI, figi));
-//
-//JsonElement securityType = dataEntryObject.get(SECURITY_TYPE);
-//
-//result.setSecurityType(getAsString (SECURITY_TYPE, securityType));
-//
-//JsonElement marketSector = dataEntryObject.get(MARKET_SECTOR);
-//
-//result.setMarketSector(getAsString (MARKET_SECTOR, marketSector));
-//
-//JsonElement ticker = dataEntryObject.get(TICKER);
-//
-//result.setTicker(getAsString (TICKER, ticker));
-//
-//JsonElement name = dataEntryObject.get(NAME);
-//
-//result.setName(getAsString (NAME, name));
-//
-//JsonElement uniqueID = dataEntryObject.get(UNIQUE_ID);
-//
-//result.setUniqueID(getAsString (UNIQUE_ID, uniqueID));
-//
-//JsonElement exchangeCode = dataEntryObject.get(EXCH_CODE);
-//
-//result.setExchangeCode(getAsString (EXCH_CODE, exchangeCode));
-//
-//JsonElement shareClassFIGI = dataEntryObject.get(SHARE_CLASS_FIGI);
-//
-//result.setShareClassFIGI(getAsString (SHARE_CLASS_FIGI, shareClassFIGI));
-//
-//JsonElement compositeFigi = dataEntryObject.get(COMPOSIT_FIGI);
-//
-//result.setCompositeFIGI(getAsString (COMPOSIT_FIGI, compositeFigi));
-//
-//JsonElement uniqueIDFutOptElement = dataEntryObject.get(UNIQUE_ID_FUT_OPT);
-//
-//result.setUniqueIDForFutureOption(getAsString (UNIQUE_ID_FUT_OPT, uniqueIDFutOptElement));
-//
-//return result;
