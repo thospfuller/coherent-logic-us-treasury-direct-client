@@ -75,8 +75,6 @@ public class SecuritiesAdapterTest {
 
         File jsonFile = new File ("src/test/resources/securities-example-2.json"); // /src/test/resources/
 
-        System.err.println("jsonFile: " + jsonFile.getAbsolutePath());
-
         FileInputStream fis = new FileInputStream (jsonFile);
 
         String json = IOUtils.toString(fis);
