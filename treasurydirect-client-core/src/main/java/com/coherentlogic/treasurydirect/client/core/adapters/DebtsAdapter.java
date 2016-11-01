@@ -22,6 +22,9 @@ import com.google.gson.stream.JsonWriter;
 
 /**
  * An adapter that converts debt-related JSON into an instance of {@link Debts}.
+ *
+ * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
+ * @author <a href="mailto:support@coherentlogic.com">Support</a>
  */
 public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
 
