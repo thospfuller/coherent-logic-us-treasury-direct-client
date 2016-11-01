@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * 
+ * An adapter that converts debt-related JSON into an instance of {@link Debts}.
  */
 public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
 
@@ -45,16 +45,16 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
 
     /**
      * Method converts debt-related JSON into an instance of Debts and returns the result.
-     * 
+     *
      * Single debt JSON:
-     * 
+     *
      * {
      *     "effectiveDate":"October 28, 2016 EDT",
      *     "governmentHoldings":5510526280153.27,
      *     "publicDebt":14309982958438.22,
      *     "totalDebt":19820509238591.49
      * }
-     * 
+     *
      * Multiple debts JSON:
      *
      * {
@@ -110,7 +110,8 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
     }
 
     /**
-     * Method creates a new instance of Debt, maps the debtObject parameters to the debt object, and returns the result.
+     * Method creates a new instance of {@link Debt}, maps the debtObject parameters to the debt object, and returns the
+     * result.
      *
      * Note that the debtObject should have the following format:
      *
@@ -168,8 +169,8 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
     }
 
     /**
-     * Method converts the debtArray, as below, into an instance of one or more Debt objects, and adds the results to
-     * the debtList.
+     * Method converts the debtArray, as below, into an instance of one or more {@link Debt} objects, and adds the
+     * results to the debtList.
      *
      * [
      *     {
@@ -262,7 +263,7 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
     }
 
     /**
-     * Method converts the debtArray into list of Debt objects -- for example, the debtArray should contain the
+     * Method converts the debtArray into list of {@link Debt} objects -- for example, the debtArray should contain the
      * following:
      *
      * [
@@ -290,6 +291,9 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
         return result;
     }
 
+    /**
+     * Method is not supported.
+     */
     @Override
     public void write(JsonWriter writer, Debts debts) throws IOException {
         throw new MethodNotSupportedException ("The write method is not supported.");
