@@ -21,10 +21,7 @@ public class QueryBuilderFactory implements TypedFactory<AbstractQueryBuilder<St
     private ApplicationContext applicationContext;
 
     @Override
-    public AbstractQueryBuilder<String, Object> getInstance() {
-    	
-    	System.err.println("FFFFFFFFFFFFFFFEREEEEEE!");
-    	
+    public QueryBuilder getInstance() {
         return applicationContext.getBean(QueryBuilder.class);
     }
 }
