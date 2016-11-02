@@ -1,6 +1,6 @@
 package com.coherentlogic.treasurydirect.client.core.adapters;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -55,9 +55,9 @@ public class SecuritiesAdapterTest {
 
     // http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=xhtml 
     @Test
-    public void testReadJsonReaderForResultOfSize1() throws IOException {
+    public void testReadSecuritiesJsonReaderForResultOfSize1() throws IOException {
 
-        File jsonFile = new File ("src/test/resources/securities-example-1.json"); // /src/test/resources/
+        File jsonFile = new File ("src/test/resources/securitiesSingleResultExample.json");
 
         FileInputStream fis = new FileInputStream (jsonFile);
 
@@ -71,9 +71,43 @@ public class SecuritiesAdapterTest {
     }
 
     @Test
-    public void testReadJsonReaderForResultOfSizeMany() throws IOException {
+    public void testReadSecuritiesJsonReaderForResultOfSizeMany() throws IOException {
 
-        File jsonFile = new File ("src/test/resources/securities-example-2.json"); // /src/test/resources/
+        File jsonFile = new File ("src/test/resources/securitiesMultipleResultsExample.json");
+
+        FileInputStream fis = new FileInputStream (jsonFile);
+
+        String json = IOUtils.toString(fis);
+
+        Securities securities = securitiesAdapter.fromJson(json);
+
+        // Second to last security is the same as that which is used in testReadJsonReaderForResultOfSize1.
+        Security result = securities.getSecurityList().get(33);
+
+        reviewSecurity(result);
+    }
+
+    // http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=xhtml 
+    @Test
+    public void testReadDebtsJsonReaderForResultOfSize1() throws IOException {
+
+        File jsonFile = new File ("src/test/resources/debtsSingleResultExample.json");
+
+        FileInputStream fis = new FileInputStream (jsonFile);
+
+        String json = IOUtils.toString(fis);
+
+        Securities securities = securitiesAdapter.fromJson(json);
+
+        Security result = securities.getSecurityList().get(0);
+
+        reviewSecurity(result);
+    }
+
+    @Test
+    public void testReadDebtsJsonReaderForResultOfSizeMany() throws IOException {
+
+        File jsonFile = new File ("src/test/resources/DebtsMultipleResultsExample.json");
 
         FileInputStream fis = new FileInputStream (jsonFile);
 
