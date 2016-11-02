@@ -82,7 +82,7 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
     @Override
     public Debts read(JsonReader reader) throws IOException {
 
-        log.info("read: method begins; reader: " + reader);
+        log.debug("read: method begins; reader: " + reader);
 
         Debts result = new Debts ();
 
@@ -93,7 +93,6 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
         if (JsonToken.BEGIN_ARRAY.equals(token)) {
             throw new ConversionFailedException("Unable to convert the JSON into an instance of Debts due to "
                 + "the resultant json starting with an array token and this is not expected.");
-            //debtsElement = getGsonBuilder().create().fromJson(reader, JsonArray.class);
         } else if (JsonToken.BEGIN_OBJECT.equals(token)) {
             debtsElement = getGsonBuilder().create().fromJson(reader, JsonObject.class);
         } else {
@@ -107,7 +106,7 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
 
         result.setDebtList(debtList);
 
-        log.info("read: method ends; result: " + result);
+        log.debug("read: method ends; result: " + result);
 
         return result;
     }
@@ -146,25 +145,37 @@ public class DebtsAdapter extends AbstractGSONBasedTypeAdapter<Debts> {
      */
     void asDebt (JsonObject debtObject, Debt debt) {
 
-        String effectiveDate = debtObject.get(EFFECTIVE_DATE).toString();
+        if (!debtObject.has("effectiveDate"))
+            throw new ConversionFailedException("The JSON does not contain a member with name effectiveDate");
+
+        String effectiveDate = debtObject.get("effectiveDate").getAsString();
 
         log.debug("effectiveDate: " + effectiveDate);
 
         debt.setEffectiveDate(effectiveDate);
 
-        String governmentHoldings = debtObject.get(GOVERNMENT_HOLDINGS).toString();
+        if (!debtObject.has("governmentHoldings"))
+            throw new ConversionFailedException("The JSON does not contain a member with name governmentHoldings");
+
+        String governmentHoldings = debtObject.get("governmentHoldings").getAsString();
 
         log.debug("governmentHoldings: " + governmentHoldings);
 
         debt.setGovernmentHoldings(governmentHoldings);
 
-        String publicDebt = debtObject.get(PUBLIC_DEBT).toString();
+        if (!debtObject.has("publicDebt"))
+            throw new ConversionFailedException("The JSON does not contain a member with name publicDebt");
+
+        String publicDebt = debtObject.get("publicDebt").getAsString();
 
         log.debug("publicDebt: " + publicDebt);
 
         debt.setPublicDebt(publicDebt);
 
-        String totalDebt = debtObject.get(TOTAL_DEBT).toString();
+        if (!debtObject.has("totalDebt"))
+            throw new ConversionFailedException("The JSON does not contain a member with name totalDebt");
+
+        String totalDebt = debtObject.get("totalDebt").getAsString();
 
         log.debug("totalDebt: " + totalDebt);
 
