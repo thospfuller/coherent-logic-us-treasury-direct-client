@@ -98,21 +98,46 @@ public class MainApplication extends AbstractApplication {
         ClassPathResource securitiesExample2Resource = (ClassPathResource)
             applicationContext.getBean("securitiesExample2Resource");
 
-            StringWriter securitiesExample2StringWriter = new StringWriter ();
+        StringWriter securitiesExample2StringWriter = new StringWriter ();
 
-            InputStream securitiesExample2In = securitiesExample2Resource.getInputStream();
+        InputStream securitiesExample2In = securitiesExample2Resource.getInputStream();
 
-            IOUtils.copy(securitiesExample2In, securitiesExample2StringWriter);
+        IOUtils.copy(securitiesExample2In, securitiesExample2StringWriter);
 
-            String securitiesExample2Example = securitiesExample2StringWriter.toString();
+        String securitiesExample2Example = securitiesExample2StringWriter.toString();
 
-            groovyExampleBeanMap.put(
-                "Securities Example (2)",
-                new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
-                    securitiesExample2Example,
-                    queryBuilderFactory,
-                    groovyEngine
-                )
-            );
+        groovyExampleBeanMap.put(
+            "Securities Example (2)",
+            new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
+                securitiesExample2Example,
+                queryBuilderFactory,
+                groovyEngine
+            )
+        );
+
+        // ---------------------
+
+        ClassPathResource securitiesMultipleResultsWithDataFrameExampleResource = (ClassPathResource)
+            applicationContext.getBean("securitiesMultipleResultsWithDataFrameExampleResource");
+
+        StringWriter securitiesMultipleResultsWithDataFrameExampleStringWriter = new StringWriter ();
+
+        InputStream securitiesMultipleResultsWithDataFrameExampleIn =
+            securitiesMultipleResultsWithDataFrameExampleResource.getInputStream();
+
+        IOUtils.copy(
+            securitiesMultipleResultsWithDataFrameExampleIn, securitiesMultipleResultsWithDataFrameExampleStringWriter);
+
+        String securitiesMultipleResultsWithDataFrameExampleExample =
+            securitiesMultipleResultsWithDataFrameExampleStringWriter.toString();
+
+        groovyExampleBeanMap.put(
+            "Securities Example (3)",
+            new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
+                securitiesMultipleResultsWithDataFrameExampleExample,
+                queryBuilderFactory,
+                groovyEngine
+            )
+        );
     }
 }
