@@ -78,7 +78,7 @@ public class DebtsAdapterTest {
     @Test
     public void testReadDebtsJsonReaderForResultOfSizeMany() throws IOException {
 
-        File jsonFile = new File ("src/test/resources/DebtsMultipleResultsExample.json");
+        File jsonFile = new File ("src/test/resources/debtsMultipleResultsExample.json");
 
         FileInputStream fis = new FileInputStream (jsonFile);
 
