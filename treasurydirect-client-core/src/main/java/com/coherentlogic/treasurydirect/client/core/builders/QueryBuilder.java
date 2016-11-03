@@ -12,6 +12,7 @@ import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 
 import com.coherentlogic.coherent.data.adapter.core.builders.rest.AbstractRESTQueryBuilder;
+import com.coherentlogic.coherent.data.adapter.core.cache.CacheServiceProviderSpecification;
 import com.coherentlogic.coherent.data.adapter.core.util.WelcomeMessage;
 import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 import com.coherentlogic.coherent.data.model.core.util.Utils;
@@ -154,6 +155,15 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 
     public QueryBuilder(
         RestTemplate restTemplate,
+        CacheServiceProviderSpecification<String, Object> cacheServiceProviderSpecification,
+        ResponseExtractor<Securities> securitiesExtractor,
+        ResponseExtractor<Debts> debtsExtractor
+    ) {
+        this (restTemplate, DEFAULT_URI, cacheServiceProviderSpecification, securitiesExtractor, debtsExtractor);
+    }
+
+    public QueryBuilder(
+        RestTemplate restTemplate,
         String uri,
 //        InReturnAdapterSpecification<RequestBody, String> requestBodyAdapter,
         ResponseExtractor<Securities> securitiesExtractor,
@@ -163,6 +173,21 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
 //        this.requestBodyAdapter = requestBodyAdapter;
 //        this.requestBody = new RequestBody (this);
 //        headers = new HashMap<String, String> ();
+        this.securitiesExtractor = securitiesExtractor;
+        this.debtsExtractor = debtsExtractor;
+    }
+
+    public QueryBuilder(
+        RestTemplate restTemplate,
+        String uri,
+        CacheServiceProviderSpecification<String, Object> cacheServiceProviderSpecification,
+        ResponseExtractor<Securities> securitiesExtractor,
+        ResponseExtractor<Debts> debtsExtractor
+    ) {
+        super(restTemplate, uri, cacheServiceProviderSpecification);
+//            this.requestBodyAdapter = requestBodyAdapter;
+//            this.requestBody = new RequestBody (this);
+//            headers = new HashMap<String, String> ();
         this.securitiesExtractor = securitiesExtractor;
         this.debtsExtractor = debtsExtractor;
     }
@@ -357,26 +382,23 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
     @Override
     protected <T> T doExecute(Class<T> type) {
 
-        T result = (T) getCache().get(getKey ());
+        ResponseExtractor<? extends SerializableBean<?>> responseExtractor = null;
 
-        if (result == null) {
+        if (Securities.class.equals(type))
+            responseExtractor = securitiesExtractor;
+        else if (Debts.class.equals(type))
+            responseExtractor = debtsExtractor;
+        else
+            throw new UnsupportedTypeException (type);
 
-            ResponseExtractor<? extends SerializableBean<?>> responseExtractor = null;
+        addParameter(FORMAT, JSON);
 
-            if (Securities.class.equals(type))
-                responseExtractor = securitiesExtractor;
-            else if (Debts.class.equals(type))
-                responseExtractor = debtsExtractor;
-            else
-                throw new UnsupportedTypeException (type);
+        log.info("responseExtractor: " + responseExtractor + ", escapedURI: " + getEscapedURI());
 
-            addParameter(FORMAT, JSON);
+        T result = (T) getRestTemplate()
+            .execute(getEscapedURI(), HttpMethod.GET, (RequestCallback) null, responseExtractor);
 
-            log.info("responseExtractor: " + responseExtractor + ", escapedURI: " + getEscapedURI());
-
-            result = (T) getRestTemplate()
-                .execute(getEscapedURI(), HttpMethod.GET, (RequestCallback) null, responseExtractor);
-        }
+        getCache().put(getEscapedURI(), result);
 
         return result;
     }
