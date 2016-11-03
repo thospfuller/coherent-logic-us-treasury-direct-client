@@ -3,8 +3,15 @@ package com.coherentlogic.treasurydirect.client.core.domain;
 import com.coherentlogic.coherent.data.model.core.annotations.Changeable;
 import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 
+/**
+ * Representation of individual security data returned from calls to the treasurydirect.gov web services.
+ *
+ * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
+ * @author <a href="mailto:support@coherentlogic.com">Support</a>
+ */
 public class Security extends SerializableBean<Security> {
 
+    private static final long serialVersionUID = 6384300918412594365L;
 
     private String cusip;
 

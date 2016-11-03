@@ -5,11 +5,16 @@ import java.util.List;
 import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 
 /**
- * http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=json
- * @author Thomas P. Fuller
+ * Top-level representation of securities data returned from calls to the treasurydirect.gov web services.
  *
+ * http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=json
+ *
+ * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
+ * @author <a href="mailto:support@coherentlogic.com">Support</a>
  */
 public class Securities extends SerializableBean<Securities> {
+
+    private static final long serialVersionUID = -7972690367461911881L;
 
     private List<Security> securityList = null;
 

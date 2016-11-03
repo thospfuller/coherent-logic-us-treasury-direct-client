@@ -5,10 +5,14 @@ import java.util.List;
 import com.coherentlogic.coherent.data.model.core.domain.SerializableBean;
 
 /**
+ * Top-level representation of debt data returned from calls to the treasurydirect.gov web services.
+ *
  * @author <a href="https://www.linkedin.com/in/thomasfuller">Thomas P. Fuller</a>
  * @author <a href="mailto:support@coherentlogic.com">Support</a>
  */
 public class Debts extends SerializableBean<Debts> {
+
+    private static final long serialVersionUID = -1997617185138107698L;
 
     private List<Debt> debtList = null;
 
