@@ -13,11 +13,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.coherentlogic.coherent.data.adapter.core.exceptions.ConversionFailedException;
 import com.coherentlogic.coherent.data.adapter.core.factories.TypedFactory;
 import com.coherentlogic.treasurydirect.client.core.domain.Securities;
 import com.coherentlogic.treasurydirect.client.core.domain.Security;
 import com.coherentlogic.treasurydirect.client.core.factories.SecuritiesFactory;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 
 /**
  * Unit test for the {@link SecuritiesAdapter} class.
@@ -47,7 +51,6 @@ public class SecuritiesAdapterTest {
     }
 
     void reviewSecurity (Security security) {
-
         assertEquals("912796CJ6", security.getCusip ());
         // TODO: Check the other properties.
         assertEquals("foo45", security.getXmlFilenameSpecialAnnouncement());
@@ -87,47 +90,21 @@ public class SecuritiesAdapterTest {
         reviewSecurity(result);
     }
 
-    // http://www.treasurydirect.gov/TA_WS/securities/912796CJ6/02/11/2014?format=xhtml 
-    @Test
-    public void testReadDebtsJsonReaderForResultOfSize1() throws IOException {
+    @Test(expected=ConversionFailedException.class)
+    public void testRead() throws IOException {
 
-        File jsonFile = new File ("src/test/resources/debtsSingleResultExample.json");
+        JsonReader reader = mock (JsonReader.class);
 
-        FileInputStream fis = new FileInputStream (jsonFile);
+        when (reader.peek()).thenReturn(JsonToken.BOOLEAN);
 
-        String json = IOUtils.toString(fis);
-
-        Securities securities = securitiesAdapter.fromJson(json);
-
-        Security result = securities.getSecurityList().get(0);
-
-        reviewSecurity(result);
+        securitiesAdapter.read(reader);
     }
 
-    @Test
-    public void testReadDebtsJsonReaderForResultOfSizeMany() throws IOException {
+    @Test(expected=ConversionFailedException.class)
+    public void testAsSecurityWhereIssueDateMemberIsMissing() {
 
-        File jsonFile = new File ("src/test/resources/DebtsMultipleResultsExample.json");
+        JsonObject securityObject = new JsonObject();
 
-        FileInputStream fis = new FileInputStream (jsonFile);
-
-        String json = IOUtils.toString(fis);
-
-        Securities securities = securitiesAdapter.fromJson(json);
-
-        // Second to last security is the same as that which is used in testReadJsonReaderForResultOfSize1.
-        Security result = securities.getSecurityList().get(33);
-
-        reviewSecurity(result);
+        securitiesAdapter.asSecurity(securityObject);
     }
-
-//    @Test
-//    public void testAsSecurity() {
-//        fail("Not yet implemented");
-//    }
-//
-//    @Test
-//    public void testAsSecurityList() {
-//        fail("Not yet implemented");
-//    }
 }
