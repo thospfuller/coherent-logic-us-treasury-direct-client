@@ -16,4 +16,8 @@
     <bean id="securitiesMultipleResultsWithDataFrameExampleResource" class="org.springframework.core.io.ClassPathResource">
         <constructor-arg name="path" value="/examples/securitiesMultipleResultsWithDataFrameExample.groovy"/>
     </bean>
+
+    <bean id="debtsMultipleResultsWithDataFrameExampleResource" class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg name="path" value="/examples/debtsMultipleResultsWithDataFrameExample.groovy"/>
+    </bean>
 </beans>
