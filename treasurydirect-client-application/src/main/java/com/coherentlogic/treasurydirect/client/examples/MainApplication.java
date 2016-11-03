@@ -8,6 +8,7 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,6 +21,7 @@ import com.coherentlogic.coherent.data.adapter.application.GroovyEngine;
 import com.coherentlogic.coherent.data.adapter.application.GroovyExampleBean;
 import com.coherentlogic.coherent.data.adapter.core.builders.AbstractQueryBuilder;
 import com.coherentlogic.coherent.data.adapter.core.factories.TypedFactory;
+import com.coherentlogic.treasurydirect.client.core.factories.QueryBuilderFactory;
 import com.coherentlogic.treasurydirect.client.factories.DistributedCacheEnabledQueryBuilderFactory;
 
 /**
@@ -36,7 +38,7 @@ public class MainApplication extends AbstractApplication {
     private static final Logger log = LoggerFactory.getLogger(MainApplication.class);
 
     @Autowired
-    private TypedFactory<AbstractQueryBuilder<String, Object>> queryBuilderFactory;
+    private QueryBuilderFactory queryBuilderFactory;
 
     @Autowired
     private DistributedCacheEnabledQueryBuilderFactory distributedCacheEnabledQueryBuilderFactory;

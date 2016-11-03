@@ -22,6 +22,6 @@ public class QueryBuilderFactory implements TypedFactory<AbstractQueryBuilder<St
 
     @Override
     public QueryBuilder getInstance() {
-        return applicationContext.getBean(QueryBuilder.class);
+        return (QueryBuilder) applicationContext.getBean(QueryBuilder.BEAN_NAME);
     }
 }
