@@ -20,7 +20,7 @@ import com.coherentlogic.coherent.data.adapter.application.GroovyEngine;
 import com.coherentlogic.coherent.data.adapter.application.GroovyExampleBean;
 import com.coherentlogic.coherent.data.adapter.core.builders.AbstractQueryBuilder;
 import com.coherentlogic.coherent.data.adapter.core.factories.TypedFactory;
-import com.coherentlogic.treasurydirect.client.core.factories.QueryBuilderFactory;
+import com.coherentlogic.treasurydirect.client.factories.DistributedCacheEnabledQueryBuilderFactory;
 
 /**
  * The front-end for the FRED Client that allows users to directly work with the
@@ -37,6 +37,9 @@ public class MainApplication extends AbstractApplication {
 
     @Autowired
     private TypedFactory<AbstractQueryBuilder<String, Object>> queryBuilderFactory;
+
+    @Autowired
+    private DistributedCacheEnabledQueryBuilderFactory distributedCacheEnabledQueryBuilderFactory;
 
     public static void main (String[] unused) throws InterruptedException {
 
@@ -128,14 +131,50 @@ public class MainApplication extends AbstractApplication {
         IOUtils.copy(
             securitiesMultipleResultsWithDataFrameExampleIn, securitiesMultipleResultsWithDataFrameExampleStringWriter);
 
-        String securitiesMultipleResultsWithDataFrameExampleExample =
+        String securitiesMultipleResultsWithDataFrameExample =
             securitiesMultipleResultsWithDataFrameExampleStringWriter.toString();
 
         groovyExampleBeanMap.put(
             "Securities Example (3)",
             new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
-                securitiesMultipleResultsWithDataFrameExampleExample,
+                securitiesMultipleResultsWithDataFrameExample,
                 queryBuilderFactory,
+                groovyEngine
+            )
+        );
+
+        // ---------------------
+
+        ClassPathResource debtsMultipleResultsWithDataFrameExampleResource = (ClassPathResource)
+            applicationContext.getBean("debtsMultipleResultsWithDataFrameExampleResource");
+
+        StringWriter debtsMultipleResultsWithDataFrameExampleStringWriter = new StringWriter ();
+
+        InputStream debtsMultipleResultsWithDataFrameExampleIn =
+            debtsMultipleResultsWithDataFrameExampleResource.getInputStream();
+
+        IOUtils.copy(
+            debtsMultipleResultsWithDataFrameExampleIn, debtsMultipleResultsWithDataFrameExampleStringWriter);
+
+        String debtsMultipleResultsWithDataFrameExample =
+            debtsMultipleResultsWithDataFrameExampleStringWriter.toString();
+
+        groovyExampleBeanMap.put(
+            "Debt Example (1)",
+            new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
+                debtsMultipleResultsWithDataFrameExample,
+                queryBuilderFactory,
+                groovyEngine
+            )
+        );
+
+     // --------------------- Distributed cache enabled below.
+
+        groovyExampleBeanMap.put(
+            "Debt Example (2) with distributed cache set on the queryBuilder",
+            new GroovyExampleBean<TypedFactory<AbstractQueryBuilder<String,Object>>> (
+                debtsMultipleResultsWithDataFrameExample,
+                distributedCacheEnabledQueryBuilderFactory,
                 groovyEngine
             )
         );
