@@ -1,4 +1,5 @@
-def names = '''issueDate
+def names = '''cusip
+issueDate
 securityType
 securityTerm
 maturityDate
@@ -114,21 +115,26 @@ xmlFilenameAnnouncement
 xmlFilenameCompetitiveResults
 xmlFilenameSpecialAnnouncement'''
 
+/*
 names = '''effectiveDate
 governmentHoldings
 publicDebt
 totalDebt'''
+*/
 
 def methodsFile = new File('C:/Temp/methods.txt')
 
 methodsFile.delete ()
 
 names.eachLine { it ->
-    def nextLine = """\n        String $it = securityObject.get(\"$it\").toString();
+    def nextLine = """\n        if (!securityObject.has(\"$it\"))
+            throw new ConversionFailedException("The JSON does not contain a member with name $it");
+
+        String $it = securityObject.get(\"$it\").getAsString();
 
         log.debug("$it: " + $it);
 
-        result.set${it.capitalize ()}($it);
+        security.set${it.capitalize ()}($it);
 """
 
     println nextLine
