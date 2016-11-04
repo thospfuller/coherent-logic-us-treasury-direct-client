@@ -102,18 +102,15 @@
         </repository>
     </repositories>
 
-    <!-- When releasing this project we need to disable the assembly module 
-        as this causes problems and the process will fail. There may be a better 
-        way to do this however at the moment commenting the module seems to work. -->
+    <!-- When releasing this project we need to disable the assembly module as this causes problems and the process will
+         fail. There may be a better way to do this however at the moment commenting the module seems to work.
+      -->
     <modules>
-        <!-- module>treasurydirect-client-assembly</module>
-        <module>treasurydirect-client-config</module>
-        <module>treasurydirect-client-misc</module -->
+        <module>treasurydirect-client-assembly</module>
         <module>treasurydirect-client-core</module>
         <module>treasurydirect-client-core-it</module>
         <module>treasurydirect-client-db-int</module>
         <module>treasurydirect-client-application</module>
-        <!-- module>treasurydirect-client-webstart-application</module -->
     </modules>
 
     <dependencyManagement>
@@ -125,16 +122,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- dependency>
-                <groupId>com.coherentlogic.treasurydirect.client</groupId>
-                <artifactId>treasurydirect-client-config</artifactId>
-                <version>${project.version}</version>
-            </dependency -->
-            <!-- dependency>
-                <groupId>com.coherentlogic.treasurydirect.client</groupId>
-                <artifactId>treasurydirect-client-misc</artifactId>
-                <version>${project.version}</version>
-            </dependency -->
             <!-- If we don't have this dependency then the assembly pom will need 
                 to have the custom-namespace-example version number. -->
             <!-- dependency> <groupId>com.coherentlogic.treasurydirect.client</groupId> <artifactId>treasurydirect-example</artifactId> 
