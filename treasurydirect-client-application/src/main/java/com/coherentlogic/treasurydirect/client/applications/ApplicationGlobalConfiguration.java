@@ -1,4 +1,4 @@
-package com.coherentlogic.treasurydirect.client.examples;
+package com.coherentlogic.treasurydirect.client.applications;
 
 import org.infinispan.Cache;
 import org.infinispan.configuration.cache.CacheMode;

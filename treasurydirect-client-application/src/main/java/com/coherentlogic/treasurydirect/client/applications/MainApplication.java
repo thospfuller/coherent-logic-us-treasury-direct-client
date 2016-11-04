@@ -1,4 +1,4 @@
-package com.coherentlogic.treasurydirect.client.examples;
+package com.coherentlogic.treasurydirect.client.applications;
 
 import java.io.InputStream;
 import java.io.StringWriter;
@@ -63,6 +63,25 @@ public class MainApplication extends AbstractApplication {
         Thread.sleep(Long.MAX_VALUE);
 
         System.exit(-9999);
+    }
+
+    @Override
+    protected String getAPIJavadocURI () {
+        return "http://www.zerohedge.com";
+    }
+
+    @Override
+    protected String getAboutTitle () {
+        return "Welcome to the Treasury Direct Client Application";
+    }
+
+    @Override
+    protected String[] getAboutText () {
+        return new String[] {
+            "Coherent Logic Treasury Direct Client Application version 0.8.5-RELEASE",
+            "Copyright (C) 2016 - Present Coherent Logic Limited; All Rights Reserved.",
+            "Licensed under the GNU Lesser General Public License"
+        };
     }
 
     @Override
