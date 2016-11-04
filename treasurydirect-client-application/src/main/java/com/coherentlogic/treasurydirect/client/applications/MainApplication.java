@@ -8,7 +8,6 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -42,6 +41,20 @@ public class MainApplication extends AbstractApplication {
 
     @Autowired
     private DistributedCacheEnabledQueryBuilderFactory distributedCacheEnabledQueryBuilderFactory;
+
+    static {
+
+        GoogleAnalyticsMeasurementService googleAnalyticsMeasurementService = new GoogleAnalyticsMeasurementService ();
+
+        if (googleAnalyticsMeasurementService.shouldTrack()) {
+            try {
+                googleAnalyticsMeasurementService.fireGAFrameworkUsageEvent ();
+            } catch (Throwable thrown) {
+                log.warn("fireGAFrameworkUsageEvent: method call failed. This exception can be ignored, and the "
+                    + "framework will function without issue.", thrown);
+            }
+        }
+    }
 
     public static void main (String[] unused) throws InterruptedException {
 
