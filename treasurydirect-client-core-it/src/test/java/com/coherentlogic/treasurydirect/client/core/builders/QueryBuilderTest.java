@@ -34,9 +34,6 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
     @Configuration
     @ComponentScan(basePackages="com.coherentlogic.treasurydirect.client")
     static class Foo {}
-    
-//    @Autowired
-//    private ApplicationContext applicationContext;
 
     @Autowired
     private QueryBuilderFactory queryBuilderFactory;
@@ -83,10 +80,6 @@ public class QueryBuilderTest extends AbstractJUnit4SpringContextTests {
      */
     @Test
     public void testDebtSearchExample () {
-
-    	//String escURI = queryBuilder.debt().search().withStartDate("2014-01-01").withEndDate("2014-02-01").getEscapedURI();
-
-    	//System.out.println("escURI: " + escURI);
 
         Debts debts = queryBuilder.debt().search().withStartDate("2014-01-01").withEndDate("2014-02-01").doGetAsDebts();
 
