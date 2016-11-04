@@ -34,12 +34,14 @@ public class GoogleAnalyticsMeasurementService extends AbstractGoogleAnalyticsMe
             .withCIDAsRandomUUID()
             .withTAsEvent()
             .withEc("Framework Usage") // event category
-            .withAn("FRED Client") // application name
-            .withEa("Framework Started (direct)") // event action
-            .withAv("Version 1.0.12-RELEASE") // Application version.
-            .withEl("Version 1.0.12-RELEASE")
+            .withAn("TreasuryDirect Client") // application name
+            .withEa("Framework Started") // event action
+            .withAv("Version 0.8.5-RELEASE") // Application version.
+            .withEl("Version 0.8.5-RELEASE")
             .doPost();
 
-        log.info("fireGAFrameworkUsageEvent: method ends; response: " + response);
+        log.debug ("response: " + response);
+
+        log.info("fireGAFrameworkUsageEvent: method ends.");
     }
 }
