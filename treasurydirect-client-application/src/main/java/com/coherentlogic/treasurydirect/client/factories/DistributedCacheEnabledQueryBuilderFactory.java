@@ -10,9 +10,9 @@ import com.coherentlogic.coherent.data.adapter.core.builders.AbstractQueryBuilde
 import com.coherentlogic.coherent.data.adapter.core.factories.TypedFactory;
 import com.coherentlogic.coherent.data.adapter.core.listeners.QueryBuilderEvent;
 import com.coherentlogic.coherent.data.adapter.core.listeners.QueryBuilderEventListener;
+import com.coherentlogic.treasurydirect.client.applications.ApplicationGlobalConfiguration;
+import com.coherentlogic.treasurydirect.client.applications.MainApplication;
 import com.coherentlogic.treasurydirect.client.core.builders.QueryBuilder;
-import com.coherentlogic.treasurydirect.client.examples.ApplicationGlobalConfiguration;
-import com.coherentlogic.treasurydirect.client.examples.MainApplication;
 
 /**
  * Factory used to obtain instances of {@link QueryBuilder}.
