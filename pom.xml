@@ -15,7 +15,7 @@
 
     <groupId>com.coherentlogic.treasurydirect</groupId>
     <artifactId>client</artifactId>
-    <version>0.8.5-RELEASE</version>
+    <version>0.8.6-RELEASE</version>
 
     <packaging>pom</packaging>
     <name>Coherent Logic Treasury Direct Client</name>
@@ -106,11 +106,12 @@
          fail. There may be a better way to do this however at the moment commenting the module seems to work.
       -->
     <modules>
-        <module>treasurydirect-client-assembly</module>
-        <module>treasurydirect-client-core</module>
+        <!-- module>treasurydirect-client-assembly</module>
         <module>treasurydirect-client-core-it</module>
+        <module>treasurydirect-client-application</module -->
+        <!--  -->
+        <module>treasurydirect-client-core</module>
         <module>treasurydirect-client-db-int</module>
-        <module>treasurydirect-client-application</module>
     </modules>
 
     <dependencyManagement>
