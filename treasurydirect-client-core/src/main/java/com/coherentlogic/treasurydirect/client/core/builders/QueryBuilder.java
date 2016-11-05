@@ -48,7 +48,7 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         "***                                                                                                       ***",
         "***                                 Welcome to the Treasury Direct Client                                 ***",
         "***                                                                                                       ***",
-        "***                                        Version 0.8.5-RELEASE                                         ***",
+        "***                                        Version 0.8.6-RELEASE                                         ***",
         "***                                                                                                       ***",
         "***                              Please take a moment to follow us on Twitter:                            ***",
         "***                                                                                                       ***",
@@ -131,110 +131,110 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
         xmlFilenameCompetitiveResults,
         datedDate,
         refCpiOnDatedDate,
-        AccruedInterestPer1000,
-        AccruedInterestPer100,
-        AdjustedAccruedInterestPer1000,
-        AdjustedPrice,
-        AllocationPercentage,
-        AllocationPercentageDecimals,
-        AnnouncedCusip,
-        AuctionFormat,
-        AverageMedianDiscountRate,
-        AverageMedianInvestmentRate,
-        AverageMedianPrice,
-        AverageMedianDiscountMargin,
-        AverageMedianYield,
-        BackDated,
-        BackDatedDate,
-        BidToCoverRatio,
-        CallDate,
-        Callable,
-        CalledDate,
-        CashManagementBillCMB,
-        ClosingTimeCompetitive,
-        ClosingTimeNoncompetitive,
-        CompetitiveAccepted,
-        CompetitiveBidDecimals,
-        CompetitiveTendered,
-        CompetitiveTendersAccepted,
-        CorpusCusip,
-        CpiBaseReferencePeriod,
-        CurrentlyOutstanding,
-        DirectBidderAccepted,
-        DirectBidderTendered,
-        EstimatedAmountOfPubliclyHeldMaturingSecuritiesByType,
-        FimaIncluded,
-        FimaNoncompetitiveAccepted,
-        FimaNoncompetitiveTendered,
-        FirstInterestPeriod,
-        FirstInterestPaymentDate,
-        FloatingRate,
-        FrnIndexDeterminationDate,
-        FrnIndexDeterminationRate,
-        HighDiscountRate,
-        HighInvestmentRate,
-        HighPrice,
-        HighDiscountMargin,
-        HighYield,
-        IndexRatioOnIssueDate,
-        IndirectBidderAccepted,
-        IndirectBidderTendered,
-        InterestPaymentFrequency,
-        LowDiscountRate,
-        LowInvestmentRate,
-        LowPrice,
-        LowDiscountMargin,
-        LowYield,
-        MaturingDate,
-        MaximumCompetitiveAward,
-        MaximumNoncompetitiveAward,
-        MaximumSingleBid,
-        MinimumBidAmount,
-        MinimumStripAmount,
-        MinimumToIssue,
-        MultiplesToBid,
-        MultiplesToIssue,
-        NlpExclusionAmount,
-        NlpReportingThreshold,
-        NoncompetitiveAccepted,
-        NoncompetitiveTendersAccepted,
-        OfferingAmount,
-        OriginalCusip,
-        OriginalDatedDate,
-        OriginalIssueDate,
-        OriginalSecurityTerm,
-        PdfFilenameAnnouncement,
-        PdfFilenameCompetitiveResults,
-        PdfFilenameNoncompetitiveResults,
-        PdfFilenameSpecialAnnouncement,
-        PricePer100,
-        PrimaryDealerAccepted,
-        PrimaryDealerTendered,
-        Reopening,
-        SecurityTermDayMonth,
-        SecurityTermWeekYear,
-        Series,
-        SomaAccepted,
-        SomaHoldings,
-        SomaIncluded,
-        SomaTendered,
-        Spread,
-        StandardInterestPaymentPer1000,
-        Strippable,
-        Term,
-        TiinConversionFactorPer1000,
-        Tips,
-        TotalAccepted,
-        TotalTendered,
-        TreasuryDirectAccepted,
-        TreasuryDirectTendersAccepted,
-        Type,
-        UnadjustedAccruedInterestPer1000,
-        UnadjustedPrice,
-        UpdatedTimestamp,
-        XmlFilenameAnnouncement,
-        XmlFilenameSpecialAnnouncement,
-        AuctionDateYear
+        accruedInterestPer1000,
+        accruedInterestPer100,
+        adjustedAccruedInterestPer1000,
+        adjustedPrice,
+        allocationPercentage,
+        allocationPercentageDecimals,
+        announcedCusip,
+        auctionFormat,
+        averageMedianDiscountRate,
+        averageMedianInvestmentRate,
+        averageMedianPrice,
+        averageMedianDiscountMargin,
+        averageMedianYield,
+        backDated,
+        backDatedDate,
+        bidToCoverRatio,
+        callDate,
+        callable,
+        calledDate,
+        cashManagementBillCMB,
+        closingTimeCompetitive,
+        closingTimeNoncompetitive,
+        competitiveAccepted,
+        competitiveBidDecimals,
+        competitiveTendered,
+        competitiveTendersAccepted,
+        corpusCusip,
+        cpiBaseReferencePeriod,
+        currentlyOutstanding,
+        directBidderAccepted,
+        directBidderTendered,
+        estimatedAmountOfPubliclyHeldMaturingSecuritiesByType,
+        fimaIncluded,
+        fimaNoncompetitiveAccepted,
+        fimaNoncompetitiveTendered,
+        firstInterestPeriod,
+        firstInterestPaymentDate,
+        floatingRate,
+        frnIndexDeterminationDate,
+        frnIndexDeterminationRate,
+        highDiscountRate,
+        highInvestmentRate,
+        highPrice,
+        highDiscountMargin,
+        highYield,
+        indexRatioOnIssueDate,
+        indirectBidderAccepted,
+        indirectBidderTendered,
+        interestPaymentFrequency,
+        lowDiscountRate,
+        lowInvestmentRate,
+        lowPrice,
+        lowDiscountMargin,
+        lowYield,
+        maturingDate,
+        maximumCompetitiveAward,
+        maximumNoncompetitiveAward,
+        maximumSingleBid,
+        minimumBidAmount,
+        minimumStripAmount,
+        minimumToIssue,
+        multiplesToBid,
+        multiplesToIssue,
+        nlpExclusionAmount,
+        nlpReportingThreshold,
+        noncompetitiveAccepted,
+        noncompetitiveTendersAccepted,
+        offeringAmount,
+        originalCusip,
+        originalDatedDate,
+        originalIssueDate,
+        originalSecurityTerm,
+        pdfFilenameAnnouncement,
+        pdfFilenameCompetitiveResults,
+        pdfFilenameNoncompetitiveResults,
+        pdfFilenameSpecialAnnouncement,
+        pricePer100,
+        primaryDealerAccepted,
+        primaryDealerTendered,
+        reopening,
+        securityTermDayMonth,
+        securityTermWeekYear,
+        series,
+        somaAccepted,
+        somaHoldings,
+        somaIncluded,
+        somaTendered,
+        spread,
+        standardInterestPaymentPer1000,
+        strippable,
+        term,
+        tiinConversionFactorPer1000,
+        tips,
+        totalAccepted,
+        totalTendered,
+        treasuryDirectAccepted,
+        treasuryDirectTendersAccepted,
+        type,
+        unadjustedAccruedInterestPer1000,
+        unadjustedPrice,
+        updatedTimestamp,
+        xmlFilenameAnnouncement,
+        xmlFilenameSpecialAnnouncement,
+        auctionDateYear
     }
 
     public static final String DEFAULT_URI = "http://www.treasurydirect.gov/",
@@ -751,1510 +751,1510 @@ public class QueryBuilder extends AbstractRESTQueryBuilder<String> {
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAccruedInterestPer1000 (String value) {
-        return withFieldAndValue (Field.AccruedInterestPer1000, value);
+        return withFieldAndValue (Field.accruedInterestPer1000, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAccruedInterestPer1000AsNotNull () {
-        return withFieldAndValue (Field.AccruedInterestPer1000, NOT_NULL);
+        return withFieldAndValue (Field.accruedInterestPer1000, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAccruedInterestPer100 (String value) {
-        return withFieldAndValue (Field.AccruedInterestPer100, value);
+        return withFieldAndValue (Field.accruedInterestPer100, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAccruedInterestPer100AsNotNull () {
-        return withFieldAndValue (Field.AccruedInterestPer100, NOT_NULL);
+        return withFieldAndValue (Field.accruedInterestPer100, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAdjustedAccruedInterestPer1000 (String value) {
-        return withFieldAndValue (Field.AdjustedAccruedInterestPer1000, value);
+        return withFieldAndValue (Field.adjustedAccruedInterestPer1000, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAdjustedAccruedInterestPer1000AsNotNull () {
-        return withFieldAndValue (Field.AdjustedAccruedInterestPer1000, NOT_NULL);
+        return withFieldAndValue (Field.adjustedAccruedInterestPer1000, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAdjustedPrice (String value) {
-        return withFieldAndValue (Field.AdjustedPrice, value);
+        return withFieldAndValue (Field.adjustedPrice, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAdjustedPriceAsNotNull () {
-        return withFieldAndValue (Field.AdjustedPrice, NOT_NULL);
+        return withFieldAndValue (Field.adjustedPrice, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAllocationPercentage (String value) {
-        return withFieldAndValue (Field.AllocationPercentage, value);
+        return withFieldAndValue (Field.allocationPercentage, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAllocationPercentageAsNotNull () {
-        return withFieldAndValue (Field.AllocationPercentage, NOT_NULL);
+        return withFieldAndValue (Field.allocationPercentage, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAllocationPercentageDecimals (String value) {
-        return withFieldAndValue (Field.AllocationPercentageDecimals, value);
+        return withFieldAndValue (Field.allocationPercentageDecimals, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAllocationPercentageDecimalsAsNotNull () {
-        return withFieldAndValue (Field.AllocationPercentageDecimals, NOT_NULL);
+        return withFieldAndValue (Field.allocationPercentageDecimals, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAnnouncedCusip (String value) {
-        return withFieldAndValue (Field.AnnouncedCusip, value);
+        return withFieldAndValue (Field.announcedCusip, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAnnouncedCusipAsNotNull () {
-        return withFieldAndValue (Field.AnnouncedCusip, NOT_NULL);
+        return withFieldAndValue (Field.announcedCusip, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAuctionFormat (String value) {
-        return withFieldAndValue (Field.AuctionFormat, value);
+        return withFieldAndValue (Field.auctionFormat, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAuctionFormatAsNotNull () {
-        return withFieldAndValue (Field.AuctionFormat, NOT_NULL);
+        return withFieldAndValue (Field.auctionFormat, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianDiscountRate (String value) {
-        return withFieldAndValue (Field.AverageMedianDiscountRate, value);
+        return withFieldAndValue (Field.averageMedianDiscountRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianDiscountRateAsNotNull () {
-        return withFieldAndValue (Field.AverageMedianDiscountRate, NOT_NULL);
+        return withFieldAndValue (Field.averageMedianDiscountRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianInvestmentRate (String value) {
-        return withFieldAndValue (Field.AverageMedianInvestmentRate, value);
+        return withFieldAndValue (Field.averageMedianInvestmentRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianInvestmentRateAsNotNull () {
-        return withFieldAndValue (Field.AverageMedianInvestmentRate, NOT_NULL);
+        return withFieldAndValue (Field.averageMedianInvestmentRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianPrice (String value) {
-        return withFieldAndValue (Field.AverageMedianPrice, value);
+        return withFieldAndValue (Field.averageMedianPrice, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianPriceAsNotNull () {
-        return withFieldAndValue (Field.AverageMedianPrice, NOT_NULL);
+        return withFieldAndValue (Field.averageMedianPrice, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianDiscountMargin (String value) {
-        return withFieldAndValue (Field.AverageMedianDiscountMargin, value);
+        return withFieldAndValue (Field.averageMedianDiscountMargin, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianDiscountMarginAsNotNull () {
-        return withFieldAndValue (Field.AverageMedianDiscountMargin, NOT_NULL);
+        return withFieldAndValue (Field.averageMedianDiscountMargin, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianYield (String value) {
-        return withFieldAndValue (Field.AverageMedianYield, value);
+        return withFieldAndValue (Field.averageMedianYield, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAverageMedianYieldAsNotNull () {
-        return withFieldAndValue (Field.AverageMedianYield, NOT_NULL);
+        return withFieldAndValue (Field.averageMedianYield, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBackDated (String value) {
-        return withFieldAndValue (Field.BackDated, value);
+        return withFieldAndValue (Field.backDated, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBackDatedAsNotNull () {
-        return withFieldAndValue (Field.BackDated, NOT_NULL);
+        return withFieldAndValue (Field.backDated, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBackDatedDate (String value) {
-        return withFieldAndValue (Field.BackDatedDate, value);
+        return withFieldAndValue (Field.backDatedDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBackDatedDateAsNotNull () {
-        return withFieldAndValue (Field.BackDatedDate, NOT_NULL);
+        return withFieldAndValue (Field.backDatedDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBackDatedDateAsToday () {
-        return withFieldAndValue (Field.BackDatedDate, TODAY);
+        return withFieldAndValue (Field.backDatedDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBidToCoverRatio (String value) {
-        return withFieldAndValue (Field.BidToCoverRatio, value);
+        return withFieldAndValue (Field.bidToCoverRatio, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withBidToCoverRatioAsNotNull () {
-        return withFieldAndValue (Field.BidToCoverRatio, NOT_NULL);
+        return withFieldAndValue (Field.bidToCoverRatio, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCallDate (String value) {
-        return withFieldAndValue (Field.CallDate, value);
+        return withFieldAndValue (Field.callDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCallDateAsNotNull () {
-        return withFieldAndValue (Field.CallDate, NOT_NULL);
+        return withFieldAndValue (Field.callDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCallDateAsToday () {
-        return withFieldAndValue (Field.CallDate, TODAY);
+        return withFieldAndValue (Field.callDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCallable (String value) {
-        return withFieldAndValue (Field.Callable, value);
+        return withFieldAndValue (Field.callable, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCallableAsNotNull () {
-        return withFieldAndValue (Field.Callable, NOT_NULL);
+        return withFieldAndValue (Field.callable, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCalledDate (String value) {
-        return withFieldAndValue (Field.CalledDate, value);
+        return withFieldAndValue (Field.calledDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCalledDateAsNotNull () {
-        return withFieldAndValue (Field.CalledDate, NOT_NULL);
+        return withFieldAndValue (Field.calledDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCalledDateAsToday () {
-        return withFieldAndValue (Field.CalledDate, TODAY);
+        return withFieldAndValue (Field.calledDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCashManagementBillCMB (String value) {
-        return withFieldAndValue (Field.CashManagementBillCMB, value);
+        return withFieldAndValue (Field.cashManagementBillCMB, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCashManagementBillCMBAsNotNull () {
-        return withFieldAndValue (Field.CashManagementBillCMB, NOT_NULL);
+        return withFieldAndValue (Field.cashManagementBillCMB, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withClosingTimeCompetitive (String value) {
-        return withFieldAndValue (Field.ClosingTimeCompetitive, value);
+        return withFieldAndValue (Field.closingTimeCompetitive, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withClosingTimeCompetitiveAsNotNull () {
-        return withFieldAndValue (Field.ClosingTimeCompetitive, NOT_NULL);
+        return withFieldAndValue (Field.closingTimeCompetitive, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withClosingTimeNoncompetitive (String value) {
-        return withFieldAndValue (Field.ClosingTimeNoncompetitive, value);
+        return withFieldAndValue (Field.closingTimeNoncompetitive, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withClosingTimeNoncompetitiveAsNotNull () {
-        return withFieldAndValue (Field.ClosingTimeNoncompetitive, NOT_NULL);
+        return withFieldAndValue (Field.closingTimeNoncompetitive, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveAccepted (String value) {
-        return withFieldAndValue (Field.CompetitiveAccepted, value);
+        return withFieldAndValue (Field.competitiveAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveAcceptedAsNotNull () {
-        return withFieldAndValue (Field.CompetitiveAccepted, NOT_NULL);
+        return withFieldAndValue (Field.competitiveAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveBidDecimals (String value) {
-        return withFieldAndValue (Field.CompetitiveBidDecimals, value);
+        return withFieldAndValue (Field.competitiveBidDecimals, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveBidDecimalsAsNotNull () {
-        return withFieldAndValue (Field.CompetitiveBidDecimals, NOT_NULL);
+        return withFieldAndValue (Field.competitiveBidDecimals, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveTendered (String value) {
-        return withFieldAndValue (Field.CompetitiveTendered, value);
+        return withFieldAndValue (Field.competitiveTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveTenderedAsNotNull () {
-        return withFieldAndValue (Field.CompetitiveTendered, NOT_NULL);
+        return withFieldAndValue (Field.competitiveTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveTendersAccepted (String value) {
-        return withFieldAndValue (Field.CompetitiveTendersAccepted, value);
+        return withFieldAndValue (Field.competitiveTendersAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCompetitiveTendersAcceptedAsNotNull () {
-        return withFieldAndValue (Field.CompetitiveTendersAccepted, NOT_NULL);
+        return withFieldAndValue (Field.competitiveTendersAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCorpusCusip (String value) {
-        return withFieldAndValue (Field.CorpusCusip, value);
+        return withFieldAndValue (Field.corpusCusip, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCorpusCusipAsNotNull () {
-        return withFieldAndValue (Field.CorpusCusip, NOT_NULL);
+        return withFieldAndValue (Field.corpusCusip, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCpiBaseReferencePeriod (String value) {
-        return withFieldAndValue (Field.CpiBaseReferencePeriod, value);
+        return withFieldAndValue (Field.cpiBaseReferencePeriod, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCpiBaseReferencePeriodAsNotNull () {
-        return withFieldAndValue (Field.CpiBaseReferencePeriod, NOT_NULL);
+        return withFieldAndValue (Field.cpiBaseReferencePeriod, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCurrentlyOutstanding (String value) {
-        return withFieldAndValue (Field.CurrentlyOutstanding, value);
+        return withFieldAndValue (Field.currentlyOutstanding, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withCurrentlyOutstandingAsNotNull () {
-        return withFieldAndValue (Field.CurrentlyOutstanding, NOT_NULL);
+        return withFieldAndValue (Field.currentlyOutstanding, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withDirectBidderAccepted (String value) {
-        return withFieldAndValue (Field.DirectBidderAccepted, value);
+        return withFieldAndValue (Field.directBidderAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withDirectBidderAcceptedAsNotNull () {
-        return withFieldAndValue (Field.DirectBidderAccepted, NOT_NULL);
+        return withFieldAndValue (Field.directBidderAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withDirectBidderTendered (String value) {
-        return withFieldAndValue (Field.DirectBidderTendered, value);
+        return withFieldAndValue (Field.directBidderTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withDirectBidderTenderedAsNotNull () {
-        return withFieldAndValue (Field.DirectBidderTendered, NOT_NULL);
+        return withFieldAndValue (Field.directBidderTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withEstimatedAmountOfPubliclyHeldMaturingSecuritiesByType (String value) {
-        return withFieldAndValue (Field.EstimatedAmountOfPubliclyHeldMaturingSecuritiesByType, value);
+        return withFieldAndValue (Field.estimatedAmountOfPubliclyHeldMaturingSecuritiesByType, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withEstimatedAmountOfPubliclyHeldMaturingSecuritiesByTypeAsNotNull () {
-        return withFieldAndValue (Field.EstimatedAmountOfPubliclyHeldMaturingSecuritiesByType, NOT_NULL);
+        return withFieldAndValue (Field.estimatedAmountOfPubliclyHeldMaturingSecuritiesByType, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaIncluded (String value) {
-        return withFieldAndValue (Field.FimaIncluded, value);
+        return withFieldAndValue (Field.fimaIncluded, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaIncludedAsNotNull () {
-        return withFieldAndValue (Field.FimaIncluded, NOT_NULL);
+        return withFieldAndValue (Field.fimaIncluded, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaNoncompetitiveAccepted (String value) {
-        return withFieldAndValue (Field.FimaNoncompetitiveAccepted, value);
+        return withFieldAndValue (Field.fimaNoncompetitiveAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaNoncompetitiveAcceptedAsNotNull () {
-        return withFieldAndValue (Field.FimaNoncompetitiveAccepted, NOT_NULL);
+        return withFieldAndValue (Field.fimaNoncompetitiveAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaNoncompetitiveTendered (String value) {
-        return withFieldAndValue (Field.FimaNoncompetitiveTendered, value);
+        return withFieldAndValue (Field.fimaNoncompetitiveTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFimaNoncompetitiveTenderedAsNotNull () {
-        return withFieldAndValue (Field.FimaNoncompetitiveTendered, NOT_NULL);
+        return withFieldAndValue (Field.fimaNoncompetitiveTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFirstInterestPeriod (String value) {
-        return withFieldAndValue (Field.FirstInterestPeriod, value);
+        return withFieldAndValue (Field.firstInterestPeriod, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFirstInterestPeriodAsNotNull () {
-        return withFieldAndValue (Field.FirstInterestPeriod, NOT_NULL);
+        return withFieldAndValue (Field.firstInterestPeriod, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFirstInterestPaymentDate (String value) {
-        return withFieldAndValue (Field.FirstInterestPaymentDate, value);
+        return withFieldAndValue (Field.firstInterestPaymentDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFirstInterestPaymentDateAsNotNull () {
-        return withFieldAndValue (Field.FirstInterestPaymentDate, NOT_NULL);
+        return withFieldAndValue (Field.firstInterestPaymentDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFirstInterestPaymentDateAsToday () {
-        return withFieldAndValue (Field.FirstInterestPaymentDate, TODAY);
+        return withFieldAndValue (Field.firstInterestPaymentDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFloatingRate (String value) {
-        return withFieldAndValue (Field.FloatingRate, value);
+        return withFieldAndValue (Field.floatingRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFloatingRateAsNotNull () {
-        return withFieldAndValue (Field.FloatingRate, NOT_NULL);
+        return withFieldAndValue (Field.floatingRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFrnIndexDeterminationDate (String value) {
-        return withFieldAndValue (Field.FrnIndexDeterminationDate, value);
+        return withFieldAndValue (Field.frnIndexDeterminationDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFrnIndexDeterminationDateAsNotNull () {
-        return withFieldAndValue (Field.FrnIndexDeterminationDate, NOT_NULL);
+        return withFieldAndValue (Field.frnIndexDeterminationDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFrnIndexDeterminationDateAsToday () {
-        return withFieldAndValue (Field.FrnIndexDeterminationDate, TODAY);
+        return withFieldAndValue (Field.frnIndexDeterminationDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFrnIndexDeterminationRate (String value) {
-        return withFieldAndValue (Field.FrnIndexDeterminationRate, value);
+        return withFieldAndValue (Field.frnIndexDeterminationRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withFrnIndexDeterminationRateAsNotNull () {
-        return withFieldAndValue (Field.FrnIndexDeterminationRate, NOT_NULL);
+        return withFieldAndValue (Field.frnIndexDeterminationRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighDiscountRate (String value) {
-        return withFieldAndValue (Field.HighDiscountRate, value);
+        return withFieldAndValue (Field.highDiscountRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighDiscountRateAsNotNull () {
-        return withFieldAndValue (Field.HighDiscountRate, NOT_NULL);
+        return withFieldAndValue (Field.highDiscountRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighInvestmentRate (String value) {
-        return withFieldAndValue (Field.HighInvestmentRate, value);
+        return withFieldAndValue (Field.highInvestmentRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighInvestmentRateAsNotNull () {
-        return withFieldAndValue (Field.HighInvestmentRate, NOT_NULL);
+        return withFieldAndValue (Field.highInvestmentRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighPrice (String value) {
-        return withFieldAndValue (Field.HighPrice, value);
+        return withFieldAndValue (Field.highPrice, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighPriceAsNotNull () {
-        return withFieldAndValue (Field.HighPrice, NOT_NULL);
+        return withFieldAndValue (Field.highPrice, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighDiscountMargin (String value) {
-        return withFieldAndValue (Field.HighDiscountMargin, value);
+        return withFieldAndValue (Field.highDiscountMargin, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighDiscountMarginAsNotNull () {
-        return withFieldAndValue (Field.HighDiscountMargin, NOT_NULL);
+        return withFieldAndValue (Field.highDiscountMargin, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighYield (String value) {
-        return withFieldAndValue (Field.HighYield, value);
+        return withFieldAndValue (Field.highYield, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withHighYieldAsNotNull () {
-        return withFieldAndValue (Field.HighYield, NOT_NULL);
+        return withFieldAndValue (Field.highYield, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndexRatioOnIssueDate (String value) {
-        return withFieldAndValue (Field.IndexRatioOnIssueDate, value);
+        return withFieldAndValue (Field.indexRatioOnIssueDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndexRatioOnIssueDateAsNotNull () {
-        return withFieldAndValue (Field.IndexRatioOnIssueDate, NOT_NULL);
+        return withFieldAndValue (Field.indexRatioOnIssueDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndexRatioOnIssueDateAsToday () {
-        return withFieldAndValue (Field.IndexRatioOnIssueDate, TODAY);
+        return withFieldAndValue (Field.indexRatioOnIssueDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndirectBidderAccepted (String value) {
-        return withFieldAndValue (Field.IndirectBidderAccepted, value);
+        return withFieldAndValue (Field.indirectBidderAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndirectBidderAcceptedAsNotNull () {
-        return withFieldAndValue (Field.IndirectBidderAccepted, NOT_NULL);
+        return withFieldAndValue (Field.indirectBidderAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndirectBidderTendered (String value) {
-        return withFieldAndValue (Field.IndirectBidderTendered, value);
+        return withFieldAndValue (Field.indirectBidderTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withIndirectBidderTenderedAsNotNull () {
-        return withFieldAndValue (Field.IndirectBidderTendered, NOT_NULL);
+        return withFieldAndValue (Field.indirectBidderTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withInterestPaymentFrequency (String value) {
-        return withFieldAndValue (Field.InterestPaymentFrequency, value);
+        return withFieldAndValue (Field.interestPaymentFrequency, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withInterestPaymentFrequencyAsNotNull () {
-        return withFieldAndValue (Field.InterestPaymentFrequency, NOT_NULL);
+        return withFieldAndValue (Field.interestPaymentFrequency, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowDiscountRate (String value) {
-        return withFieldAndValue (Field.LowDiscountRate, value);
+        return withFieldAndValue (Field.lowDiscountRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowDiscountRateAsNotNull () {
-        return withFieldAndValue (Field.LowDiscountRate, NOT_NULL);
+        return withFieldAndValue (Field.lowDiscountRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowInvestmentRate (String value) {
-        return withFieldAndValue (Field.LowInvestmentRate, value);
+        return withFieldAndValue (Field.lowInvestmentRate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowInvestmentRateAsNotNull () {
-        return withFieldAndValue (Field.LowInvestmentRate, NOT_NULL);
+        return withFieldAndValue (Field.lowInvestmentRate, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowPrice (String value) {
-        return withFieldAndValue (Field.LowPrice, value);
+        return withFieldAndValue (Field.lowPrice, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowPriceAsNotNull () {
-        return withFieldAndValue (Field.LowPrice, NOT_NULL);
+        return withFieldAndValue (Field.lowPrice, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowDiscountMargin (String value) {
-        return withFieldAndValue (Field.LowDiscountMargin, value);
+        return withFieldAndValue (Field.lowDiscountMargin, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowDiscountMarginAsNotNull () {
-        return withFieldAndValue (Field.LowDiscountMargin, NOT_NULL);
+        return withFieldAndValue (Field.lowDiscountMargin, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowYield (String value) {
-        return withFieldAndValue (Field.LowYield, value);
+        return withFieldAndValue (Field.lowYield, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withLowYieldAsNotNull () {
-        return withFieldAndValue (Field.LowYield, NOT_NULL);
+        return withFieldAndValue (Field.lowYield, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaturingDate (String value) {
-        return withFieldAndValue (Field.MaturingDate, value);
+        return withFieldAndValue (Field.maturingDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaturingDateAsNotNull () {
-        return withFieldAndValue (Field.MaturingDate, NOT_NULL);
+        return withFieldAndValue (Field.maturingDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaturingDateAsToday () {
-        return withFieldAndValue (Field.MaturingDate, TODAY);
+        return withFieldAndValue (Field.maturingDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumCompetitiveAward (String value) {
-        return withFieldAndValue (Field.MaximumCompetitiveAward, value);
+        return withFieldAndValue (Field.maximumCompetitiveAward, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumCompetitiveAwardAsNotNull () {
-        return withFieldAndValue (Field.MaximumCompetitiveAward, NOT_NULL);
+        return withFieldAndValue (Field.maximumCompetitiveAward, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumNoncompetitiveAward (String value) {
-        return withFieldAndValue (Field.MaximumNoncompetitiveAward, value);
+        return withFieldAndValue (Field.maximumNoncompetitiveAward, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumNoncompetitiveAwardAsNotNull () {
-        return withFieldAndValue (Field.MaximumNoncompetitiveAward, NOT_NULL);
+        return withFieldAndValue (Field.maximumNoncompetitiveAward, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumSingleBid (String value) {
-        return withFieldAndValue (Field.MaximumSingleBid, value);
+        return withFieldAndValue (Field.maximumSingleBid, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMaximumSingleBidAsNotNull () {
-        return withFieldAndValue (Field.MaximumSingleBid, NOT_NULL);
+        return withFieldAndValue (Field.maximumSingleBid, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumBidAmount (String value) {
-        return withFieldAndValue (Field.MinimumBidAmount, value);
+        return withFieldAndValue (Field.minimumBidAmount, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumBidAmountAsNotNull () {
-        return withFieldAndValue (Field.MinimumBidAmount, NOT_NULL);
+        return withFieldAndValue (Field.minimumBidAmount, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumStripAmount (String value) {
-        return withFieldAndValue (Field.MinimumStripAmount, value);
+        return withFieldAndValue (Field.minimumStripAmount, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumStripAmountAsNotNull () {
-        return withFieldAndValue (Field.MinimumStripAmount, NOT_NULL);
+        return withFieldAndValue (Field.minimumStripAmount, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumToIssue (String value) {
-        return withFieldAndValue (Field.MinimumToIssue, value);
+        return withFieldAndValue (Field.minimumToIssue, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMinimumToIssueAsNotNull () {
-        return withFieldAndValue (Field.MinimumToIssue, NOT_NULL);
+        return withFieldAndValue (Field.minimumToIssue, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMultiplesToBid (String value) {
-        return withFieldAndValue (Field.MultiplesToBid, value);
+        return withFieldAndValue (Field.multiplesToBid, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMultiplesToBidAsNotNull () {
-        return withFieldAndValue (Field.MultiplesToBid, NOT_NULL);
+        return withFieldAndValue (Field.multiplesToBid, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMultiplesToIssue (String value) {
-        return withFieldAndValue (Field.MultiplesToIssue, value);
+        return withFieldAndValue (Field.multiplesToIssue, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withMultiplesToIssueAsNotNull () {
-        return withFieldAndValue (Field.MultiplesToIssue, NOT_NULL);
+        return withFieldAndValue (Field.multiplesToIssue, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNlpExclusionAmount (String value) {
-        return withFieldAndValue (Field.NlpExclusionAmount, value);
+        return withFieldAndValue (Field.nlpExclusionAmount, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNlpExclusionAmountAsNotNull () {
-        return withFieldAndValue (Field.NlpExclusionAmount, NOT_NULL);
+        return withFieldAndValue (Field.nlpExclusionAmount, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNlpReportingThreshold (String value) {
-        return withFieldAndValue (Field.NlpReportingThreshold, value);
+        return withFieldAndValue (Field.nlpReportingThreshold, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNlpReportingThresholdAsNotNull () {
-        return withFieldAndValue (Field.NlpReportingThreshold, NOT_NULL);
+        return withFieldAndValue (Field.nlpReportingThreshold, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNoncompetitiveAccepted (String value) {
-        return withFieldAndValue (Field.NoncompetitiveAccepted, value);
+        return withFieldAndValue (Field.noncompetitiveAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNoncompetitiveAcceptedAsNotNull () {
-        return withFieldAndValue (Field.NoncompetitiveAccepted, NOT_NULL);
+        return withFieldAndValue (Field.noncompetitiveAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNoncompetitiveTendersAccepted (String value) {
-        return withFieldAndValue (Field.NoncompetitiveTendersAccepted, value);
+        return withFieldAndValue (Field.noncompetitiveTendersAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withNoncompetitiveTendersAcceptedAsNotNull () {
-        return withFieldAndValue (Field.NoncompetitiveTendersAccepted, NOT_NULL);
+        return withFieldAndValue (Field.noncompetitiveTendersAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOfferingAmount (String value) {
-        return withFieldAndValue (Field.OfferingAmount, value);
+        return withFieldAndValue (Field.offeringAmount, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOfferingAmountAsNotNull () {
-        return withFieldAndValue (Field.OfferingAmount, NOT_NULL);
+        return withFieldAndValue (Field.offeringAmount, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalCusip (String value) {
-        return withFieldAndValue (Field.OriginalCusip, value);
+        return withFieldAndValue (Field.originalCusip, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalCusipAsNotNull () {
-        return withFieldAndValue (Field.OriginalCusip, NOT_NULL);
+        return withFieldAndValue (Field.originalCusip, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalDatedDate (String value) {
-        return withFieldAndValue (Field.OriginalDatedDate, value);
+        return withFieldAndValue (Field.originalDatedDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalDatedDateAsNotNull () {
-        return withFieldAndValue (Field.OriginalDatedDate, NOT_NULL);
+        return withFieldAndValue (Field.originalDatedDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalDatedDateAsToday () {
-        return withFieldAndValue (Field.OriginalDatedDate, TODAY);
+        return withFieldAndValue (Field.originalDatedDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalIssueDate (String value) {
-        return withFieldAndValue (Field.OriginalIssueDate, value);
+        return withFieldAndValue (Field.originalIssueDate, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalIssueDateAsNotNull () {
-        return withFieldAndValue (Field.OriginalIssueDate, NOT_NULL);
+        return withFieldAndValue (Field.originalIssueDate, NOT_NULL);
     }
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalIssueDateAsToday () {
-        return withFieldAndValue (Field.OriginalIssueDate, TODAY);
+        return withFieldAndValue (Field.originalIssueDate, TODAY);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalSecurityTerm (String value) {
-        return withFieldAndValue (Field.OriginalSecurityTerm, value);
+        return withFieldAndValue (Field.originalSecurityTerm, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withOriginalSecurityTermAsNotNull () {
-        return withFieldAndValue (Field.OriginalSecurityTerm, NOT_NULL);
+        return withFieldAndValue (Field.originalSecurityTerm, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameAnnouncement (String value) {
-        return withFieldAndValue (Field.PdfFilenameAnnouncement, value);
+        return withFieldAndValue (Field.pdfFilenameAnnouncement, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameAnnouncementAsNotNull () {
-        return withFieldAndValue (Field.PdfFilenameAnnouncement, NOT_NULL);
+        return withFieldAndValue (Field.pdfFilenameAnnouncement, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameCompetitiveResults (String value) {
-        return withFieldAndValue (Field.PdfFilenameCompetitiveResults, value);
+        return withFieldAndValue (Field.pdfFilenameCompetitiveResults, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameCompetitiveResultsAsNotNull () {
-        return withFieldAndValue (Field.PdfFilenameCompetitiveResults, NOT_NULL);
+        return withFieldAndValue (Field.pdfFilenameCompetitiveResults, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameNoncompetitiveResults (String value) {
-        return withFieldAndValue (Field.PdfFilenameNoncompetitiveResults, value);
+        return withFieldAndValue (Field.pdfFilenameNoncompetitiveResults, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameNoncompetitiveResultsAsNotNull () {
-        return withFieldAndValue (Field.PdfFilenameNoncompetitiveResults, NOT_NULL);
+        return withFieldAndValue (Field.pdfFilenameNoncompetitiveResults, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameSpecialAnnouncement (String value) {
-        return withFieldAndValue (Field.PdfFilenameSpecialAnnouncement, value);
+        return withFieldAndValue (Field.pdfFilenameSpecialAnnouncement, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPdfFilenameSpecialAnnouncementAsNotNull () {
-        return withFieldAndValue (Field.PdfFilenameSpecialAnnouncement, NOT_NULL);
+        return withFieldAndValue (Field.pdfFilenameSpecialAnnouncement, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPricePer100 (String value) {
-        return withFieldAndValue (Field.PricePer100, value);
+        return withFieldAndValue (Field.pricePer100, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPricePer100AsNotNull () {
-        return withFieldAndValue (Field.PricePer100, NOT_NULL);
+        return withFieldAndValue (Field.pricePer100, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPrimaryDealerAccepted (String value) {
-        return withFieldAndValue (Field.PrimaryDealerAccepted, value);
+        return withFieldAndValue (Field.primaryDealerAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPrimaryDealerAcceptedAsNotNull () {
-        return withFieldAndValue (Field.PrimaryDealerAccepted, NOT_NULL);
+        return withFieldAndValue (Field.primaryDealerAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPrimaryDealerTendered (String value) {
-        return withFieldAndValue (Field.PrimaryDealerTendered, value);
+        return withFieldAndValue (Field.primaryDealerTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withPrimaryDealerTenderedAsNotNull () {
-        return withFieldAndValue (Field.PrimaryDealerTendered, NOT_NULL);
+        return withFieldAndValue (Field.primaryDealerTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withReopening (String value) {
-        return withFieldAndValue (Field.Reopening, value);
+        return withFieldAndValue (Field.reopening, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withReopeningAsNotNull () {
-        return withFieldAndValue (Field.Reopening, NOT_NULL);
+        return withFieldAndValue (Field.reopening, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSecurityTermDayMonth (String value) {
-        return withFieldAndValue (Field.SecurityTermDayMonth, value);
+        return withFieldAndValue (Field.securityTermDayMonth, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSecurityTermDayMonthAsNotNull () {
-        return withFieldAndValue (Field.SecurityTermDayMonth, NOT_NULL);
+        return withFieldAndValue (Field.securityTermDayMonth, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSecurityTermWeekYear (String value) {
-        return withFieldAndValue (Field.SecurityTermWeekYear, value);
+        return withFieldAndValue (Field.securityTermWeekYear, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSecurityTermWeekYearAsNotNull () {
-        return withFieldAndValue (Field.SecurityTermWeekYear, NOT_NULL);
+        return withFieldAndValue (Field.securityTermWeekYear, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSeries (String value) {
-        return withFieldAndValue (Field.Series, value);
+        return withFieldAndValue (Field.series, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSeriesAsNotNull () {
-        return withFieldAndValue (Field.Series, NOT_NULL);
+        return withFieldAndValue (Field.series, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaAccepted (String value) {
-        return withFieldAndValue (Field.SomaAccepted, value);
+        return withFieldAndValue (Field.somaAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaAcceptedAsNotNull () {
-        return withFieldAndValue (Field.SomaAccepted, NOT_NULL);
+        return withFieldAndValue (Field.somaAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaHoldings (String value) {
-        return withFieldAndValue (Field.SomaHoldings, value);
+        return withFieldAndValue (Field.somaHoldings, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaHoldingsAsNotNull () {
-        return withFieldAndValue (Field.SomaHoldings, NOT_NULL);
+        return withFieldAndValue (Field.somaHoldings, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaIncluded (String value) {
-        return withFieldAndValue (Field.SomaIncluded, value);
+        return withFieldAndValue (Field.somaIncluded, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaIncludedAsNotNull () {
-        return withFieldAndValue (Field.SomaIncluded, NOT_NULL);
+        return withFieldAndValue (Field.somaIncluded, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaTendered (String value) {
-        return withFieldAndValue (Field.SomaTendered, value);
+        return withFieldAndValue (Field.somaTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSomaTenderedAsNotNull () {
-        return withFieldAndValue (Field.SomaTendered, NOT_NULL);
+        return withFieldAndValue (Field.somaTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSpread (String value) {
-        return withFieldAndValue (Field.Spread, value);
+        return withFieldAndValue (Field.spread, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withSpreadAsNotNull () {
-        return withFieldAndValue (Field.Spread, NOT_NULL);
+        return withFieldAndValue (Field.spread, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withStandardInterestPaymentPer1000 (String value) {
-        return withFieldAndValue (Field.StandardInterestPaymentPer1000, value);
+        return withFieldAndValue (Field.standardInterestPaymentPer1000, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withStandardInterestPaymentPer1000AsNotNull () {
-        return withFieldAndValue (Field.StandardInterestPaymentPer1000, NOT_NULL);
+        return withFieldAndValue (Field.standardInterestPaymentPer1000, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withStrippable (String value) {
-        return withFieldAndValue (Field.Strippable, value);
+        return withFieldAndValue (Field.strippable, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withStrippableAsNotNull () {
-        return withFieldAndValue (Field.Strippable, NOT_NULL);
+        return withFieldAndValue (Field.strippable, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTerm (String value) {
-        return withFieldAndValue (Field.Term, value);
+        return withFieldAndValue (Field.term, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTermAsNotNull () {
-        return withFieldAndValue (Field.Term, NOT_NULL);
+        return withFieldAndValue (Field.term, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTiinConversionFactorPer1000 (String value) {
-        return withFieldAndValue (Field.TiinConversionFactorPer1000, value);
+        return withFieldAndValue (Field.tiinConversionFactorPer1000, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTiinConversionFactorPer1000AsNotNull () {
-        return withFieldAndValue (Field.TiinConversionFactorPer1000, NOT_NULL);
+        return withFieldAndValue (Field.tiinConversionFactorPer1000, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTips (String value) {
-        return withFieldAndValue (Field.Tips, value);
+        return withFieldAndValue (Field.tips, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTipsAsNotNull () {
-        return withFieldAndValue (Field.Tips, NOT_NULL);
+        return withFieldAndValue (Field.tips, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTotalAccepted (String value) {
-        return withFieldAndValue (Field.TotalAccepted, value);
+        return withFieldAndValue (Field.totalAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTotalAcceptedAsNotNull () {
-        return withFieldAndValue (Field.TotalAccepted, NOT_NULL);
+        return withFieldAndValue (Field.totalAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTotalTendered (String value) {
-        return withFieldAndValue (Field.TotalTendered, value);
+        return withFieldAndValue (Field.totalTendered, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTotalTenderedAsNotNull () {
-        return withFieldAndValue (Field.TotalTendered, NOT_NULL);
+        return withFieldAndValue (Field.totalTendered, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTreasuryDirectAccepted (String value) {
-        return withFieldAndValue (Field.TreasuryDirectAccepted, value);
+        return withFieldAndValue (Field.treasuryDirectAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTreasuryDirectAcceptedAsNotNull () {
-        return withFieldAndValue (Field.TreasuryDirectAccepted, NOT_NULL);
+        return withFieldAndValue (Field.treasuryDirectAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTreasuryDirectTendersAccepted (String value) {
-        return withFieldAndValue (Field.TreasuryDirectTendersAccepted, value);
+        return withFieldAndValue (Field.treasuryDirectTendersAccepted, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTreasuryDirectTendersAcceptedAsNotNull () {
-        return withFieldAndValue (Field.TreasuryDirectTendersAccepted, NOT_NULL);
+        return withFieldAndValue (Field.treasuryDirectTendersAccepted, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withType (String value) {
-        return withFieldAndValue (Field.Type, value);
+        return withFieldAndValue (Field.type, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withTypeAsNotNull () {
-        return withFieldAndValue (Field.Type, NOT_NULL);
+        return withFieldAndValue (Field.type, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUnadjustedAccruedInterestPer1000 (String value) {
-        return withFieldAndValue (Field.UnadjustedAccruedInterestPer1000, value);
+        return withFieldAndValue (Field.unadjustedAccruedInterestPer1000, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUnadjustedAccruedInterestPer1000AsNotNull () {
-        return withFieldAndValue (Field.UnadjustedAccruedInterestPer1000, NOT_NULL);
+        return withFieldAndValue (Field.unadjustedAccruedInterestPer1000, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUnadjustedPrice (String value) {
-        return withFieldAndValue (Field.UnadjustedPrice, value);
+        return withFieldAndValue (Field.unadjustedPrice, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUnadjustedPriceAsNotNull () {
-        return withFieldAndValue (Field.UnadjustedPrice, NOT_NULL);
+        return withFieldAndValue (Field.unadjustedPrice, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUpdatedTimestamp (String value) {
-        return withFieldAndValue (Field.UpdatedTimestamp, value);
+        return withFieldAndValue (Field.updatedTimestamp, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withUpdatedTimestampAsNotNull () {
-        return withFieldAndValue (Field.UpdatedTimestamp, NOT_NULL);
+        return withFieldAndValue (Field.updatedTimestamp, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withXmlFilenameAnnouncement (String value) {
-        return withFieldAndValue (Field.XmlFilenameAnnouncement, value);
+        return withFieldAndValue (Field.xmlFilenameAnnouncement, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withXmlFilenameAnnouncementAsNotNull () {
-        return withFieldAndValue (Field.XmlFilenameAnnouncement, NOT_NULL);
+        return withFieldAndValue (Field.xmlFilenameAnnouncement, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withXmlFilenameSpecialAnnouncement (String value) {
-        return withFieldAndValue (Field.XmlFilenameSpecialAnnouncement, value);
+        return withFieldAndValue (Field.xmlFilenameSpecialAnnouncement, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withXmlFilenameSpecialAnnouncementAsNotNull () {
-        return withFieldAndValue (Field.XmlFilenameSpecialAnnouncement, NOT_NULL);
+        return withFieldAndValue (Field.xmlFilenameSpecialAnnouncement, NOT_NULL);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAuctionDateYear (String value) {
-        return withFieldAndValue (Field.AuctionDateYear, value);
+        return withFieldAndValue (Field.auctionDateYear, value);
     }
 
     /**
      * @see <a href="https://www.treasurydirect.gov/webapis/webapisecurities.htm">Treasury Security Information</a>
      */
     public QueryBuilder withAuctionDateYearAsNotNull () {
-        return withFieldAndValue (Field.AuctionDateYear, NOT_NULL);
+        return withFieldAndValue (Field.auctionDateYear, NOT_NULL);
     }
 
     // Autogenerated methods ends.
